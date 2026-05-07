@@ -227,9 +227,107 @@ section.tight { padding: clamp(2rem, 4vw, 3rem) 0; }
     .whatsapp-fab { bottom: 16px; right: 16px; width: 52px; height: 52px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+/* ═══ INTRO OVERLAY ═══ */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--pergament);
+    overflow: hidden;
+    transition: opacity 0.9s ease-out;
+}
+.intro-overlay.done {
+    opacity: 0;
+    pointer-events: none;
+}
+.intro-logo-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.intro-logo-svg {
+    width: 240px;
+    height: 240px;
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+}
+.intro-arch {
+    fill: none;
+    stroke: var(--saphir);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: stroke-dashoffset 1.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.intro-logo-svg.draw .intro-arch { stroke-dashoffset: 0; }
+.intro-i-line {
+    stroke: var(--bronze);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 0.8s ease-out;
+}
+.intro-logo-svg.draw .intro-i-line {
+    stroke-dashoffset: 0;
+    transition-delay: 1.2s;
+}
+.intro-brand-name {
+    margin-top: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--saphir);
+    letter-spacing: 7px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.intro-brand-name.show { opacity: 1; transform: translateY(0); }
+.intro-skip {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: transparent;
+    color: rgba(15, 36, 64, 0.5);
+    border: 0.5px solid rgba(15, 36, 64, 0.25);
+    padding: 0.6rem 1.4rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0;
+    animation: introSkipFade 0.5s ease-out 0.6s forwards;
+    z-index: 10;
+}
+.intro-skip:hover { color: var(--saphir); border-color: var(--saphir); }
+@keyframes introSkipFade { to { opacity: 1; } }
+@media (max-width: 640px) {
+    .intro-logo-svg { width: 180px; height: 180px; }
+    .intro-brand-name { font-size: 1.6rem; letter-spacing: 4px; margin-top: 0.9rem; }
+    .intro-skip { font-size: 0.68rem; padding: 0.5rem 1rem; }
+}
 </style>
 </head>
 <body>
+
+<!-- ═══ INTRO OVERLAY ═══ -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-logo-area">
+        <svg class="intro-logo-svg" id="introLogoSvg" viewBox="0 0 100 100">
+            <path class="intro-arch" d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80"/>
+            <line class="intro-i-line" x1="50" y1="38" x2="50" y2="78"/>
+        </svg>
+        <div class="intro-brand-name" id="introBrandName">HAUS IVERIA</div>
+    </div>
+    <button class="intro-skip" id="introSkip">Skip Intro</button>
+</div>
 
 <div class="announcement">
     <strong>Persönliche Vermittlung</strong> · Erstgespräch immer kostenfrei und unverbindlich · <a href="kontakt.html">Termin vereinbaren →</a>
@@ -692,6 +790,49 @@ section.tight { padding: clamp(2rem, 4vw, 3rem) 0; }
             try { localStorage.setItem("hi-cookie-consent", "declined"); } catch(e) {}
             cookieBanner.classList.remove("show");
         });
+    }
+    // Intro Animation (immer abspielen, auch für Wiederbesucher)
+    var introOverlay = document.getElementById('introOverlay');
+    if (introOverlay) {
+        var introLogoSvg = document.getElementById('introLogoSvg');
+        var introBrandName = document.getElementById('introBrandName');
+        var introSkipBtn = document.getElementById('introSkip');
+        var introTimers = [];
+
+        function clearIntroTimers() {
+            introTimers.forEach(function(t) { clearTimeout(t); });
+            introTimers = [];
+        }
+
+        // Phase 1: Bogen wird gezeichnet (0.7s start, 1.7s duration)
+        introTimers.push(setTimeout(function() {
+            introLogoSvg.classList.add('draw');
+        }, 700));
+
+        // Phase 2: Schriftzug fadet ein (2.8s)
+        introTimers.push(setTimeout(function() {
+            introBrandName.classList.add('show');
+        }, 2800));
+
+        // Phase 3: Intro fadet aus (4.5s)
+        introTimers.push(setTimeout(function() {
+            introOverlay.classList.add('done');
+        }, 4500));
+
+        // Phase 4: Aus DOM entfernen nach Fade (5.5s)
+        introTimers.push(setTimeout(function() {
+            if (introOverlay.parentNode) introOverlay.parentNode.removeChild(introOverlay);
+        }, 5500));
+
+        if (introSkipBtn) {
+            introSkipBtn.addEventListener('click', function() {
+                clearIntroTimers();
+                introOverlay.classList.add('done');
+                setTimeout(function() {
+                    if (introOverlay.parentNode) introOverlay.parentNode.removeChild(introOverlay);
+                }, 1000);
+            });
+        }
     }
 })();
 </script>
