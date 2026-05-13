@@ -3,669 +3,868 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haus Iveria. Immobilien & Projektvermarktung in Österreich</title>
-<meta name="description" content="Haus Iveria. Persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.">
+<title>Immobilien & Projektvermarktung in Österreich — Haus Iveria</title>
+<meta name="description" content="Haus Iveria — persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2440'/%3E%3Cpath d='M 22 80 L 22 50 Q 50 22 78 50 L 78 80' fill='none' stroke='%23F5F0E6' stroke-width='2.6' stroke-linecap='round'/%3E%3Cline x1='50' y1='38' x2='50' y2='78' stroke='%23B08D57' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23161513'/%3E%3Cpath d='M 22 80 L 22 50 Q 50 22 78 50 L 78 80' fill='none' stroke='%23FAFAF7' stroke-width='1.4' stroke-linecap='round'/%3E%3Cline x1='50' y1='38' x2='50' y2='78' stroke='%23B08D57' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <style>
 :root {
-    --saphir: #0F2440; --saphir-soft: #1A2D4F; --saphir-deep: #081627;
-    --bronze: #B08D57; --bronze-soft: #C9A674; --bronze-deep: #8E6F3F;
-    --pergament: #F5F0E6; --pergament-light: #FBF8F1; --pergament-warm: #EFE8D8;
-    --anthrazit: #1F1B17; --anthrazit-soft: #4A4540; --anthrazit-mute: #7A736B;
-    --line: rgba(15, 36, 64, 0.12); --line-soft: rgba(15, 36, 64, 0.06);
+    --ink: #161513;
+    --ink-soft: #2A2825;
+    --ink-mute: #6F6B65;
+    --ink-fade: rgba(22, 21, 19, 0.55);
+    --paper: #FAFAF7;
+    --paper-warm: #F2EFE9;
+    --paper-darker: #ECE8DF;
+    --bronze: #B08D57;
+    --bronze-soft: #C9A674;
+    --line: rgba(22, 21, 19, 0.08);
+    --line-strong: rgba(22, 21, 19, 0.15);
     --font-display: "Cormorant Garamond", Georgia, serif;
     --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    --container: 1240px; --radius: 3px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-md: 0 4px 24px rgba(15, 36, 64, 0.08);
-    --shadow-lg: 0 12px 48px rgba(15, 36, 64, 0.12);
-    --shadow-bronze: 0 8px 32px rgba(176, 141, 87, 0.18);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--anthrazit); background: var(--pergament); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--paper);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: none; background: none; }
 ul, ol { list-style: none; }
-h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; letter-spacing: 0.3px; color: var(--saphir); }
-h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
-h2 { font-size: clamp(2rem, 3.8vw, 2.8rem); }
-h3 { font-size: clamp(1.3rem, 2vw, 1.5rem); }
-.eyebrow { font-family: var(--font-display); font-style: italic; font-size: 0.85rem; color: var(--bronze); letter-spacing: 2.8px; text-transform: lowercase; margin-bottom: 1rem; display: inline-block; }
-.lead { font-size: 1.1rem; line-height: 1.75; max-width: 58ch; color: var(--anthrazit-soft); }
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
-section { padding: clamp(3.5rem, 7vw, 6rem) 0; position: relative; }
-section.tight { padding: clamp(2rem, 4vw, 3rem) 0; }
-.announcement { background: var(--saphir-deep); color: var(--pergament); padding: 0.65rem 1.5rem; text-align: center; font-size: 0.82rem; }
-.announcement strong { color: var(--bronze-soft); font-weight: 500; }
-.announcement a { color: var(--bronze-soft); border-bottom: 0.5px solid var(--bronze-soft); }
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(245, 240, 230, 0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
-.site-header .container { display: flex; justify-content: space-between; align-items: center; padding-top: 1.1rem; padding-bottom: 1.1rem; }
-.brand { display: flex; align-items: center; gap: 0.7rem; color: var(--saphir); }
-.brand svg { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.4s var(--ease); }
-.brand:hover svg { transform: rotate(-3deg); }
-.brand-name { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 2.5px; }
-.nav { display: flex; gap: 2rem; align-items: center; }
-.nav a { font-size: 0.86rem; color: var(--anthrazit); transition: color 0.25s var(--ease); padding: 0.2rem 0; }
-.nav a:hover { color: var(--bronze); }
-.nav-cta { background: var(--saphir); color: var(--pergament) !important; padding: 0.6rem 1.2rem !important; border-radius: var(--radius); font-size: 0.82rem !important; transition: all 0.25s var(--ease); }
-.nav-cta:hover { background: var(--saphir-soft); transform: translateY(-1px); }
-.nav-toggle { display: none; width: 32px; height: 32px; flex-direction: column; justify-content: center; gap: 5px; }
-.nav-toggle span { display: block; height: 1.5px; background: var(--saphir); transition: all 0.3s; }
-.trust-bar { background: var(--saphir); color: var(--pergament); padding: 1.1rem 0; }
-.trust-bar-inner { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; font-size: 0.85rem; }
-.trust-item { display: flex; align-items: center; gap: 0.55rem; color: rgba(245, 240, 230, 0.88); }
-.trust-item svg { width: 16px; height: 16px; color: var(--bronze-soft); flex-shrink: 0; }
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.8rem; font-size: 0.92rem; letter-spacing: 0.5px; border-radius: var(--radius); transition: all 0.25s var(--ease); border: 0.5px solid transparent; white-space: nowrap; }
-.btn-primary { background: var(--saphir); color: var(--pergament); }
-.btn-primary:hover { background: var(--saphir-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.btn-bronze { background: var(--bronze); color: var(--saphir); }
-.btn-bronze:hover { background: var(--bronze-soft); transform: translateY(-2px); box-shadow: var(--shadow-bronze); }
-.btn-outline { background: transparent; color: var(--saphir); border-color: var(--saphir); }
-.btn-outline:hover { background: var(--saphir); color: var(--pergament); }
-.btn-outline-bronze { background: transparent; color: var(--bronze-soft); border-color: var(--bronze); }
-.btn-outline-bronze:hover { background: var(--bronze); color: var(--saphir); }
-.hero { padding: clamp(4rem, 9vw, 7rem) 0 clamp(4rem, 8vw, 6rem); }
-.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
-.hero-content h1 { font-size: clamp(2.8rem, 5.5vw, 4.4rem); line-height: 1.05; margin-bottom: 1.5rem; }
-.hero-content h1 em { color: var(--bronze); font-style: italic; }
-.hero-content .lead { font-size: 1.15rem; margin-bottom: 2rem; max-width: 50ch; }
-.hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-.hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.8rem; }
-.hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.95rem; background: rgba(176, 141, 87, 0.1); border: 0.5px solid rgba(176, 141, 87, 0.3); border-radius: 100px; font-size: 0.75rem; color: var(--bronze-deep); letter-spacing: 0.5px; }
-.hero-badge::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--bronze); }
-.hero-visual { aspect-ratio: 4/5; position: relative; border-radius: var(--radius); overflow: hidden; background: linear-gradient(135deg, var(--saphir) 0%, var(--saphir-soft) 50%, #2A4068 100%); box-shadow: var(--shadow-lg); }
-.hero-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(176, 141, 87, 0.25) 0%, transparent 60%); }
-.hero-visual::after { content: ""; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(176, 141, 87, 0.15) 0%, transparent 70%); }
-.hero-visual-arch { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
-.hero-visual-arch svg { width: 70%; opacity: 0.95; }
-.hero-visual-label { position: absolute; bottom: 2rem; left: 2rem; color: var(--bronze-soft); font-family: var(--font-display); font-style: italic; font-size: 1.1rem; z-index: 3; line-height: 1.4; }
-.hero-visual-label span { display: block; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; font-style: normal; color: rgba(245, 240, 230, 0.55); margin-bottom: 0.5rem; }
-.section-saphir { background: var(--saphir); color: var(--pergament); position: relative; overflow: hidden; }
-.section-saphir::before { content: ""; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(176, 141, 87, 0.08) 0%, transparent 60%); pointer-events: none; }
-.section-saphir h2, .section-saphir h3 { color: var(--pergament); }
-.section-saphir .eyebrow { color: var(--bronze-soft); }
-.section-saphir .lead { color: rgba(245, 240, 230, 0.85); }
-.section-soft { background: var(--pergament-light); }
-.section-warm { background: var(--pergament-warm); }
-.section-header { text-align: center; margin-bottom: 3.5rem; max-width: 720px; margin-left: auto; margin-right: auto; }
-.section-header.split { display: flex; justify-content: space-between; align-items: end; text-align: left; flex-wrap: wrap; gap: 1.5rem; max-width: 100%; }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
-.stat-num { font-family: var(--font-display); font-size: clamp(2.6rem, 5vw, 3.6rem); color: var(--bronze); line-height: 1; margin-bottom: 0.4rem; font-weight: 500; }
-.stat-label { font-size: 0.82rem; color: var(--anthrazit-soft); letter-spacing: 0.5px; text-transform: uppercase; }
-.section-saphir .stat-num { color: var(--bronze-soft); }
-.section-saphir .stat-label { color: rgba(245, 240, 230, 0.7); }
-.services-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.service-card { background: var(--pergament); border: 0.5px solid var(--line); border-radius: var(--radius); padding: 2.5rem; transition: all 0.3s var(--ease); display: flex; flex-direction: column; }
-.service-card:hover { border-color: var(--bronze); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.service-card-icon { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-soft) 100%); display: flex; align-items: center; justify-content: center; color: var(--saphir); font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 1.5rem; font-weight: 500; }
-.service-card h3 { margin-bottom: 0.8rem; font-size: 1.5rem; }
-.service-card p { color: var(--anthrazit-soft); font-size: 0.97rem; margin-bottom: 1.5rem; flex-grow: 1; }
-.service-card-link { color: var(--bronze); font-size: 0.88rem; letter-spacing: 0.5px; transition: gap 0.25s var(--ease); display: inline-flex; align-items: center; gap: 0.4rem; }
-.service-card:hover .service-card-link { gap: 0.7rem; }
-.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-.value h3 { margin-bottom: 1rem; font-size: 1.4rem; }
-.value p { font-size: 0.97rem; line-height: 1.78; color: var(--anthrazit-soft); }
-.value-icon { width: 32px; height: 1.5px; background: var(--bronze); margin-bottom: 1.4rem; }
-.objects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.object-card { background: var(--pergament); border-radius: var(--radius); overflow: hidden; transition: all 0.3s var(--ease); border: 0.5px solid var(--line); display: block; }
-.object-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--bronze); }
-.object-photo { aspect-ratio: 4/3; position: relative; display: flex; align-items: end; justify-content: space-between; padding: 1.2rem; overflow: hidden; }
-.object-photo::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(245, 240, 230, 0.18) 0%, transparent 50%), radial-gradient(ellipse at bottom left, rgba(15, 36, 64, 0.25) 0%, transparent 50%); }
-.object-photo--altbau { background: linear-gradient(135deg, #B89D7C, #847057); }
-.object-photo--neubau { background: linear-gradient(135deg, #8C9DA8, #557080); }
-.object-photo--haus { background: linear-gradient(135deg, #7A8B6E, #4F5C46); }
-.object-status { background: var(--pergament); color: var(--saphir); padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; z-index: 1; }
-.object-status.new { background: var(--bronze); color: var(--saphir); }
-.object-area { background: rgba(15, 36, 64, 0.7); backdrop-filter: blur(8px); color: var(--pergament); padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.72rem; z-index: 1; }
-.object-info { padding: 1.4rem; }
-.object-title { font-family: var(--font-display); font-size: 1.25rem; color: var(--saphir); margin-bottom: 0.4rem; line-height: 1.3; }
-.object-meta { font-size: 0.85rem; color: var(--anthrazit-soft); line-height: 1.6; margin-bottom: 0.8rem; }
-.object-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--bronze); border-top: 0.5px solid var(--line-soft); padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: baseline; }
-.object-price-label { font-family: var(--font-body); font-size: 0.75rem; color: var(--anthrazit-mute); }
-.story { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: center; max-width: 960px; margin: 0 auto; }
-.story-portrait { aspect-ratio: 1; background: linear-gradient(135deg, var(--saphir-soft) 0%, var(--saphir-deep) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; border: 1px solid rgba(176, 141, 87, 0.3); overflow: hidden; }
-.story-portrait::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(176, 141, 87, 0.2) 0%, transparent 60%); }
-.story-portrait svg { width: 60%; opacity: 0.9; z-index: 1; }
-.story-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 1.2rem; }
-.story-text p { font-size: 1.02rem; line-height: 1.85; }
-.story-text p + p { margin-top: 1.2rem; }
-.story-text .btn { margin-top: 2rem; }
-.bautraeger-teaser { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.bautraeger-image { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--saphir) 0%, #2A4068 100%); border-radius: var(--radius); position: relative; overflow: hidden; border: 1px solid rgba(176, 141, 87, 0.2); }
-.bautraeger-image::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0px, transparent 39px, rgba(176, 141, 87, 0.07) 40px), repeating-linear-gradient(90deg, transparent 0px, transparent 39px, rgba(176, 141, 87, 0.07) 40px); }
-.bautraeger-image::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(176, 141, 87, 0.18) 0%, transparent 60%); }
-.bautraeger-image-content { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; }
-.bautraeger-image-content svg { width: 50%; opacity: 0.9; }
-.bautraeger-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; padding: 1.5rem 0; border-top: 0.5px solid var(--line); border-bottom: 0.5px solid var(--line); }
-.bautraeger-stat-num { font-family: var(--font-display); font-size: 2rem; color: var(--bronze); line-height: 1; margin-bottom: 0.3rem; }
-.bautraeger-stat-label { font-size: 0.78rem; color: var(--anthrazit-soft); letter-spacing: 0.5px; line-height: 1.3; }
-.process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; position: relative; }
-.process::before { content: ""; position: absolute; top: 32px; left: 8%; right: 8%; height: 0.5px; background: rgba(176, 141, 87, 0.3); z-index: 0; }
-.step { position: relative; z-index: 1; text-align: center; }
-.step-num { width: 64px; height: 64px; border-radius: 50%; background: var(--saphir); color: var(--bronze-soft); border: 1px solid var(--bronze); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem; margin: 0 auto 1.4rem; transition: all 0.3s var(--ease); }
-.step:hover .step-num { background: var(--bronze); color: var(--saphir); transform: scale(1.05); }
-.step-title { font-family: var(--font-display); font-size: 1.15rem; color: var(--pergament); margin-bottom: 0.6rem; }
-.step-desc { font-size: 0.88rem; color: rgba(245, 240, 230, 0.75); line-height: 1.65; }
-.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
-.testimonial { padding: 2rem; background: var(--pergament); border-radius: var(--radius); border: 0.5px solid var(--line); transition: all 0.3s var(--ease); display: flex; flex-direction: column; }
-.testimonial:hover { border-color: var(--bronze); }
-.stars { color: var(--bronze); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1.2rem; }
-.testimonial-text { font-family: var(--font-display); font-size: 1.08rem; line-height: 1.6; color: var(--saphir); margin-bottom: 1.8rem; flex-grow: 1; }
-.testimonial-author { display: flex; align-items: center; gap: 0.9rem; border-top: 0.5px solid var(--line-soft); padding-top: 1.2rem; }
-.testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-deep) 100%); color: var(--saphir); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 500; font-size: 0.95rem; }
-.testimonial-meta { font-size: 0.85rem; line-height: 1.4; }
-.testimonial-meta strong { color: var(--saphir); display: block; font-weight: 500; }
-.testimonial-meta span { color: var(--anthrazit-mute); font-size: 0.78rem; }
-.faq details { border-bottom: 0.5px solid var(--line); padding: 1.5rem 0; transition: all 0.3s var(--ease); }
-.faq details[open] { padding-bottom: 1.8rem; }
-.faq summary { cursor: pointer; font-family: var(--font-display); font-size: 1.25rem; color: var(--saphir); list-style: none; display: flex; justify-content: space-between; align-items: center; padding-right: 1rem; line-height: 1.4; transition: color 0.25s var(--ease); }
-.faq summary:hover { color: var(--bronze); }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; font-family: var(--font-display); font-size: 1.8rem; color: var(--bronze); margin-left: 1rem; flex-shrink: 0; line-height: 1; }
-.faq details[open] summary::after { content: "−"; }
-.faq details > p { margin-top: 1.2rem; color: var(--anthrazit-soft); line-height: 1.78; max-width: 64ch; font-size: 0.97rem; }
-.cta-section { text-align: center; padding: clamp(4rem, 8vw, 6.5rem) 0; }
-.cta-section h2 { font-size: clamp(2rem, 4vw, 2.8rem); max-width: 18ch; margin: 0 auto 1.4rem; line-height: 1.1; }
-.cta-section .lead { margin: 0 auto 2.5rem; max-width: 50ch; }
-.cta-section .hero-cta { justify-content: center; }
-.site-footer { background: var(--anthrazit); color: var(--pergament); padding: 4.5rem 0 2rem; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand .brand-name { color: var(--pergament); }
-.footer-brand p { margin-top: 1.2rem; font-size: 0.88rem; color: rgba(245, 240, 230, 0.7); line-height: 1.7; max-width: 28ch; }
-.footer-col h4 { font-family: var(--font-body); font-size: 0.78rem; color: var(--bronze); letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 1.4rem; font-weight: 500; }
-.footer-col ul li { margin-bottom: 0.7rem; }
-.footer-col a { font-size: 0.92rem; color: rgba(245, 240, 230, 0.8); transition: color 0.2s; }
-.footer-col a:hover { color: var(--bronze); }
-.footer-bottom { padding-top: 2rem; border-top: 0.5px solid rgba(245, 240, 230, 0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: rgba(245, 240, 230, 0.5); }
-.footer-bottom em { font-family: var(--font-display); color: rgba(245, 240, 230, 0.7); font-size: 1em; }
-.whatsapp-fab { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 90; transition: all 0.3s; }
-.whatsapp-fab:hover { transform: translateY(-4px) scale(1.05); }
-.whatsapp-fab svg { width: 28px; height: 28px; }
-.cookie-banner { position: fixed; bottom: 24px; left: 24px; max-width: 380px; background: var(--saphir); color: var(--pergament); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow-lg); z-index: 95; border: 0.5px solid rgba(176, 141, 87, 0.3); display: none; }
-.cookie-banner.show { display: block; animation: slideUp 0.5s; }
-.cookie-banner h4 { color: var(--bronze-soft); font-size: 1.15rem; margin-bottom: 0.6rem; }
-.cookie-banner p { font-size: 0.85rem; line-height: 1.6; color: rgba(245, 240, 230, 0.8); margin-bottom: 1.2rem; }
-.cookie-banner-actions { display: flex; gap: 0.6rem; }
-.cookie-banner .btn { padding: 0.6rem 1.2rem; font-size: 0.82rem; flex: 1; justify-content: center; }
-@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-visual { aspect-ratio: 16/10; max-width: 600px; margin: 0 auto; }
-    .stats { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; }
+input, textarea, select { font: inherit; }
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--ink);
 }
-@media (max-width: 960px) {
-    .values, .objects, .testimonials { grid-template-columns: 1fr 1fr; }
-    .services-3 { grid-template-columns: 1fr 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-    .process { grid-template-columns: repeat(3, 1fr); gap: 1.5rem 1rem; }
-    .process::before { display: none; }
-    .bautraeger-teaser { grid-template-columns: 1fr; gap: 2.5rem; }
-    .story { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-    .story-portrait { width: 220px; height: 220px; margin: 0 auto; }
-    .trust-bar-inner { gap: 2rem; }
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+h3 { font-size: clamp(1.3rem, 1.8vw, 1.6rem); }
+em { font-style: italic; color: var(--bronze); }
+h1 em, h2 em, h3 em { font-weight: 300; }
+
+.container { max-width: 1480px; margin: 0 auto; padding: 0 2.5rem; }
+.container-narrow { max-width: 880px; margin: 0 auto; padding: 0 2.5rem; }
+.container-prose { max-width: 720px; margin: 0 auto; padding: 0 2.5rem; }
+
+section { padding: 12vh 0; position: relative; }
+section.tight { padding: 7vh 0; }
+
+.eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    font-weight: 400;
 }
-@media (max-width: 640px) {
-    .nav { display: none; }
-    .nav.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--pergament); padding: 2rem 1.5rem; gap: 1.5rem; border-bottom: 0.5px solid var(--line); align-items: stretch; }
-    .nav-toggle { display: flex; }
-    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
-    .values, .objects, .testimonials, .footer-grid, .process, .services-3, .stats { grid-template-columns: 1fr; }
-    .hero-cta { flex-direction: column; align-items: stretch; }
-    .hero-cta .btn { justify-content: center; }
-    section { padding: 3rem 0; }
-    .trust-bar-inner { gap: 1rem; }
-    .trust-item { font-size: 0.78rem; }
-    .cookie-banner { left: 16px; right: 16px; bottom: 16px; max-width: none; }
-    .whatsapp-fab { bottom: 16px; right: 16px; width: 52px; height: 52px; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; }
-}
+.lead { font-size: 1.1rem; line-height: 1.75; color: var(--ink-soft); font-weight: 300; max-width: 56ch; }
+
 /* ═══ INTRO OVERLAY ═══ */
-.intro-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: var(--pergament);
+.intro {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--paper);
     overflow: hidden;
     transition: opacity 0.9s ease-out;
 }
-.intro-overlay.done {
-    opacity: 0;
-    pointer-events: none;
-}
+.intro.done { opacity: 0; pointer-events: none; }
 .intro-logo-area {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.intro-logo-svg {
-    width: 240px;
-    height: 240px;
-    display: block;
-    margin: 0 auto;
-    overflow: visible;
-}
+.intro-logo-svg { width: 180px; height: 180px; display: block; margin: 0 auto; overflow: visible; }
 .intro-arch {
-    fill: none;
-    stroke: var(--saphir);
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
+    fill: none; stroke: var(--ink);
+    stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 200; stroke-dashoffset: 200;
     transition: stroke-dashoffset 1.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .intro-logo-svg.draw .intro-arch { stroke-dashoffset: 0; }
 .intro-i-line {
-    stroke: var(--bronze);
-    stroke-width: 7;
-    stroke-linecap: round;
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
+    stroke: var(--bronze); stroke-width: 1.8; stroke-linecap: round;
+    stroke-dasharray: 50; stroke-dashoffset: 50;
     transition: stroke-dashoffset 0.8s ease-out;
 }
-.intro-logo-svg.draw .intro-i-line {
-    stroke-dashoffset: 0;
-    transition-delay: 1.2s;
-}
+.intro-logo-svg.draw .intro-i-line { stroke-dashoffset: 0; transition-delay: 1.2s; }
 .intro-brand-name {
-    margin-top: 1.2rem;
-    font-family: var(--font-display);
-    font-size: 2.4rem;
-    color: var(--saphir);
-    letter-spacing: 7px;
-    opacity: 0;
-    transform: translateY(8px);
+    margin-top: -1.2rem;
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 1.7rem; color: var(--ink); letter-spacing: 8px;
+    opacity: 0; transform: translateY(6px);
     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 }
 .intro-brand-name.show { opacity: 1; transform: translateY(0); }
-.intro-skip {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    background: transparent;
-    color: rgba(15, 36, 64, 0.5);
-    border: 0.5px solid rgba(15, 36, 64, 0.25);
-    padding: 0.6rem 1.4rem;
-    font-family: var(--font-body);
-    font-size: 0.72rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0;
-    animation: introSkipFade 0.5s ease-out 0.6s forwards;
-    z-index: 10;
+
+/* ═══ HEADER ═══ */
+.site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.4rem 0;
+    background: rgba(250, 250, 247, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: var(--ink);
+    border-bottom: 0.5px solid var(--line);
+    transition: all 0.3s var(--ease);
 }
-.intro-skip:hover { color: var(--saphir); border-color: var(--saphir); }
-@keyframes introSkipFade { to { opacity: 1; } }
+.site-header.transparent {
+    background: transparent;
+    color: var(--paper);
+    border-bottom: 0.5px solid transparent;
+    padding: 1.8rem 0;
+}
+.site-header .container {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand { display: flex; align-items: center; gap: 0.4rem; color: inherit; }
+.brand svg { width: 30px; height: 30px; flex-shrink: 0; margin-top: -7px; transition: all 0.3s; }
+.brand-name {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 1.05rem; letter-spacing: 4.5px; text-transform: uppercase;
+}
+.nav {
+    display: flex; gap: 2.5rem; align-items: center;
+    font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 400;
+}
+.nav a { transition: opacity 0.2s; opacity: 0.85; padding: 0.3rem 0; position: relative; }
+.nav a:hover, .nav a.active { opacity: 1; }
+.nav a.active::after {
+    content: ""; position: absolute; bottom: -3px; left: 0; right: 0;
+    height: 0.5px; background: currentColor;
+}
+.nav-toggle {
+    display: none; width: 28px; height: 28px;
+    flex-direction: column; justify-content: center; gap: 5px;
+}
+.nav-toggle span { display: block; height: 1px; background: currentColor; transition: all 0.3s; }
+
+/* ═══ BUTTONS / LINKS ═══ */
+.btn {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    padding: 0.95rem 1.8rem;
+    font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.25s var(--ease);
+    border: 0.5px solid transparent;
+    cursor: pointer;
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--ink-soft); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+.btn-outline-light { background: transparent; color: var(--paper); border-color: rgba(250, 250, 247, 0.6); }
+.btn-outline-light:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.link {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink); padding-bottom: 0.4rem;
+    border-bottom: 0.5px solid var(--ink);
+    transition: gap 0.3s, opacity 0.2s;
+}
+.link:hover { gap: 1.2rem; opacity: 0.7; }
+.link-light { color: var(--paper); border-bottom-color: rgba(250, 250, 247, 0.6); }
+.link-light:hover { opacity: 0.85; }
+
+/* ═══ PAGE HERO (Subpages with image) ═══ */
+.page-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 480px;
+    overflow: hidden;
+    color: var(--paper);
+}
+.page-hero-image {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+}
+.page-hero-image::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(22, 21, 19, 0.4) 0%, rgba(22, 21, 19, 0.3) 50%, rgba(22, 21, 19, 0.6) 100%);
+}
+.page-hero-content {
+    position: absolute; bottom: 11vh; left: 0; right: 0; z-index: 2;
+}
+.page-hero h1 {
+    color: var(--paper);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    line-height: 1.05;
+    max-width: 18ch;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+.page-hero p {
+    max-width: 50ch;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.65;
+    opacity: 0.92;
+}
+.page-hero .eyebrow {
+    color: rgba(250, 250, 247, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+/* ═══ SECTION HEADERS ═══ */
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+}
+.section-header h2 { margin-bottom: 1.5rem; }
+.section-header.split {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    text-align: left;
+    flex-wrap: wrap; gap: 2rem;
+    max-width: 100%;
+    margin-bottom: 4rem;
+}
+.section-header.split > div { max-width: 52ch; }
+
+/* ═══ BACKGROUNDS ═══ */
+.section-warm { background: var(--paper-warm); }
+.section-dark { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--paper); }
+.section-dark .eyebrow { color: rgba(250, 250, 247, 0.6); }
+.section-dark .lead, .section-dark p { color: rgba(250, 250, 247, 0.85); }
+.section-dark .link { color: var(--paper); border-bottom-color: rgba(250, 250, 247, 0.6); }
+
+/* ═══ EDITORIAL TWO-COL (Image + Text) ═══ */
+.editorial {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    margin-bottom: 10rem;
+}
+.editorial:last-child { margin-bottom: 0; }
+.editorial.reverse { direction: rtl; }
+.editorial.reverse > * { direction: ltr; }
+.editorial-image {
+    aspect-ratio: 4/5;
+    background-size: cover; background-position: center;
+}
+.editorial-image.wide { aspect-ratio: 5/4; }
+.editorial-text { padding: 1rem 0; }
+.editorial-text h2 { margin-bottom: 1.8rem; }
+.editorial-text p {
+    font-size: 1rem; line-height: 1.8; color: var(--ink-soft);
+    margin-bottom: 2.2rem; font-weight: 300; max-width: 50ch;
+}
+.section-dark .editorial-text p { color: rgba(250, 250, 247, 0.8); }
+
+/* ═══ STATS (Editorial) ═══ */
+.stats-editorial {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+}
+.stat-item { padding: 0; }
+.stat-num {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    line-height: 1; margin-bottom: 0.6rem;
+    color: var(--ink); letter-spacing: -1px;
+}
+.section-dark .stat-num { color: var(--paper); }
+.stat-label {
+    font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink-mute); line-height: 1.5;
+}
+.section-dark .stat-label { color: rgba(250, 250, 247, 0.55); }
+.stat-divider { width: 28px; height: 0.5px; background: var(--bronze); margin-bottom: 1.5rem; }
+
+/* ═══ PROPERTY CARDS ═══ */
+.properties {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem;
+}
+.property { display: block; transition: opacity 0.3s; }
+.property:hover { opacity: 0.85; }
+.property-image-wrap {
+    aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;
+}
+.property-image {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    transition: transform 0.8s var(--ease);
+}
+.property:hover .property-image { transform: scale(1.04); }
+.property-meta {
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 0.8rem;
+}
+.property h3 {
+    font-size: 1.4rem; font-weight: 300; line-height: 1.25;
+    margin-bottom: 0.5rem; letter-spacing: -0.3px;
+}
+.property-info {
+    font-size: 0.88rem; color: var(--ink-mute);
+    line-height: 1.55; margin-bottom: 0.8rem; font-weight: 400;
+}
+.property-price {
+    font-family: var(--font-display); font-size: 1.2rem;
+    color: var(--ink); font-weight: 400;
+}
+
+/* ═══ FILTER BAR ═══ */
+.filter-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr) auto;
+    gap: 1.5rem; align-items: end;
+    padding: 2rem 0;
+    border-top: 0.5px solid var(--line);
+    border-bottom: 0.5px solid var(--line);
+    margin-bottom: 5rem;
+}
+
+/* ═══ FEATURE CARDS (Minimalist) ═══ */
+.features {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem;
+}
+.feature { }
+.feature-num {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 2.5rem; color: var(--bronze);
+    line-height: 1; margin-bottom: 1.5rem; letter-spacing: -1px;
+}
+.feature h3 { margin-bottom: 1rem; font-size: 1.4rem; font-weight: 400; }
+.feature p {
+    color: var(--ink-soft); line-height: 1.75; font-weight: 300;
+    font-size: 0.95rem;
+}
+.section-dark .feature p { color: rgba(250, 250, 247, 0.8); }
+
+/* ═══ PROCESS STEPS ═══ */
+.process {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem;
+    position: relative;
+}
+.process::before {
+    content: ""; position: absolute;
+    top: 22px; left: 8%; right: 8%;
+    height: 0.5px; background: var(--line-strong);
+}
+.section-dark .process::before { background: rgba(176, 141, 87, 0.3); }
+.step { position: relative; z-index: 1; text-align: center; }
+.step-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--paper); color: var(--ink);
+    border: 0.5px solid var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1rem; font-weight: 400;
+    margin: 0 auto 1.4rem;
+    transition: all 0.3s var(--ease);
+}
+.section-dark .step-num {
+    background: var(--ink); color: var(--bronze);
+    border-color: var(--bronze);
+}
+.step:hover .step-num {
+    background: var(--ink); color: var(--paper);
+}
+.section-dark .step:hover .step-num {
+    background: var(--bronze); color: var(--ink);
+}
+.step-title {
+    font-family: var(--font-display); font-size: 1.15rem;
+    font-weight: 400; margin-bottom: 0.6rem; letter-spacing: -0.3px;
+}
+.section-dark .step-title { color: var(--paper); }
+.step-desc {
+    font-size: 0.85rem; color: var(--ink-mute);
+    line-height: 1.65; font-weight: 300;
+}
+.section-dark .step-desc { color: rgba(250, 250, 247, 0.65); }
+
+/* ═══ BRONZE LIST ═══ */
+.bronze-list { padding: 0; }
+.bronze-list li {
+    padding: 1.4rem 0 1.4rem 2.5rem;
+    border-bottom: 0.5px solid var(--line);
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--ink-soft);
+}
+.bronze-list li:last-child { border-bottom: none; }
+.bronze-list li::before {
+    content: ""; position: absolute; left: 0; top: 1.85rem;
+    width: 18px; height: 0.5px; background: var(--bronze);
+}
+.bronze-list li strong {
+    display: block; margin-bottom: 0.4rem;
+    font-family: var(--font-display); font-size: 1.15rem;
+    font-weight: 400; color: var(--ink); letter-spacing: -0.2px;
+}
+
+/* ═══ FAQ ═══ */
+.faq { }
+.faq details {
+    border-bottom: 0.5px solid var(--line);
+    padding: 2rem 0;
+}
+.faq summary {
+    cursor: pointer; list-style: none;
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--ink); font-weight: 400;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-right: 1rem; line-height: 1.4;
+    transition: opacity 0.2s;
+    letter-spacing: -0.3px;
+}
+.faq summary:hover { opacity: 0.7; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+    content: "+"; font-family: var(--font-display);
+    font-size: 1.6rem; font-weight: 300; color: var(--bronze);
+    margin-left: 1rem; flex-shrink: 0; line-height: 1;
+    transition: transform 0.3s;
+}
+.faq details[open] summary::after { content: "−"; }
+.faq details > p {
+    margin-top: 1.2rem; color: var(--ink-soft);
+    line-height: 1.8; font-size: 0.95rem; font-weight: 300; max-width: 64ch;
+}
+
+/* ═══ FORMS ═══ */
+.form { display: flex; flex-direction: column; gap: 1.6rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.form-row.three { grid-template-columns: repeat(3, 1fr); }
+.form label {
+    display: block;
+    font-size: 0.7rem; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 0.55rem; font-weight: 400;
+}
+.form input, .form textarea, .form select {
+    width: 100%;
+    padding: 0.9rem 0;
+    background: transparent;
+    border: none; border-bottom: 0.5px solid var(--line-strong);
+    font-family: var(--font-body); font-size: 0.95rem;
+    color: var(--ink); font-weight: 300;
+    transition: border-color 0.2s;
+}
+.form input:focus, .form textarea:focus, .form select:focus {
+    outline: none; border-bottom-color: var(--bronze);
+}
+.form textarea { min-height: 110px; resize: vertical; padding: 0.9rem 0; }
+.form-note {
+    font-size: 0.78rem; color: var(--ink-mute);
+    line-height: 1.6; font-weight: 300;
+}
+.form-note a { color: var(--ink); border-bottom: 0.5px solid var(--bronze); }
+.form .btn { align-self: flex-start; margin-top: 1rem; }
+.section-dark .form input, .section-dark .form textarea, .section-dark .form select {
+    color: var(--paper); border-bottom-color: rgba(250, 250, 247, 0.25);
+}
+.section-dark .form input::placeholder, .section-dark .form textarea::placeholder {
+    color: rgba(250, 250, 247, 0.4);
+}
+.section-dark .form label { color: rgba(250, 250, 247, 0.55); }
+.section-dark .form input:focus, .section-dark .form textarea:focus, .section-dark .form select:focus {
+    border-bottom-color: var(--bronze-soft);
+}
+
+/* ═══ CONTACT GRID ═══ */
+.contact-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
+}
+.contact-block {
+    padding: 1.8rem 0;
+    border-bottom: 0.5px solid var(--line);
+}
+.contact-block:first-child { padding-top: 0; }
+.contact-block:last-child { border-bottom: none; }
+.contact-block h4 {
+    font-family: var(--font-body); font-size: 0.7rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 0.7rem; font-weight: 400;
+}
+.contact-block p {
+    font-size: 0.97rem; color: var(--ink-soft);
+    line-height: 1.65; font-weight: 300;
+}
+.contact-block a {
+    color: var(--ink); border-bottom: 0.5px solid var(--bronze);
+    transition: color 0.2s;
+}
+.contact-block a:hover { color: var(--bronze); }
+
+/* ═══ PROSE ═══ */
+.prose h2 {
+    margin-top: 3rem; margin-bottom: 1.2rem;
+    font-size: 1.7rem; font-weight: 400;
+}
+.prose h2:first-child { margin-top: 0; }
+.prose h3 {
+    margin-top: 2.2rem; margin-bottom: 0.8rem;
+    font-size: 1.3rem; font-weight: 400;
+}
+.prose p {
+    margin-bottom: 1.3rem;
+    line-height: 1.85; font-weight: 300;
+    color: var(--ink-soft);
+}
+.prose strong { font-weight: 500; color: var(--ink); }
+.prose a { color: var(--ink); border-bottom: 0.5px solid var(--bronze); }
+.prose ul { margin: 0.5rem 0 1.3rem 0; }
+.prose ul li {
+    padding: 0.5rem 0 0.5rem 1.5rem; position: relative;
+    line-height: 1.7; font-weight: 300; color: var(--ink-soft);
+}
+.prose ul li::before {
+    content: ""; position: absolute; left: 0; top: 1.1rem;
+    width: 8px; height: 0.5px; background: var(--bronze);
+}
+
+/* ═══ CTA SECTION ═══ */
+.cta-section { text-align: center; padding: 14vh 0; }
+.cta-section h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    max-width: 20ch; margin: 0 auto 1.8rem;
+    font-weight: 300;
+}
+.cta-section .lead {
+    margin: 0 auto 3rem; max-width: 52ch;
+    color: var(--ink-soft);
+}
+.section-dark.cta-section .lead { color: rgba(250, 250, 247, 0.85); }
+.cta-buttons {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+}
+
+/* ═══ FOOTER ═══ */
+.site-footer {
+    background: var(--ink); color: var(--paper);
+    padding: 7vh 0 3vh;
+}
+.footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem; padding-bottom: 5rem;
+    border-bottom: 0.5px solid rgba(250, 250, 247, 0.1);
+    margin-bottom: 2.5rem;
+}
+.footer-brand .brand { color: var(--paper); margin-bottom: 1.5rem; }
+.footer-brand p {
+    font-size: 0.9rem; color: rgba(250, 250, 247, 0.6);
+    line-height: 1.75; max-width: 30ch; font-weight: 300;
+}
+.footer-col h4 {
+    font-family: var(--font-body); font-size: 0.7rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--bronze); margin-bottom: 1.5rem; font-weight: 400;
+}
+.footer-col ul li { margin-bottom: 0.9rem; }
+.footer-col a {
+    font-size: 0.92rem; color: rgba(250, 250, 250, 0.75);
+    font-weight: 300; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--bronze); }
+.footer-bottom {
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    gap: 1rem; font-size: 0.78rem;
+    color: rgba(250, 250, 247, 0.45);
+    font-weight: 300;
+}
+.footer-bottom em { font-style: italic; color: rgba(250, 250, 247, 0.7); }
+
+/* ═══ WHATSAPP & COOKIE ═══ */
+.whatsapp-fab {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #25D366; color: white;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 90; transition: all 0.3s;
+}
+.whatsapp-fab:hover { transform: translateY(-4px) scale(1.05); }
+.whatsapp-fab svg { width: 24px; height: 24px; }
+
+.cookie-banner {
+    position: fixed; bottom: 24px; left: 24px;
+    max-width: 380px;
+    background: var(--ink); color: var(--paper);
+    padding: 1.6rem; border-radius: 0;
+    box-shadow: 0 12px 48px rgba(22, 21, 19, 0.2);
+    z-index: 95;
+    border-left: 2px solid var(--bronze);
+    display: none;
+}
+.cookie-banner.show { display: block; animation: slideUp 0.5s var(--ease); }
+.cookie-banner h4 {
+    color: var(--bronze); font-size: 0.7rem; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 0.8rem; font-weight: 400;
+}
+.cookie-banner p {
+    font-size: 0.85rem; line-height: 1.6;
+    color: rgba(250, 250, 247, 0.8); margin-bottom: 1.3rem; font-weight: 300;
+}
+.cookie-banner p a { color: var(--bronze); border-bottom: 0.5px solid var(--bronze); }
+.cookie-banner-actions { display: flex; gap: 0.6rem; }
+.cookie-banner .btn { padding: 0.6rem 1.2rem; font-size: 0.7rem; flex: 1; justify-content: center; }
+.cookie-banner .btn-primary { background: var(--bronze); color: var(--ink); }
+.cookie-banner .btn-primary:hover { background: var(--bronze-soft); }
+.cookie-banner .btn-outline-light { color: var(--paper); border-color: rgba(250, 250, 247, 0.4); }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 1024px) {
+    .stats-editorial { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .features { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+}
+@media (max-width: 880px) {
+    .nav { display: none; }
+    .nav.open {
+        display: flex; position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--paper);
+        padding: 2.5rem 2rem; gap: 1.8rem;
+        border-bottom: 0.5px solid var(--line);
+        align-items: stretch; text-align: center;
+    }
+    .nav-toggle { display: flex; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+    .properties { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; }
+    .editorial { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 6rem; }
+    .editorial.reverse { direction: ltr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .process { grid-template-columns: repeat(3, 1fr); gap: 2rem 1rem; }
+    .process::before { display: none; }
+    .filter-bar { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .container, .container-narrow, .container-prose { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
 @media (max-width: 640px) {
-    .intro-logo-svg { width: 180px; height: 180px; }
-    .intro-brand-name { font-size: 1.6rem; letter-spacing: 4px; margin-top: 0.9rem; }
-    .intro-skip { font-size: 0.68rem; padding: 0.5rem 1rem; }
+    section { padding: 8vh 0; }
+    .properties, .footer-top, .features, .form-row, .form-row.three,
+    .filter-bar, .stats-editorial, .process { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; align-items: stretch; }
+    .cta-buttons .btn { justify-content: center; }
+    .cookie-banner { left: 16px; right: 16px; bottom: 16px; max-width: none; }
+    .whatsapp-fab { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+    .footer-bottom { flex-direction: column; }
+    .intro-logo-svg { width: 140px; height: 140px; }
+    .intro-brand-name { font-size: 1.3rem; letter-spacing: 5px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ═══ INTRO OVERLAY ═══ -->
-<div class="intro-overlay" id="introOverlay">
+<!-- INTRO -->
+<div class="intro" id="intro">
     <div class="intro-logo-area">
-        <svg class="intro-logo-svg" id="introLogoSvg" viewBox="0 0 100 100">
+        <svg class="intro-logo-svg" id="introSvg" viewBox="0 0 100 100">
             <path class="intro-arch" d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80"/>
             <line class="intro-i-line" x1="50" y1="38" x2="50" y2="78"/>
         </svg>
-        <div class="intro-brand-name" id="introBrandName">HAUS IVERIA</div>
+        <div class="intro-brand-name" id="introName">HAUS IVERIA</div>
     </div>
-    <button class="intro-skip" id="introSkip">Skip Intro</button>
 </div>
 
-<div class="announcement">
-    <strong>Persönliche Vermittlung</strong> · Erstgespräch immer kostenfrei und unverbindlich · <a href="kontakt.html">Termin vereinbaren →</a>
-</div>
-
-<header class="site-header">
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
     <div class="container">
         <a href="index.html" class="brand">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-                <path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="#0F2440" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="3.6" stroke-linecap="round"/>
+            <svg viewBox="0 0 100 100">
+                <path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
             <span class="brand-name">Haus Iveria</span>
         </a>
         <button class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
         <nav class="nav">
-            <a href="verkaufen.html">Verkaufen</a>
-            <a href="kaufen.html">Suchen</a>
-            <a href="bautraeger.html">Bauträger</a>
-            <a href="ueber-uns.html">Über uns</a>
-            <a href="bewertung.html">Bewertung</a>
-            <a href="kontakt.html" class="nav-cta">Kontakt</a>
+            <a href="kaufen.html" data-page="kaufen">Objekte</a>
+            <a href="verkaufen.html" data-page="verkaufen">Verkaufen</a>
+            <a href="bautraeger.html" data-page="bautraeger">Bauträger</a>
+            <a href="ueber-uns.html" data-page="ueber-uns">Über uns</a>
+            <a href="kontakt.html" data-page="kontakt">Kontakt</a>
         </nav>
     </div>
 </header>
 
-<div class="trust-bar">
-    <div class="container">
-        <div class="trust-bar-inner">
-            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><span>10+ Jahre Erfahrung</span></div>
-            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><span>80+ Objekte vermittelt</span></div>
-            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><span>Wien · NÖ · Bgld · Kärnten</span></div>
-            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><span>Erstgespräch kostenfrei</span></div>
-        </div>
-    </div>
-</div>
-
 <main>
 
-<section class="hero">
-    <div class="container">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-badges">
-                    <span class="hero-badge">Immobilien</span>
-                    <span class="hero-badge">Projektvermarktung</span>
-                    <span class="hero-badge">Bewertung</span>
-                </div>
-                <h1>Wo aus vier Wänden <em>Zuhause</em> wird.</h1>
-                <p class="lead">Persönliche Immobilienvermittlung in Österreich. Mit Geduld, Sorgfalt und einem Auge für das, was eine Immobilie zum Zuhause macht. Für Verkäufer, Käufer und Bauträger.</p>
-                <div class="hero-cta">
-                    <a href="verkaufen.html" class="btn btn-primary">Verkaufen oder vermieten →</a>
-                    <a href="kontakt.html" class="btn btn-outline">Erstgespräch vereinbaren</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-visual-arch">
-                    <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 30 220 L 30 110 Q 100 30 170 110 L 170 220" fill="none" stroke="#B08D57" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M 50 220 L 50 120 Q 100 60 150 120 L 150 220" fill="none" stroke="#C9A674" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                        <line x1="100" y1="90" x2="100" y2="220" stroke="#B08D57" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="100" cy="90" r="4" fill="#B08D57"/>
-                        <line x1="30" y1="220" x2="170" y2="220" stroke="#B08D57" stroke-width="2" opacity="0.4"/>
-                    </svg>
-                </div>
-                <div class="hero-visual-label">
-                    <span>Haus Iveria · Wien</span>
-                    Persönlich.<br>Sorgfältig.<br>Verbindlich.
-                </div>
-            </div>
+<!-- HEADER OVERRIDE: transparent on hero -->
+<script>document.getElementById('siteHeader').classList.add('transparent');</script>
+
+<!-- HERO with full-screen image -->
+<section class="hero" style="position: relative; height: 100vh; min-height: 720px; overflow: hidden; color: var(--paper); margin-top: -82px;">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(180deg, rgba(22, 21, 19, 0.25) 0%, rgba(22, 21, 19, 0.15) 50%, rgba(22, 21, 19, 0.55) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=85'); background-size: cover; background-position: center;"></div>
+    <div style="position: absolute; bottom: 14vh; left: 0; right: 0; z-index: 2;">
+        <div class="container">
+            <div class="eyebrow" style="color: rgba(250, 250, 247, 0.85); margin-bottom: 2rem;">Immobilien · Projektvermarktung · Bewertung</div>
+            <h1 style="color: var(--paper); font-size: clamp(3rem, 6.5vw, 6rem); line-height: 0.98; max-width: 16ch; margin-bottom: 2rem; letter-spacing: -1.5px;">Wo aus vier Wänden <em style="color: var(--bronze);">Zuhause</em> wird.</h1>
+            <p style="font-size: 1.05rem; max-width: 42ch; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.65; color: var(--paper);">Persönliche Immobilienvermittlung in Wien, Niederösterreich, Burgenland und Kärnten. Mit Sorgfalt, Erfahrung und einem Auge für Details.</p>
+            <a href="kaufen.html" class="link link-light">Objekte entdecken →</a>
         </div>
+    </div>
+    <div style="position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--paper); opacity: 0.55; z-index: 2;">
+        Scroll
+        <div style="width: 0.5px; height: 50px; background: var(--paper); margin: 1rem auto 0; opacity: 0.5;"></div>
     </div>
 </section>
 
-<section class="section-soft tight">
-    <div class="container">
-        <div class="stats">
-            <div><div class="stat-num">80+</div><div class="stat-label">Vermittelte Objekte</div></div>
-            <div><div class="stat-num">10</div><div class="stat-label">Jahre Erfahrung</div></div>
-            <div><div class="stat-num">4</div><div class="stat-label">Bundesländer</div></div>
-            <div><div class="stat-num">100%</div><div class="stat-label">Erfolgsbasiert</div></div>
-        </div>
+<!-- INTRO TEXT -->
+<section style="padding: 14vh 0 12vh; text-align: center;">
+    <div class="container-narrow">
+        <p class="eyebrow">Über uns</p>
+        <h2 style="max-width: 22ch; margin: 0 auto 2.5rem; line-height: 1.15;">Klassische Maklerei mit <em>persönlicher</em> Note.</h2>
+        <p class="lead" style="margin: 0 auto;">Über zehn Jahre Erfahrung im österreichischen Immobilienmarkt. Die Sorgfalt eines Familienunternehmens. Und das Verständnis, dass jede Immobilie eine Geschichte ist.</p>
     </div>
 </section>
 
-<section id="leistungen">
-    <div class="container">
-        <div class="section-header">
-            <p class="eyebrow">Was wir tun</p>
-            <h2>Drei Bereiche, eine Haltung.</h2>
-            <p class="lead" style="margin: 1.2rem auto 0;">Ob Sie verkaufen, suchen oder ein Bauprojekt vermarkten möchten. Wir begleiten Sie mit der gleichen Sorgfalt durch jede Phase.</p>
-        </div>
-        <div class="services-3">
-            <a href="verkaufen.html" class="service-card">
-                <div class="service-card-icon">V</div>
-                <h3>Verkaufen & Vermieten</h3>
-                <p>Vom Erstgespräch über Bewertung und Vermarktung bis zur Schlüsselübergabe. Volle Vermarktung ohne Aufpreis. Persönlich, sorgfältig und auf Erfolgsbasis.</p>
-                <span class="service-card-link">Mehr erfahren →</span>
-            </a>
-            <a href="kaufen.html" class="service-card">
-                <div class="service-card-icon">S</div>
-                <h3>Suchen & Kaufen</h3>
-                <p>Aktuelle Objekte in Wien, Niederösterreich, Burgenland und Kärnten. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag.</p>
-                <span class="service-card-link">Objekte ansehen →</span>
-            </a>
-            <a href="bautraeger.html" class="service-card">
-                <div class="service-card-icon">B</div>
-                <h3>Bauträgervermarktung</h3>
-                <p>Vermarktung kompletter Wohnprojekte vom Erstkonzept über Off-Market-Phase bis zur Übergabe. Reservierungslisten, Notarbegleitung, klare Kommunikation.</p>
-                <span class="service-card-link">Projekt anfragen →</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="section-warm">
-    <div class="container">
-        <div class="section-header">
-            <p class="eyebrow">Unsere Haltung</p>
-            <h2>Drei Versprechen.</h2>
-        </div>
-        <div class="values">
-            <div class="value">
-                <div class="value-icon"></div>
-                <h3>Wir handeln in Ihrem Sinne.</h3>
-                <p>Jede Empfehlung dient der Sache, nicht der Provision. Wir sagen offen, wann ein Verkauf nicht der richtige Zeitpunkt ist. Auch wenn das gegen unser kurzfristiges Interesse spricht.</p>
-            </div>
-            <div class="value">
-                <div class="value-icon"></div>
-                <h3>Wir nehmen uns Zeit.</h3>
-                <p>Eine Immobilie zu verkaufen oder zu kaufen ist eine der wichtigsten Lebensentscheidungen. Wir behandeln sie auch so. Keine Massenabfertigung, keine Standardexposés.</p>
-            </div>
-            <div class="value">
-                <div class="value-icon"></div>
-                <h3>Wir bleiben verbunden.</h3>
-                <p>Auch nach dem Notartermin sind wir erreichbar. Bei Fragen zur Übergabe, zur ersten Heizperiode, zur Hausordnung. Wir verschwinden nicht, wenn die Provision überwiesen ist.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="objekte">
+<!-- FEATURED PROPERTIES -->
+<section style="padding: 0 0 14vh;">
     <div class="container">
         <div class="section-header split">
             <div>
                 <p class="eyebrow">Aktuelle Objekte</p>
-                <h2>Eine Auswahl unserer Vermittlungen.</h2>
+                <h2>Eine Auswahl unserer <em>Vermittlungen</em>.</h2>
             </div>
-            <a href="kaufen.html" class="btn btn-outline">Alle Objekte ansehen →</a>
+            <a href="kaufen.html" class="link">Alle Objekte →</a>
         </div>
-        <div class="objects">
-            <a href="#" class="object-card">
-                <div class="object-photo object-photo--altbau">
-                    <span class="object-status new">Neu</span>
-                    <span class="object-area">1010 Wien</span>
+        <div class="properties">
+            <a href="kaufen.html" class="property">
+                <div class="property-image-wrap">
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85');"></div>
                 </div>
-                <div class="object-info">
-                    <h3 class="object-title">Altbauwohnung am Stadtpark</h3>
-                    <p class="object-meta">3 Zimmer · 92 m² · Stuck · Erstbezug nach Sanierung</p>
-                    <div class="object-price">€ 745.000 <span class="object-price-label">Kaufpreis</span></div>
-                </div>
+                <div class="property-meta">1010 Wien · Stadtpark</div>
+                <h3>Altbauwohnung am Stadtpark</h3>
+                <p class="property-info">3 Zimmer · 92 m² · Stuck · Erstbezug nach Sanierung</p>
+                <div class="property-price">€ 745.000</div>
             </a>
-            <a href="#" class="object-card">
-                <div class="object-photo object-photo--haus">
-                    <span class="object-status">Reserviert</span>
-                    <span class="object-area">2380 Perchtoldsdorf</span>
+            <a href="kaufen.html" class="property">
+                <div class="property-image-wrap">
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=85');"></div>
                 </div>
-                <div class="object-info">
-                    <h3 class="object-title">Familienhaus mit Garten</h3>
-                    <p class="object-meta">5 Zimmer · 168 m² · 620 m² Grund · Bj. 1962, saniert</p>
-                    <div class="object-price">€ 1.290.000 <span class="object-price-label">Kaufpreis</span></div>
-                </div>
+                <div class="property-meta">2380 Perchtoldsdorf</div>
+                <h3>Familienhaus mit Garten</h3>
+                <p class="property-info">5 Zimmer · 168 m² · 620 m² Grund · Bj. 1962, saniert</p>
+                <div class="property-price">€ 1.290.000</div>
             </a>
-            <a href="#" class="object-card">
-                <div class="object-photo object-photo--neubau">
-                    <span class="object-status new">Neu</span>
-                    <span class="object-area">9220 Velden</span>
+            <a href="kaufen.html" class="property">
+                <div class="property-image-wrap">
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=85');"></div>
                 </div>
-                <div class="object-info">
-                    <h3 class="object-title">Penthouse mit Seeblick</h3>
-                    <p class="object-meta">4 Zimmer · 142 m² · Dachterrasse · Wörtherseeblick</p>
-                    <div class="object-price">€ 1.850.000 <span class="object-price-label">Kaufpreis</span></div>
-                </div>
+                <div class="property-meta">9220 Velden · Wörthersee</div>
+                <h3>Penthouse mit Seeblick</h3>
+                <p class="property-info">4 Zimmer · 142 m² · Dachterrasse · Wörtherseeblick</p>
+                <div class="property-price">€ 1.850.000</div>
             </a>
         </div>
     </div>
 </section>
 
-<section id="story" class="section-saphir">
-    <div class="container">
-        <div class="story">
-            <div class="story-portrait">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="100" cy="80" r="35" fill="none" stroke="#C9A674" stroke-width="2" opacity="0.7"/>
-                    <path d="M 50 175 Q 50 130 100 130 Q 150 130 150 175" fill="none" stroke="#C9A674" stroke-width="2" opacity="0.7"/>
-                </svg>
-            </div>
-            <div class="story-text">
-                <p class="eyebrow">Über uns</p>
-                <h2>Klassische Maklerei mit persönlicher Note.</h2>
-                <p>Über zehn Jahre Erfahrung im österreichischen Immobilienmarkt, die Sorgfalt eines Familienunternehmens und ein Verständnis dafür, dass jeder Verkauf eine Geschichte ist.</p>
-                <p>Wir nehmen weniger Mandate an, dafür betreuen wir jedes persönlich. Sie haben einen festen Ansprechpartner. Keine Hotline, kein Fallmanager. Bei jedem Termin sind wir selbst vor Ort.</p>
-                <a href="ueber-uns.html" class="btn btn-outline-bronze">Mehr über uns →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="bautraeger">
-    <div class="container">
-        <div class="bautraeger-teaser">
-            <div class="bautraeger-image">
-                <div class="bautraeger-image-content">
-                    <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="30" y="60" width="40" height="90" fill="none" stroke="#B08D57" stroke-width="2"/>
-                        <rect x="80" y="40" width="40" height="110" fill="none" stroke="#C9A674" stroke-width="2"/>
-                        <rect x="130" y="70" width="40" height="80" fill="none" stroke="#B08D57" stroke-width="2"/>
-                        <line x1="20" y1="150" x2="180" y2="150" stroke="#B08D57" stroke-width="2"/>
-                    </svg>
-                </div>
-            </div>
-            <div>
-                <p class="eyebrow">Für Bauträger</p>
-                <h2>Projekte vermarkten, die ankommen.</h2>
-                <p class="lead">Von der ersten Konzeptphase bis zur letzten Schlüsselübergabe. Wir vermarkten komplette Wohnprojekte mit der gleichen Sorgfalt, mit der sie geplant wurden.</p>
-                <div class="bautraeger-stats">
-                    <div>
-                        <div class="bautraeger-stat-num">3</div>
-                        <div class="bautraeger-stat-label">Aktive Mandate</div>
-                    </div>
-                    <div>
-                        <div class="bautraeger-stat-num">52+</div>
-                        <div class="bautraeger-stat-label">Vermarktete Einheiten</div>
-                    </div>
-                    <div>
-                        <div class="bautraeger-stat-num">100%</div>
-                        <div class="bautraeger-stat-label">Vor Übergabe verkauft</div>
-                    </div>
-                </div>
-                <a href="bautraeger.html" class="btn btn-primary">Mehr für Bauträger →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-saphir">
-    <div class="container">
-        <div class="section-header">
-            <p class="eyebrow">Wie wir arbeiten</p>
-            <h2>In fünf Schritten zum Verkauf.</h2>
-        </div>
-        <div class="process">
-            <div class="step">
-                <div class="step-num">I</div>
-                <div class="step-title">Erstgespräch</div>
-                <div class="step-desc">Kostenfrei und unverbindlich. Vor Ort oder digital.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">II</div>
-                <div class="step-title">Bewertung</div>
-                <div class="step-desc">Marktwert auf Basis aktueller Vergleichsdaten und Lage.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">III</div>
-                <div class="step-title">Vermarktung</div>
-                <div class="step-desc">Exposé, Fotografie, Inserate und persönliche Anfragen.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">IV</div>
-                <div class="step-title">Besichtigungen</div>
-                <div class="step-desc">Wir filtern, organisieren und begleiten.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">V</div>
-                <div class="step-title">Abschluss</div>
-                <div class="step-desc">Vom Notartermin bis zur Schlüsselübergabe.</div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<!-- SERVICES EDITORIAL -->
 <section class="section-warm">
     <div class="container">
-        <div class="section-header">
-            <p class="eyebrow">Stimmen</p>
-            <h2>Was unsere Kunden sagen.</h2>
+        <div class="editorial">
+            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85');"></div>
+            <div class="editorial-text">
+                <span class="eyebrow">Für Eigentümer</span>
+                <h2>Verkaufen & <em>Vermieten</em></h2>
+                <p>Vom Erstgespräch über Bewertung und Vermarktung bis zur Schlüsselübergabe. Volle Vermarktung ohne Aufpreis. Persönlich, sorgfältig und auf Erfolgsbasis.</p>
+                <a href="verkaufen.html" class="link">Mehr erfahren →</a>
+            </div>
         </div>
-        <div class="testimonials">
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Nach drei Maklern, die nur Termine wollten, war das Erstgespräch eine Erleichterung. Endlich jemand, der zuhört."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">FK</div>
-                    <div class="testimonial-meta"><strong>Familie K.</strong><span>Eigentumswohnung Wien-Hietzing</span></div>
-                </div>
+
+        <div class="editorial reverse">
+            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=85');"></div>
+            <div class="editorial-text">
+                <span class="eyebrow">Für Bauträger</span>
+                <h2>Projekte vermarkten, die <em>ankommen</em>.</h2>
+                <p>Von der Konzeptphase bis zur letzten Schlüsselübergabe. Wir vermarkten komplette Wohnprojekte mit der Sorgfalt, mit der sie geplant wurden.</p>
+                <a href="bautraeger.html" class="link">Mehr erfahren →</a>
             </div>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Wir haben unser Haus innerhalb von sechs Wochen über Wert verkauft. Vor allem aber stressfrei. Und das war uns wichtiger."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AM</div>
-                    <div class="testimonial-meta"><strong>Andreas M.</strong><span>Einfamilienhaus Niederösterreich</span></div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Als Bauträger schätze ich die ruhige, professionelle Art. Keine Versprechungen, die nicht gehalten werden."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">PW</div>
-                    <div class="testimonial-meta"><strong>Peter W.</strong><span>Bauträger, Klosterneuburg</span></div>
-                </div>
+        </div>
+
+        <div class="editorial">
+            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85');"></div>
+            <div class="editorial-text">
+                <span class="eyebrow">Für Käufer</span>
+                <h2>Suchen & <em>Kaufen</em></h2>
+                <p>Aktuelle Objekte in Wien, Niederösterreich, Burgenland und Kärnten. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag, bevor Objekte öffentlich werden.</p>
+                <a href="kaufen.html" class="link">Objekte ansehen →</a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="faq">
-    <div class="container" style="max-width: 800px;">
+<!-- STATS -->
+<section class="section-dark">
+    <div class="container">
+        <div class="section-header" style="text-align: left; margin-bottom: 5rem; max-width: 100%;">
+            <div style="max-width: 52ch;">
+                <p class="eyebrow">Auf einen Blick</p>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 3rem);">Klassische Werte. <em>Messbare</em> Ergebnisse.</h2>
+            </div>
+        </div>
+        <div class="stats-editorial">
+            <div class="stat-item">
+                <div class="stat-divider"></div>
+                <div class="stat-num">80+</div>
+                <div class="stat-label">Vermittelte Objekte</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-divider"></div>
+                <div class="stat-num">10</div>
+                <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-divider"></div>
+                <div class="stat-num">4</div>
+                <div class="stat-label">Bundesländer</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-divider"></div>
+                <div class="stat-num">100<span style="font-size: 0.5em;">%</span></div>
+                <div class="stat-label">Erfolgsbasiert</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section>
+    <div class="container-narrow">
         <div class="section-header">
             <p class="eyebrow">Häufige Fragen</p>
-            <h2>Was Sie wissen sollten.</h2>
+            <h2>Was Sie wissen <em>sollten</em>.</h2>
         </div>
         <div class="faq">
             <details>
                 <summary>Was kostet die Vermittlung?</summary>
-                <p>Unsere Provision orientiert sich an den in der Immobilienmaklerverordnung (IMV) festgelegten Sätzen. Üblich sind 3 % zzgl. 20 % USt. vom Käufer und Verkäufer. Sie zahlen nur im Erfolgsfall.</p>
+                <p>Unsere Provision orientiert sich an der Immobilienmaklerverordnung (IMV). Üblich sind 3 % zzgl. 20 % USt. vom Käufer und Verkäufer. Sie zahlen nur im Erfolgsfall. Bei Bauträgermandaten vereinbaren wir individuelle Konditionen.</p>
             </details>
             <details>
                 <summary>In welchen Regionen sind Sie tätig?</summary>
-                <p>Schwerpunkt Wien, Niederösterreich, Burgenland und Kärnten. Bei Mandaten außerhalb dieser Regionen arbeiten wir mit ausgewählten lokalen Partnern zusammen.</p>
+                <p>Schwerpunkt Wien, Niederösterreich, Burgenland und Kärnten. Bei Mandaten außerhalb dieser Regionen arbeiten wir mit ausgewählten lokalen Partnern zusammen. Die Betreuung bleibt aber bei uns.</p>
             </details>
             <details>
                 <summary>Wie lange dauert ein Verkauf üblicherweise?</summary>
-                <p>Vom Erstgespräch bis zur Übergabe rechnen wir mit drei bis sechs Monaten. Abhängig von Marktlage, Preisstellung und der Komplexität der Immobilie.</p>
+                <p>Vom Erstgespräch bis zur Übergabe rechnen wir mit drei bis sechs Monaten. Abhängig von Marktlage, Preisstellung und Komplexität. Wir geben Ihnen im Erstgespräch eine realistische Einschätzung.</p>
             </details>
             <details>
                 <summary>Was unterscheidet Sie von größeren Maklerketten?</summary>
-                <p>Wir nehmen weniger Mandate an, dafür betreuen wir jedes persönlich. Sie haben einen festen Ansprechpartner. Keine Hotline, kein Fallmanager.</p>
+                <p>Wir nehmen weniger Mandate an, dafür betreuen wir jedes persönlich. Sie haben einen festen Ansprechpartner. Keine Hotline, kein Fallmanager. Bei jedem Termin sind wir selbst vor Ort.</p>
             </details>
             <details>
                 <summary>Bieten Sie auch Bewertungen ohne Verkaufsabsicht an?</summary>
@@ -675,167 +874,18 @@ section.tight { padding: clamp(2rem, 4vw, 3rem) 0; }
     </div>
 </section>
 
-<section id="kontakt" class="section-saphir cta-section">
+<!-- CTA -->
+<section class="section-dark cta-section">
     <div class="container">
         <p class="eyebrow">Erstgespräch</p>
-        <h2>Bereit, ein Zuhause zu finden. Oder loszulassen?</h2>
-        <p class="lead">Schreiben Sie uns kurz, was Sie planen. Wir melden uns innerhalb von 24 Stunden.</p>
-        <div class="hero-cta">
-            <a href="mailto:office@haus-iveria.at" class="btn btn-bronze">office@haus-iveria.at →</a>
-            <a href="tel:+43" class="btn btn-outline-bronze">Anrufen</a>
+        <h2>Bereit, ein Zuhause zu finden. Oder <em>loszulassen</em>.</h2>
+        <p class="lead" style="margin: 0 auto 3rem;">Schreiben Sie uns kurz, was Sie planen. Wir melden uns innerhalb von 24 Stunden.</p>
+        <div class="cta-buttons">
+            <a href="kontakt.html" class="btn btn-outline-light">Kontakt aufnehmen →</a>
+            <a href="bewertung.html" class="btn btn-outline-light">Bewertung anfragen</a>
         </div>
     </div>
 </section>
-
-</main>
-
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="brand">
-                    <svg viewBox="0 0 100 100" aria-hidden="true">
-                        <path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="#F5F0E6" stroke-width="2.6" stroke-linecap="round"/>
-                        <line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="3.6" stroke-linecap="round"/>
-                    </svg>
-                    <span class="brand-name">Haus Iveria</span>
-                </a>
-                <p>Persönliche Immobilienvermittlung und Projektvermarktung in Österreich. Wo aus vier Wänden Zuhause wird.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Leistungen</h4>
-                <ul>
-                    <li><a href="verkaufen.html">Verkaufen & Vermieten</a></li>
-                    <li><a href="kaufen.html">Objekte ansehen</a></li>
-                    <li><a href="bautraeger.html">Bauträgervermarktung</a></li>
-                    <li><a href="bewertung.html">Bewertung anfragen</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Haus Iveria</h4>
-                <ul>
-                    <li><a href="ueber-uns.html">Über uns</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontakt</h4>
-                <ul>
-                    <li><a href="mailto:office@haus-iveria.at">office@haus-iveria.at</a></li>
-                    <li><a href="tel:+43">+43 (0)1 …</a></li>
-                    <li>Wien · Österreich</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© 2026 Haus Iveria. Alle Rechte vorbehalten.</span>
-            <em>Wo aus vier Wänden Zuhause wird.</em>
-        </div>
-    </div>
-</footer>
-
-<a href="https://wa.me/43" class="whatsapp-fab" aria-label="WhatsApp Kontakt" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<div class="cookie-banner" id="cookie-banner">
-    <h4>Cookies & Datenschutz</h4>
-    <p>Wir verwenden ausschließlich technisch notwendige Cookies. Mehr in unserer <a href="datenschutz.html" style="color: var(--bronze-soft); border-bottom: 0.5px solid var(--bronze-soft);">Datenschutzerklärung</a>.</p>
-    <div class="cookie-banner-actions">
-        <button class="btn btn-bronze" id="cookie-accept">Akzeptieren</button>
-        <button class="btn btn-outline-bronze" id="cookie-decline">Ablehnen</button>
-    </div>
-</div>
-
-<script>
-(function () {
-    "use strict";
-    var navToggle = document.querySelector(".nav-toggle");
-    var nav = document.querySelector(".nav");
-    if (navToggle && nav) {
-        navToggle.addEventListener("click", function () {
-            nav.classList.toggle("open");
-            navToggle.classList.toggle("open");
-        });
-        nav.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                nav.classList.remove("open");
-                navToggle.classList.remove("open");
-            });
-        });
-    }
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener("click", function (e) {
-            var targetId = this.getAttribute("href");
-            if (targetId === "#" || targetId.length < 2) return;
-            var target = document.querySelector(targetId);
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth", block: "start" }); }
-        });
-    });
-    var cookieBanner = document.getElementById("cookie-banner");
-    if (cookieBanner) {
-        try {
-            var consent = localStorage.getItem("hi-cookie-consent");
-            if (!consent) setTimeout(function () { cookieBanner.classList.add("show"); }, 1500);
-        } catch(e) { setTimeout(function () { cookieBanner.classList.add("show"); }, 1500); }
-        var acceptBtn = document.getElementById("cookie-accept");
-        var declineBtn = document.getElementById("cookie-decline");
-        if (acceptBtn) acceptBtn.addEventListener("click", function () {
-            try { localStorage.setItem("hi-cookie-consent", "accepted"); } catch(e) {}
-            cookieBanner.classList.remove("show");
-        });
-        if (declineBtn) declineBtn.addEventListener("click", function () {
-            try { localStorage.setItem("hi-cookie-consent", "declined"); } catch(e) {}
-            cookieBanner.classList.remove("show");
-        });
-    }
-    // Intro Animation (immer abspielen, auch für Wiederbesucher)
-    var introOverlay = document.getElementById('introOverlay');
-    if (introOverlay) {
-        var introLogoSvg = document.getElementById('introLogoSvg');
-        var introBrandName = document.getElementById('introBrandName');
-        var introSkipBtn = document.getElementById('introSkip');
-        var introTimers = [];
-
-        function clearIntroTimers() {
-            introTimers.forEach(function(t) { clearTimeout(t); });
-            introTimers = [];
-        }
-
-        // Phase 1: Bogen wird gezeichnet (0.7s start, 1.7s duration)
-        introTimers.push(setTimeout(function() {
-            introLogoSvg.classList.add('draw');
-        }, 700));
-
-        // Phase 2: Schriftzug fadet ein (2.8s)
-        introTimers.push(setTimeout(function() {
-            introBrandName.classList.add('show');
-        }, 2800));
-
-        // Phase 3: Intro fadet aus (4.5s)
-        introTimers.push(setTimeout(function() {
-            introOverlay.classList.add('done');
-        }, 4500));
-
-        // Phase 4: Aus DOM entfernen nach Fade (5.5s)
-        introTimers.push(setTimeout(function() {
-            if (introOverlay.parentNode) introOverlay.parentNode.removeChild(introOverlay);
-        }, 5500));
-
-        if (introSkipBtn) {
-            introSkipBtn.addEventListener('click', function() {
-                clearIntroTimers();
-                introOverlay.classList.add('done');
-                setTimeout(function() {
-                    if (introOverlay.parentNode) introOverlay.parentNode.removeChild(introOverlay);
-                }, 1000);
-            });
-        }
-    }
-})();
-</script>
 
 <!-- Netlify Form Detection (versteckt) -->
 <form name="kontakt" netlify netlify-honeypot="bot-field" hidden>
@@ -865,6 +915,155 @@ section.tight { padding: clamp(2rem, 4vw, 3rem) 0; }
     <input type="text" name="budget"/>
     <textarea name="wuensche"></textarea>
 </form>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" style="color: var(--paper);">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="#FAFAF7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="brand-name">Haus Iveria</span>
+                </a>
+                <p>Persönliche Immobilienvermittlung und Projektvermarktung in Österreich. Wo aus vier Wänden Zuhause wird.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Leistungen</h4>
+                <ul>
+                    <li><a href="verkaufen.html">Verkaufen & Vermieten</a></li>
+                    <li><a href="kaufen.html">Objekte ansehen</a></li>
+                    <li><a href="bautraeger.html">Bauträgervermarktung</a></li>
+                    <li><a href="bewertung.html">Bewertung anfragen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Haus Iveria</h4>
+                <ul>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li><a href="mailto:office@haus-iveria.at">office@haus-iveria.at</a></li>
+                    <li><a href="tel:+43">+43 (0)1 …</a></li>
+                    <li style="color: rgba(250, 250, 247, 0.6); font-weight: 300;">Wien · Österreich</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Haus Iveria. Alle Rechte vorbehalten.</span>
+            <em>Wo aus vier Wänden Zuhause wird.</em>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/43" class="whatsapp-fab" aria-label="WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="cookie-banner" id="cookie-banner">
+    <h4>Cookies & Datenschutz</h4>
+    <p>Wir verwenden ausschließlich technisch notwendige Cookies. Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+        <button class="btn btn-primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn-outline-light" id="cookie-decline">Ablehnen</button>
+    </div>
+</div>
+
+<script>
+(function() {
+    "use strict";
+
+    // Intro (immer abspielen)
+    var intro = document.getElementById('intro');
+    if (intro) {
+        var introSvg = document.getElementById('introSvg');
+        var introName = document.getElementById('introName');
+        setTimeout(function() { introSvg.classList.add('draw'); }, 700);
+        setTimeout(function() { introName.classList.add('show'); }, 2800);
+        setTimeout(function() { intro.classList.add('done'); }, 4500);
+        setTimeout(function() { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 5500);
+    }
+
+    // Mobile Nav
+    var navToggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.nav');
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function() {
+            nav.classList.toggle('open');
+            navToggle.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                nav.classList.remove('open');
+                navToggle.classList.remove('open');
+            });
+        });
+    }
+
+    // Active nav
+    var currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '');
+    document.querySelectorAll('.nav a[data-page]').forEach(function(link) {
+        if (link.getAttribute('data-page') === currentPage) link.classList.add('active');
+    });
+
+    // Smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var id = this.getAttribute('href');
+            if (id === '#' || id.length < 2) return;
+            var t = document.querySelector(id);
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+
+    // Cookie
+    var cookieBanner = document.getElementById('cookie-banner');
+    if (cookieBanner) {
+        try {
+            if (!localStorage.getItem('hi-cookie-consent')) {
+                setTimeout(function() { cookieBanner.classList.add('show'); }, 6500);
+            }
+        } catch(e) { setTimeout(function() { cookieBanner.classList.add('show'); }, 6500); }
+        var ab = document.getElementById('cookie-accept');
+        var db = document.getElementById('cookie-decline');
+        if (ab) ab.addEventListener('click', function() {
+            try { localStorage.setItem('hi-cookie-consent', 'accepted'); } catch(e) {}
+            cookieBanner.classList.remove('show');
+        });
+        if (db) db.addEventListener('click', function() {
+            try { localStorage.setItem('hi-cookie-consent', 'declined'); } catch(e) {}
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    // Form submission feedback
+    document.querySelectorAll('form[data-form]').forEach(function(form) {
+        form.addEventListener('submit', function() {
+            var btn = form.querySelector("button[type='submit']");
+            if (btn) { btn.disabled = true; btn.textContent = 'wird gesendet …'; }
+        });
+    });
+
+    // Header style behavior: transparent on hero pages
+    var header = document.getElementById('siteHeader');
+    if (header && header.classList.contains('transparent')) {
+        function onScroll() {
+            if (window.scrollY > 80) header.classList.remove('transparent');
+            else header.classList.add('transparent');
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+})();
+</script>
 
 </body>
 </html>
