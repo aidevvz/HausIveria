@@ -197,7 +197,7 @@ section.tight { padding: 7vh 0; }
 }
 .page-hero-image::after {
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(90deg, rgba(22, 21, 19, 0.65) 0%, rgba(22, 21, 19, 0.4) 35%, rgba(22, 21, 19, 0.2) 70%, rgba(22, 21, 19, 0.1) 100%), linear-gradient(180deg, rgba(22, 21, 19, 0.2) 0%, rgba(22, 21, 19, 0.15) 50%, rgba(22, 21, 19, 0.5) 100%);
+    background: linear-gradient(90deg, rgba(22, 21, 19, 0.95) 0%, rgba(22, 21, 19, 0.85) 30%, rgba(22, 21, 19, 0.6) 55%, rgba(22, 21, 19, 0.25) 80%, rgba(22, 21, 19, 0.1) 100%), linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.2) 50%, rgba(22, 21, 19, 0.6) 100%);
 }
 .page-hero-content {
     position: absolute; bottom: 11vh; left: 0; right: 0; z-index: 2;
@@ -653,16 +653,117 @@ section.tight { padding: 7vh 0; }
     .container, .container-narrow, .container-prose { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
 @media (max-width: 640px) {
-    section { padding: 8vh 0; }
+    /* Section padding */
+    section { padding: 7vh 0; }
+
+    /* Typography */
+    h1 { font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: -0.5px; }
+    h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); letter-spacing: -0.3px; }
+    h3 { font-size: 1.2rem; }
+    .lead { font-size: 0.95rem; line-height: 1.65; }
+    body { font-size: 14px; }
+
+    /* Container padding */
+    .container, .container-narrow, .container-prose { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+    /* Grids zu 1 Spalte */
     .properties, .footer-top, .features, .form-row, .form-row.three,
-    .filter-bar, .stats-editorial, .process { grid-template-columns: 1fr; }
-    .cta-buttons { flex-direction: column; align-items: stretch; }
-    .cta-buttons .btn { justify-content: center; }
-    .cookie-banner { left: 16px; right: 16px; bottom: 16px; max-width: none; }
-    .whatsapp-fab { bottom: 16px; right: 16px; width: 48px; height: 48px; }
-    .footer-bottom { flex-direction: column; }
-    .intro-logo-svg { width: 140px; height: 140px; }
-    .intro-brand-name { font-size: 1.3rem; letter-spacing: 5px; }
+    .filter-bar, .stats-editorial, .process, .contact-grid, .editorial { grid-template-columns: 1fr; }
+    .editorial { gap: 2rem; margin-bottom: 4rem; }
+    .editorial.reverse { direction: ltr; }
+    .stats-editorial { gap: 2.5rem; }
+    .contact-grid { gap: 2.5rem; }
+    .features { gap: 2.5rem; }
+
+    /* CTA buttons */
+    .cta-buttons { flex-direction: column; align-items: stretch; gap: 0.7rem; }
+    .cta-buttons .btn { justify-content: center; width: 100%; }
+    .btn { padding: 0.85rem 1.4rem; font-size: 0.72rem; letter-spacing: 2px; }
+    .link { font-size: 0.72rem; letter-spacing: 2.5px; }
+
+    /* Fixed widgets */
+    .cookie-banner { left: 12px; right: 12px; bottom: 12px; max-width: none; padding: 1.2rem; }
+    .cookie-banner h4 { font-size: 0.65rem; }
+    .cookie-banner p { font-size: 0.8rem; }
+    .whatsapp-fab { bottom: 12px; right: 12px; width: 46px; height: 46px; }
+    .whatsapp-fab svg { width: 22px; height: 22px; }
+
+    /* Footer */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .footer-top { padding-bottom: 3rem; gap: 2.5rem; }
+    .site-footer { padding: 5vh 0 2.5vh; }
+
+    /* Intro */
+    .intro-logo-svg { width: 120px; height: 120px; }
+    .intro-brand-name { font-size: 1.05rem; letter-spacing: 4px; margin-top: -0.9rem; }
+
+    /* Header */
+    .site-header { padding: 1rem 0; }
+    .site-header.transparent { padding: 1.2rem 0; }
+    .brand svg { width: 26px; height: 26px; margin-top: -6px; }
+    .brand-name { font-size: 0.85rem; letter-spacing: 3px; }
+    .nav-toggle { width: 24px; height: 24px; }
+    .nav.open { padding: 2rem 1.5rem; gap: 1.4rem; }
+    .nav.open a { font-size: 0.85rem; letter-spacing: 2px; }
+
+    /* Page Hero (Subpages) */
+    .page-hero { height: auto; min-height: 75vh; padding: 0; }
+    .page-hero-content { position: absolute; bottom: 8vh; padding-top: 18vh; }
+    .page-hero h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); max-width: 100%; margin-bottom: 1rem; }
+    .page-hero p { font-size: 0.92rem; max-width: 100%; line-height: 1.6; }
+    .page-hero .eyebrow { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 0.8rem; }
+
+    /* Hero (Index) — kompakter, kein Konflikt mit Scroll */
+    .hero { min-height: auto !important; height: 100svh !important; min-height: 600px !important; }
+    .hero h1 { font-size: clamp(2rem, 10vw, 3rem) !important; max-width: 100% !important; letter-spacing: -0.5px !important; margin-bottom: 1.2rem !important; line-height: 1.05 !important; }
+    .hero p { font-size: 0.92rem !important; max-width: 100% !important; margin-bottom: 1.8rem !important; }
+    .hero .eyebrow { font-size: 0.62rem !important; letter-spacing: 2.5px !important; margin-bottom: 1.2rem !important; }
+    .hero-content-mobile { bottom: 12vh !important; }
+
+    /* Page Hero Overlay auf Mobile: vertikal statt horizontal */
+    .page-hero-image::after {
+        background: linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.5) 40%, rgba(22, 21, 19, 0.85) 80%, rgba(22, 21, 19, 0.95) 100%) !important;
+    }
+
+    /* Editorial */
+    .editorial-image { aspect-ratio: 16/10; }
+    .editorial-text p { font-size: 0.95rem; }
+
+    /* Process steps mobile stacked */
+    .process { gap: 2rem; }
+    .step { display: flex; gap: 1.2rem; text-align: left; align-items: flex-start; }
+    .step-num { margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.85rem; }
+    .step-title { font-size: 1rem; margin-bottom: 0.3rem; }
+    .step-desc { font-size: 0.82rem; }
+
+    /* Stats mobile */
+    .stat-num { font-size: 2.4rem; }
+    .stat-label { font-size: 0.65rem; }
+
+    /* Feature numbers mobile */
+    .feature-num { font-size: 1.8rem; margin-bottom: 1rem; }
+
+    /* FAQ mobile */
+    .faq summary { font-size: 1.05rem; padding-right: 0.5rem; }
+    .faq summary::after { font-size: 1.4rem; }
+    .faq details > p { font-size: 0.9rem; line-height: 1.7; }
+
+    /* Forms mobile */
+    .form { gap: 1.2rem; }
+    .form input, .form textarea, .form select { padding: 0.7rem 0; font-size: 0.92rem; }
+
+    /* Filter bar mobile */
+    .filter-bar { padding: 1.5rem 0; gap: 1rem; }
+
+    /* Properties mobile */
+    .property h3 { font-size: 1.2rem; }
+    .property-image-wrap { margin-bottom: 1rem; }
+
+    /* Section headers split → stack auf mobile */
+    .section-header.split { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+    /* Scroll indicator nur auf Desktop */
+    .hero-scroll-indicator { display: none !important; }
 }
 </style>
 </head>
