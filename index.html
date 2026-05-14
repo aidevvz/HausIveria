@@ -82,7 +82,7 @@ section.tight { padding: 7vh 0; }
     position: fixed; inset: 0; z-index: 9999;
     background: var(--paper);
     overflow: hidden;
-    transition: opacity 0.9s ease-out;
+    transition: opacity 0.8s ease-out;
 }
 .intro.done { opacity: 0; pointer-events: none; }
 .intro-logo-area {
@@ -96,23 +96,44 @@ section.tight { padding: 7vh 0; }
     fill: none; stroke: var(--ink);
     stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
     stroke-dasharray: 200; stroke-dashoffset: 200;
-    transition: stroke-dashoffset 1.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: stroke-dashoffset 1.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .intro-logo-svg.draw .intro-arch { stroke-dashoffset: 0; }
 .intro-i-line {
     stroke: var(--bronze); stroke-width: 1.8; stroke-linecap: round;
     stroke-dasharray: 50; stroke-dashoffset: 50;
-    transition: stroke-dashoffset 0.8s ease-out;
+    transition: stroke-dashoffset 0.75s ease-out;
 }
-.intro-logo-svg.draw .intro-i-line { stroke-dashoffset: 0; transition-delay: 1.2s; }
+.intro-logo-svg.draw .intro-i-line { stroke-dashoffset: 0; transition-delay: 1.15s; }
 .intro-brand-name {
     margin-top: -1.2rem;
     font-family: var(--font-display); font-weight: 300;
     font-size: 1.7rem; color: var(--ink); letter-spacing: 8px;
     opacity: 0; transform: translateY(6px);
-    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .intro-brand-name.show { opacity: 1; transform: translateY(0); }
+.intro-skip {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    background: transparent;
+    border: 0.5px solid rgba(22, 21, 19, 0.25);
+    color: var(--ink-mute);
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.7rem 1.4rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.6s ease-out 1s, color 0.25s, border-color 0.25s;
+}
+.intro-skip.visible { opacity: 1; }
+.intro-skip:hover { color: var(--ink); border-color: var(--ink); }
+@media (max-width: 640px) {
+    .intro-skip { bottom: 1.5rem; right: 1.5rem; font-size: 0.62rem; padding: 0.6rem 1.1rem; }
+}
 
 /* ═══ HEADER ═══ */
 .site-header {
@@ -724,7 +745,7 @@ section.tight { padding: 7vh 0; }
     .hero > div:first-child {
         background-image:
             linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.5) 40%, rgba(22, 21, 19, 0.85) 80%, rgba(22, 21, 19, 0.95) 100%),
-            url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85') !important;
+            url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=85') !important;
     }
     .page-hero-image::after {
         background: linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.5) 40%, rgba(22, 21, 19, 0.85) 80%, rgba(22, 21, 19, 0.95) 100%) !important;
@@ -783,6 +804,7 @@ section.tight { padding: 7vh 0; }
         </svg>
         <div class="intro-brand-name" id="introName">HAUS IVERIA</div>
     </div>
+    <button class="intro-skip" id="introSkip">Intro überspringen</button>
 </div>
 
 <!-- HEADER -->
@@ -813,7 +835,7 @@ section.tight { padding: 7vh 0; }
 
 <!-- HERO with full-screen image -->
 <section class="hero" style="position: relative; height: 100vh; min-height: 720px; overflow: hidden; color: var(--paper); margin-top: -82px;">
-    <div style="position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(22, 21, 19, 0.95) 0%, rgba(22, 21, 19, 0.85) 30%, rgba(22, 21, 19, 0.6) 55%, rgba(22, 21, 19, 0.25) 80%, rgba(22, 21, 19, 0.1) 100%), linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.2) 50%, rgba(22, 21, 19, 0.6) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=85'); background-size: cover; background-position: center;"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(22, 21, 19, 0.95) 0%, rgba(22, 21, 19, 0.85) 30%, rgba(22, 21, 19, 0.6) 55%, rgba(22, 21, 19, 0.25) 80%, rgba(22, 21, 19, 0.1) 100%), linear-gradient(180deg, rgba(22, 21, 19, 0.3) 0%, rgba(22, 21, 19, 0.2) 50%, rgba(22, 21, 19, 0.6) 100%), url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=2400&q=85'); background-size: cover; background-position: center;"></div>
     <div style="position: absolute; bottom: 14vh; left: 0; right: 0; z-index: 2;">
         <div class="container">
             <div class="eyebrow" style="color: rgba(250, 250, 247, 0.85); margin-bottom: 2rem;">Immobilien · Projektvermarktung · Bewertung</div>
@@ -850,7 +872,7 @@ section.tight { padding: 7vh 0; }
         <div class="properties">
             <a href="kaufen.html" class="property">
                 <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85');"></div>
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=900&q=85');"></div>
                 </div>
                 <div class="property-meta">1010 Wien · Stadtpark</div>
                 <h3>Altbauwohnung am Stadtpark</h3>
@@ -859,7 +881,7 @@ section.tight { padding: 7vh 0; }
             </a>
             <a href="kaufen.html" class="property">
                 <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=85');"></div>
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=85');"></div>
                 </div>
                 <div class="property-meta">2380 Perchtoldsdorf</div>
                 <h3>Familienhaus mit Garten</h3>
@@ -868,7 +890,7 @@ section.tight { padding: 7vh 0; }
             </a>
             <a href="kaufen.html" class="property">
                 <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=85');"></div>
+                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=85');"></div>
                 </div>
                 <div class="property-meta">9220 Velden · Wörthersee</div>
                 <h3>Penthouse mit Seeblick</h3>
@@ -883,7 +905,7 @@ section.tight { padding: 7vh 0; }
 <section class="section-warm">
     <div class="container">
         <div class="editorial">
-            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85');"></div>
+            <div class="editorial-image" style="background-image: url('images/eigentuemer-index.jpg');"></div>
             <div class="editorial-text">
                 <span class="eyebrow">Für Eigentümer</span>
                 <h2>Verkaufen & <em>Vermieten</em></h2>
@@ -893,7 +915,7 @@ section.tight { padding: 7vh 0; }
         </div>
 
         <div class="editorial reverse">
-            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=85');"></div>
+            <div class="editorial-image" style="background-image: url('images/bautraeger-index.jpg');"></div>
             <div class="editorial-text">
                 <span class="eyebrow">Für Bauträger</span>
                 <h2>Projekte vermarkten, die <em>ankommen</em>.</h2>
@@ -903,7 +925,7 @@ section.tight { padding: 7vh 0; }
         </div>
 
         <div class="editorial">
-            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85');"></div>
+            <div class="editorial-image" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85');"></div>
             <div class="editorial-text">
                 <span class="eyebrow">Für Käufer</span>
                 <h2>Suchen & <em>Kaufen</em></h2>
@@ -1088,15 +1110,60 @@ section.tight { padding: 7vh 0; }
 (function() {
     "use strict";
 
-    // Intro (immer abspielen)
+    // Intro — Option C: erster Besuch volles Intro (5s), danach Kurzversion (1.5s)
     var intro = document.getElementById('intro');
     if (intro) {
         var introSvg = document.getElementById('introSvg');
         var introName = document.getElementById('introName');
-        setTimeout(function() { introSvg.classList.add('draw'); }, 700);
-        setTimeout(function() { introName.classList.add('show'); }, 2800);
-        setTimeout(function() { intro.classList.add('done'); }, 4500);
-        setTimeout(function() { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 5500);
+        var introSkip = document.getElementById('introSkip');
+
+        // Prüfen ob schon besucht
+        var alreadyVisited = false;
+        try {
+            alreadyVisited = localStorage.getItem('hi-intro-seen') === 'yes';
+        } catch (e) {
+            alreadyVisited = false;
+        }
+
+        var introTimers = [];
+        function clearIntroTimers() {
+            introTimers.forEach(function(t) { clearTimeout(t); });
+            introTimers = [];
+        }
+        function finishIntro() {
+            clearIntroTimers();
+            intro.classList.add('done');
+            setTimeout(function() {
+                if (intro.parentNode) intro.parentNode.removeChild(intro);
+            }, 800);
+        }
+
+        // Besuch merken
+        try { localStorage.setItem('hi-intro-seen', 'yes'); } catch (e) {}
+
+        if (alreadyVisited) {
+            // KURZVERSION (~1.5s): Logo erscheint schnell, kein Skip-Button
+            introSvg.classList.add('draw');
+            introTimers.push(setTimeout(function() { introName.classList.add('show'); }, 400));
+            introTimers.push(setTimeout(function() { intro.classList.add('done'); }, 1500));
+            introTimers.push(setTimeout(function() {
+                if (intro.parentNode) intro.parentNode.removeChild(intro);
+            }, 2300));
+        } else {
+            // VOLLVERSION (~5s) mit Skip-Button
+            introTimers.push(setTimeout(function() { introSvg.classList.add('draw'); }, 600));
+            introTimers.push(setTimeout(function() { introName.classList.add('show'); }, 2600));
+            introTimers.push(setTimeout(function() { intro.classList.add('done'); }, 4200));
+            introTimers.push(setTimeout(function() {
+                if (intro.parentNode) intro.parentNode.removeChild(intro);
+            }, 5000));
+
+            // Skip-Button einblenden
+            if (introSkip) {
+                introSkip.classList.add('visible');
+                introSkip.addEventListener('click', finishIntro);
+            }
+        }
     }
 
     // Mobile Nav
@@ -1136,9 +1203,9 @@ section.tight { padding: 7vh 0; }
     if (cookieBanner) {
         try {
             if (!localStorage.getItem('hi-cookie-consent')) {
-                setTimeout(function() { cookieBanner.classList.add('show'); }, 6500);
+                setTimeout(function() { cookieBanner.classList.add("show"); }, 4000);
             }
-        } catch(e) { setTimeout(function() { cookieBanner.classList.add('show'); }, 6500); }
+        } catch(e) { setTimeout(function() { cookieBanner.classList.add("show"); }, 4000); }
         var ab = document.getElementById('cookie-accept');
         var db = document.getElementById('cookie-decline');
         if (ab) ab.addEventListener('click', function() {
