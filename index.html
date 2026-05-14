@@ -1110,7 +1110,7 @@ section.tight { padding: 7vh 0; }
 (function() {
     "use strict";
 
-    // Intro — Option C: erster Besuch volles Intro (5s), danach Kurzversion (1.5s)
+    // Intro — Option 2: erster Besuch volles Intro (5s), danach gar kein Intro
     var intro = document.getElementById('intro');
     if (intro) {
         var introSvg = document.getElementById('introSvg');
@@ -1125,32 +1125,27 @@ section.tight { padding: 7vh 0; }
             alreadyVisited = false;
         }
 
-        var introTimers = [];
-        function clearIntroTimers() {
-            introTimers.forEach(function(t) { clearTimeout(t); });
-            introTimers = [];
-        }
-        function finishIntro() {
-            clearIntroTimers();
-            intro.classList.add('done');
-            setTimeout(function() {
-                if (intro.parentNode) intro.parentNode.removeChild(intro);
-            }, 800);
-        }
-
-        // Besuch merken
-        try { localStorage.setItem('hi-intro-seen', 'yes'); } catch (e) {}
-
         if (alreadyVisited) {
-            // KURZVERSION (~1.5s): Logo erscheint schnell, kein Skip-Button
-            introSvg.classList.add('draw');
-            introTimers.push(setTimeout(function() { introName.classList.add('show'); }, 400));
-            introTimers.push(setTimeout(function() { intro.classList.add('done'); }, 1500));
-            introTimers.push(setTimeout(function() {
-                if (intro.parentNode) intro.parentNode.removeChild(intro);
-            }, 2300));
+            // WIEDERBESUCH: Intro sofort entfernen, Seite direkt zeigen
+            if (intro.parentNode) intro.parentNode.removeChild(intro);
         } else {
-            // VOLLVERSION (~5s) mit Skip-Button
+            // ERSTER BESUCH: Vollversion (~5s) mit Skip-Button
+            var introTimers = [];
+            function clearIntroTimers() {
+                introTimers.forEach(function(t) { clearTimeout(t); });
+                introTimers = [];
+            }
+            function finishIntro() {
+                clearIntroTimers();
+                intro.classList.add('done');
+                setTimeout(function() {
+                    if (intro.parentNode) intro.parentNode.removeChild(intro);
+                }, 800);
+            }
+
+            // Besuch merken
+            try { localStorage.setItem('hi-intro-seen', 'yes'); } catch (e) {}
+
             introTimers.push(setTimeout(function() { introSvg.classList.add('draw'); }, 600));
             introTimers.push(setTimeout(function() { introName.classList.add('show'); }, 2600));
             introTimers.push(setTimeout(function() { intro.classList.add('done'); }, 4200));
