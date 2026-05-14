@@ -945,25 +945,25 @@ section.tight { padding: 7vh 0; }
                 <h2 style="font-size: clamp(2rem, 3.5vw, 3rem);">Klassische Werte. <em>Messbare</em> Ergebnisse.</h2>
             </div>
         </div>
-        <div class="stats-editorial">
+        <div class="stats-editorial" id="statsBlock">
             <div class="stat-item">
                 <div class="stat-divider"></div>
-                <div class="stat-num">80+</div>
+                <div class="stat-num" data-target="120" data-suffix="+">0</div>
                 <div class="stat-label">Vermittelte Objekte</div>
             </div>
             <div class="stat-item">
                 <div class="stat-divider"></div>
-                <div class="stat-num">10</div>
+                <div class="stat-num" data-target="10" data-suffix="">0</div>
                 <div class="stat-label">Jahre Erfahrung</div>
             </div>
             <div class="stat-item">
                 <div class="stat-divider"></div>
-                <div class="stat-num">4</div>
+                <div class="stat-num" data-target="4" data-suffix="">0</div>
                 <div class="stat-label">Bundesländer</div>
             </div>
             <div class="stat-item">
                 <div class="stat-divider"></div>
-                <div class="stat-num">100<span style="font-size: 0.5em;">%</span></div>
+                <div class="stat-num" data-target="100" data-suffix="%">0</div>
                 <div class="stat-label">Erfolgsbasiert</div>
             </div>
         </div>
@@ -1229,6 +1229,56 @@ section.tight { padding: 7vh 0; }
             else header.classList.add('transparent');
         }
         window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // Count-Up Animation für Statistiken
+    var statsBlock = document.getElementById('statsBlock');
+    if (statsBlock) {
+        var statsAnimated = false;
+
+        function animateCount(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1600; // ms
+            var startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                // ease-out: schneller Start, sanftes Ende
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.round(eased * target);
+                el.textContent = current + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        function runStats() {
+            if (statsAnimated) return;
+            statsAnimated = true;
+            var nums = statsBlock.querySelectorAll('.stat-num');
+            nums.forEach(function(el) { animateCount(el); });
+        }
+
+        if ('IntersectionObserver' in window) {
+            var statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        runStats();
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsBlock);
+        } else {
+            // Fallback für sehr alte Browser: einfach sofort setzen
+            runStats();
+        }
     }
 })();
 </script>
