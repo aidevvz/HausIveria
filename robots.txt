@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hausiveria.at/sitemap.xml
