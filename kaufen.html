@@ -815,101 +815,13 @@ section.tight { padding: 7vh 0; }
 <!-- FILTER & PROPERTIES -->
 <section style="padding: 10vh 0;">
     <div class="container">
-        <form class="filter-bar" name="objekt-filter" action="#objekte" onsubmit="event.preventDefault();">
-            <div>
-                <label>Typ</label>
-                <select name="typ">
-                    <option value="">Alle</option>
-                    <option>Wohnung</option>
-                    <option>Haus</option>
-                    <option>Anlage</option>
-                    <option>Grundstück</option>
-                    <option>Gewerbe</option>
-                </select>
+        <div class="section-header" style="text-align: center; max-width: 58ch; margin: 0 auto;">
+            <p class="eyebrow">Aktuell verfügbar</p>
+            <h2>Zurzeit keine <em>Objekte</em> in Vermarktung.</h2>
+            <p style="margin-top: 1.5rem;">Momentan vermarkten wir keine Objekte öffentlich. Schauen Sie gerne bald wieder vorbei — oder hinterlegen Sie unverbindlich Ihre Suchanfrage, und wir melden uns, sobald etwas Passendes für Sie dabei ist.</p>
+            <div style="margin-top: 2.5rem;">
+                <a href="kontakt.html" class="btn btn-primary">Suchanfrage stellen →</a>
             </div>
-            <div>
-                <label>Region</label>
-                <select name="region">
-                    <option value="">Alle</option>
-                    <option>Wien</option>
-                    <option>Niederösterreich</option>
-                    <option>Burgenland</option>
-                    <option>Kärnten</option>
-                </select>
-            </div>
-            <div>
-                <label>Preis ab</label>
-                <input type="number" name="min" placeholder="z.B. 300.000">
-            </div>
-            <div>
-                <label>Preis bis</label>
-                <input type="number" name="max" placeholder="z.B. 1.500.000">
-            </div>
-            <button type="submit" class="btn btn-primary">Filtern →</button>
-        </form>
-
-        <div class="section-header split" id="objekte">
-            <div>
-                <p class="eyebrow">Aktuell verfügbar</p>
-                <h2>Sechs ausgewählte <em>Objekte</em>.</h2>
-            </div>
-        </div>
-
-        <div class="properties">
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">1010 Wien · Stadtpark · Neu</div>
-                <h3>Altbauwohnung am Stadtpark</h3>
-                <p class="property-info">3 Zimmer · 92 m² · Stuck · Erstbezug nach Sanierung</p>
-                <div class="property-price">€ 745.000</div>
-            </a>
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">2380 Perchtoldsdorf · Reserviert</div>
-                <h3>Familienhaus mit Garten</h3>
-                <p class="property-info">5 Zimmer · 168 m² · 620 m² Grund · Bj. 1962, saniert</p>
-                <div class="property-price">€ 1.290.000</div>
-            </a>
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">9220 Velden · Wörthersee · Neu</div>
-                <h3>Penthouse mit Seeblick</h3>
-                <p class="property-info">4 Zimmer · 142 m² · Dachterrasse · Wörtherseeblick</p>
-                <div class="property-price">€ 1.850.000</div>
-            </a>
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">1190 Wien · Döbling</div>
-                <h3>Erstbezug Döbling</h3>
-                <p class="property-info">2 Zimmer · 58 m² · Loggia · Tiefgarage optional</p>
-                <div class="property-price">€ 489.000</div>
-            </a>
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">7000 Eisenstadt · Neu</div>
-                <h3>Reihenhaus mit Atelier</h3>
-                <p class="property-info">4 Zimmer · 124 m² · 280 m² Grund · Bj. 1998</p>
-                <div class="property-price">€ 425.000</div>
-            </a>
-            <a href="kontakt.html" class="property">
-                <div class="property-image-wrap">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=85');"></div>
-                </div>
-                <div class="property-meta">3400 Klosterneuburg · Off-Market</div>
-                <h3>Bürgerhaus mit Innenhof</h3>
-                <p class="property-info">7 Zimmer · 245 m² · Eigener Innenhof · Bj. 1890, saniert</p>
-                <div class="property-price">Auf Anfrage</div>
-            </a>
         </div>
     </div>
 </section>
