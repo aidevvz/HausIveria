@@ -110,7 +110,9 @@ em{font-style:italic;color:var(--bronze)}
 @keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ---------- Vier Wände ---------- */
-.walls{position:relative;min-height:100svh;display:grid;align-items:center;padding-block:14vh;overflow-x:clip}
+.walls{position:relative;display:grid;align-items:center;padding-block:12vh 4vh;overflow-x:clip}
+.walls > .wrap{width:100%}
+.walls + .pad{padding-top:9vh}
 .walls .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:5vw;align-items:center}
 .walls h2{margin:1.6rem 0 2rem;max-width:14ch}
 .house{--g:22px;position:relative;width:min(40%, 280px);aspect-ratio:5/4;justify-self:center;margin-block:6rem}
@@ -372,8 +374,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .walls .grid,.faq .grid,.cta .grid,.editorial,.contact-grid{grid-template-columns:1fr}
   .editorial.reverse > .ed-img{order:0}
   .ed-img{aspect-ratio:4/3.4}
-  .walls{min-height:0;padding-block:12vh 2vh}
-  .walls + .pad{padding-top:9vh}
+  .walls{padding-block:12vh 2vh}
   .house{width:min(44%, 280px);margin-block:6.5rem 5rem}
   .faq .side{position:static}
   .card{grid-template-columns:1fr;grid-template-rows:38% 1fr;height:min(84svh,760px)}
@@ -403,7 +404,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .h-l2{bottom:4%;padding-left:20%}
   .h-meta{display:none}
   .h-copy{bottom:16%}
-  .walls{min-height:0;padding-block:10vh 2vh}
+  .walls{padding-block:10vh 2vh}
   .house{--g:14px;width:min(40%, 170px);margin-block:5.2rem 4.6rem}
   .house .lbl{font-size:.56rem;letter-spacing:.16em;max-width:11em}
   .house .lbl b{font-size:1.02rem;margin-top:.25rem;white-space:nowrap}

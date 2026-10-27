@@ -174,7 +174,7 @@
     // Am Handy und Tablet: kein Festhalten, die Zeichnung entsteht beim normalen Scrollen
     var wt = tablet
       ? gsap.timeline({scrollTrigger:{trigger:'#house', start:'top 85%', end:'bottom 45%', scrub:1}})
-      : gsap.timeline({scrollTrigger:{trigger:'#walls', start:'top top', end:'+=160%', pin:true, scrub:1}});
+      : gsap.timeline({scrollTrigger:{trigger:'#walls', start:'center center', end:'+=160%', pin:true, scrub:1}});
     if(!tablet) wt.from('#walls .grid > div:first-child > *', {opacity:0, y:30, stagger:.1, duration:.5});
     else gsap.from('#walls .grid > div:first-child > *', {opacity:0, y:30, stagger:.1, duration:1, ease:'expo.out', scrollTrigger:{trigger:'#walls', start:'top 80%'}});
     wt.to(ws[0], {strokeDashoffset:0, duration:.6}).to('.house .l1', {opacity:1, duration:.3}, '<.2')
