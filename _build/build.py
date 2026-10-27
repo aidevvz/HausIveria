@@ -304,7 +304,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
     <p>Persönliche Immobilienvermittlung in Wien, Niederösterreich, Burgenland und Kärnten. Mit Sorgfalt, Erfahrung und einem Auge für Details.</p>
     <a href="kaufen.html" class="link">Objekte entdecken {ARR}</a>
   </div>
-  <div class="h-meta wrap" aria-hidden="true"><span class="sc">Scroll<i></i></span><span>Wien · Österreich<br>Seit über 10 Jahren</span></div>
+  <div class="h-meta wrap" aria-hidden="true"><span class="sc">Scroll<i></i></span><span>Wien &amp; Niederösterreich<br>Seit über 10 Jahren</span></div>
 </section>
 
 <section class="walls" id="walls">
@@ -425,7 +425,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
 '''
 page("index.html","index","Immobilienmakler Wien &amp; Projektvermarktung · Iveria Immobilien",
      "Iveria Immobilien — persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.",
-     index_main, preload="Images/hero-kaufen.webp", extra_before_header=INTRO, wa_wait=True,
+     index_main, preload="Images/hero-kaufen.webp", wa_wait=True,
      schema=[{"@context":"https://schema.org","@type":"WebSite","@id":f"{DOMAIN}/#website","url":DOMAIN+"/","name":cfg('markenname'),"inLanguage":"de-AT","publisher":{"@id":ORG_ID}}])
 
 # =====================================================================
