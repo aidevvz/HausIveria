@@ -400,8 +400,12 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .h-l2{bottom:4%;padding-left:20%}
   .h-meta{display:none}
   .h-copy{bottom:16%}
-  .house .lbl b{font-size:1.05rem}
-  .house .l1,.house .l3{display:none}
+  .walls{min-height:0;padding-block:12vh 16vh}
+  .house{width:min(64%, 270px);margin-top:4.5rem;margin-bottom:3.5rem}
+  .house .lbl{font-size:.56rem;letter-spacing:.16em;max-width:7.2em}
+  .house .lbl b{font-size:1.02rem;margin-top:.25rem}
+  .house .l1{left:20%;padding-right:10px}
+  .house .l3{right:20%;padding-left:10px}
   .props.stagger,.props.three{grid-template-columns:1fr}
   .props.stagger .prop:nth-child(n),.props.three .prop:nth-child(n){grid-column:1 / -1;margin-top:0}
   .prop .ph,.props.stagger .prop:nth-child(n) .ph{aspect-ratio:4/3.4}

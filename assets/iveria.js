@@ -98,6 +98,12 @@
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
+  // Adressleiste am Handy soll keine Neuberechnung auslösen
+  ScrollTrigger.config({ignoreMobileResize:true});
+
+  // Bild in eine eigene Ebene legen: Intro animiert die Ebene, Scrollen das Fenster.
+  // So greifen nie zwei Animationen auf dasselbe Element zu.
+  function revealLayer(win){ var img = $('img', win); if(!img) return null; var r = document.createElement('div'); r.className = 'reveal-layer'; r.style.cssText = 'position:absolute;inset:0;overflow:hidden'; img.parentNode.insertBefore(r, img); r.appendChild(img); return r; }
 
   /* ---------- Weiches Scrollen ---------- */
   var lenis = null;
@@ -138,8 +144,9 @@
         .to('#intro > div', {scale:.6, opacity:0, duration:.6, ease:'power2.in'}, '+=.3')
         .to(intro, {opacity:0, duration:.5, ease:'power1.out'}, '-=.15');
     } else if(intro){ intro.remove(); intro = null; }
-    tl.from('#hWin', {clipPath:'inset(50% 50% 17% 50% round 50vw 50vw 0vw 0vw)', duration:1.6, ease:'expo.inOut'}, intro ? '-=.55' : 0)
-      .from('#hWin img', {scale:1.14, duration:2.2, ease:'expo.out'}, '<')
+    var hRev = revealLayer($('#hWin'));
+    tl.from(hRev, {clipPath:'inset(100% 0% 0% 0%)', duration:1.5, ease:'expo.inOut'}, intro ? '-=.55' : 0)
+      .from(hRev, {scale:1.14, duration:2.2, ease:'expo.out'}, '<')
       .from('.h-line .wd', {yPercent:110, duration:1.3, ease:'expo.out', stagger:.06}, '-=1.1')
       .from(['.site-header','.h-meta'], {opacity:0, y:-10, duration:.9, ease:'power2.out'}, '-=.8');
 
@@ -164,9 +171,13 @@
     var ws = $$('.house .w'), ar = $('.house .arch'), ln = $('.house .iline');
     ws.concat([ar, ln]).forEach(function(el){ var L = el.getTotalLength(); gsap.set(el, {strokeDasharray:L, strokeDashoffset:L}); });
     gsap.set('.house .lbl', {opacity:0});
-    var wt = gsap.timeline({scrollTrigger:{trigger:'#walls', start:'top top', end:'+=160%', pin:true, scrub:1}});
-    wt.from('#walls .grid > div:first-child > *', {opacity:0, y:30, stagger:.1, duration:.5})
-      .to(ws[0], {strokeDashoffset:0, duration:.6}).to('.house .l1', {opacity:1, duration:.3}, '<.2')
+    // Am Handy und Tablet: kein Festhalten, die Zeichnung entsteht beim normalen Scrollen
+    var wt = tablet
+      ? gsap.timeline({scrollTrigger:{trigger:'#house', start:'top 85%', end:'bottom 45%', scrub:1}})
+      : gsap.timeline({scrollTrigger:{trigger:'#walls', start:'top top', end:'+=160%', pin:true, scrub:1}});
+    if(!tablet) wt.from('#walls .grid > div:first-child > *', {opacity:0, y:30, stagger:.1, duration:.5});
+    else gsap.from('#walls .grid > div:first-child > *', {opacity:0, y:30, stagger:.1, duration:1, ease:'expo.out', scrollTrigger:{trigger:'#walls', start:'top 80%'}});
+    wt.to(ws[0], {strokeDashoffset:0, duration:.6}).to('.house .l1', {opacity:1, duration:.3}, '<.2')
       .to(ws[1], {strokeDashoffset:0, duration:.6}).to('.house .l2', {opacity:1, duration:.3}, '<.2')
       .to(ws[2], {strokeDashoffset:0, duration:.6}).to('.house .l3', {opacity:1, duration:.3}, '<.2')
       .to(ar, {strokeDashoffset:0, duration:.8}).to('.house .l4', {opacity:1, duration:.3}, '<.3')
@@ -179,9 +190,10 @@
     var win = $('.ph-window', ph), img = $('img', win), txt = $('.ph-text', ph);
     var h1 = $('h1', ph); if(h1) split(h1);
     var cs = getComputedStyle(win).clipPath;
+    var rev = revealLayer(win);
     gsap.timeline({defaults:{ease:'expo.out'}})
-      .from(win, {clipPath:cs.replace(/inset\(\s*[^ ]+/, 'inset(100%'), duration:1.6, ease:'expo.inOut'})
-      .from(img, {scale:1.2, duration:2.2}, '<')
+      .from(rev, {clipPath:'inset(100% 0% 0% 0%)', duration:1.5, ease:'expo.inOut'})
+      .from(rev, {scale:1.2, duration:2.2}, '<')
       .from($$('.wd', ph), {yPercent:110, duration:1.2, stagger:.05}, '-=1.3')
       .from([$('.eyebrow', ph), $('.ph-text p', ph)], {opacity:0, y:16, duration:1, stagger:.1}, '-=1');
     var pt = gsap.timeline({scrollTrigger:{trigger:ph, start:'top top', end:tablet ? '+=60%' : '+=80%', pin:true, scrub:1,
