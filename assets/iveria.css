@@ -122,8 +122,9 @@ em{font-style:italic;color:var(--bronze)}
 .house .lbl{position:absolute;font:400 .68rem/1.35 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);width:max-content;max-width:12em}
 .house .lbl b{display:block;font:400 1.3rem/1.1 var(--display);letter-spacing:0;text-transform:none;color:var(--ink);margin-top:.35rem;white-space:nowrap}
 /* Alle vier Beschriftungen im gleichen Abstand --g zur Zeichnung */
-.house .l1{right:100%;top:64.6%;transform:translateY(-50%);text-align:right;padding-right:var(--g)}
-.house .l3{left:100%;top:64.6%;transform:translateY(-50%);padding-left:var(--g)}
+.house .lbl span{display:block;margin-right:-.2em}
+.house .l1{right:100%;top:64.6%;transform:translateY(-50%);text-align:center;padding-right:var(--g)}
+.house .l3{left:100%;top:64.6%;transform:translateY(-50%);text-align:center;padding-left:var(--g)}
 .house .l4{left:50%;bottom:100%;transform:translateX(-50%);text-align:center;padding-bottom:var(--g)}
 .house .l2{left:50%;top:100%;transform:translateX(-50%);text-align:center;padding-top:var(--g)}
 
@@ -407,6 +408,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .walls{padding-block:10vh 2vh}
   .house{--g:14px;width:min(40%, 170px);margin-block:5.2rem 4.6rem}
   .house .lbl{font-size:.56rem;letter-spacing:.16em;max-width:11em}
+  .house .lbl span{margin-right:-.16em}
   .house .lbl b{font-size:1.02rem;margin-top:.25rem;white-space:nowrap}
   .props.stagger,.props.three{grid-template-columns:1fr}
   .props.stagger .prop:nth-child(n),.props.three .prop:nth-child(n){grid-column:1 / -1;margin-top:0}
