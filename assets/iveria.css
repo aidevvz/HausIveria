@@ -113,16 +113,17 @@ em{font-style:italic;color:var(--bronze)}
 .walls{position:relative;min-height:100svh;display:grid;align-items:center;padding-block:14vh;overflow-x:clip}
 .walls .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:5vw;align-items:center}
 .walls h2{margin:1.6rem 0 2rem;max-width:14ch}
-.house{position:relative;width:min(64%, 440px);aspect-ratio:1/1;justify-self:center}
+.house{--g:22px;position:relative;width:min(40%, 280px);aspect-ratio:5/4;justify-self:center;margin-block:6rem}
 .house svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .house .w,.house .arch{fill:none;stroke:var(--ink);stroke-width:.7;stroke-linecap:round}
 .house .iline{stroke:var(--bronze);stroke-width:1;stroke-linecap:round}
 .house .lbl{position:absolute;font:400 .68rem/1.35 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);width:max-content;max-width:12em}
 .house .lbl b{display:block;font:400 1.3rem/1.1 var(--display);letter-spacing:0;text-transform:none;color:var(--ink);margin-top:.35rem}
-.house .l1{left:-2%;top:50%;transform:translate(-100%,-50%);text-align:right;padding-right:14px}
-.house .l2{left:50%;bottom:-2%;transform:translate(-50%,100%);text-align:center;padding-top:10px}
-.house .l3{right:-2%;top:50%;transform:translate(100%,-50%);padding-left:14px}
-.house .l4{left:50%;top:6%;transform:translate(-50%,-100%);text-align:center}
+/* Alle vier Beschriftungen im gleichen Abstand --g zur Zeichnung */
+.house .l1{right:100%;top:64.6%;transform:translateY(-50%);text-align:right;padding-right:var(--g)}
+.house .l3{left:100%;top:64.6%;transform:translateY(-50%);padding-left:var(--g)}
+.house .l4{left:50%;bottom:100%;transform:translateX(-50%);text-align:center;padding-bottom:var(--g)}
+.house .l2{left:50%;top:100%;transform:translateX(-50%);text-align:center;padding-top:var(--g)}
 
 /* ---------- Unterseiten: Hero mit Bogen ---------- */
 .phero{position:relative;min-height:max(620px, 92svh);overflow:hidden;display:grid;align-items:end}
@@ -357,7 +358,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 .cookie .btn{padding:.8rem 1.2rem;font-size:.66rem;flex:1}
 
 /* ---------- Responsiv ---------- */
-@media (max-width:1200px) and (min-width:981px){.house{width:min(54%, 400px)}}
+@media (max-width:1200px) and (min-width:981px){.house{width:min(34%, 230px)}}
 @media (max-width:1024px){
   .sgrid{grid-template-columns:1fr 1fr;gap:3rem 2rem}
   .steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:4.6rem}
@@ -371,7 +372,9 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .walls .grid,.faq .grid,.cta .grid,.editorial,.contact-grid{grid-template-columns:1fr}
   .editorial.reverse > .ed-img{order:0}
   .ed-img{aspect-ratio:4/3.4}
-  .house{width:min(72%, 380px);margin-top:3rem}
+  .walls{min-height:0;padding-block:12vh 2vh}
+  .walls + .pad{padding-top:9vh}
+  .house{width:min(44%, 280px);margin-block:6.5rem 5rem}
   .faq .side{position:static}
   .card{grid-template-columns:1fr;grid-template-rows:38% 1fr;height:min(84svh,760px)}
   .card .txt{justify-content:flex-start}
@@ -400,12 +403,10 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .h-l2{bottom:4%;padding-left:20%}
   .h-meta{display:none}
   .h-copy{bottom:16%}
-  .walls{min-height:0;padding-block:12vh 16vh}
-  .house{width:min(64%, 270px);margin-top:4.5rem;margin-bottom:3.5rem}
-  .house .lbl{font-size:.56rem;letter-spacing:.16em;max-width:7.2em}
-  .house .lbl b{font-size:1.02rem;margin-top:.25rem}
-  .house .l1{left:20%;padding-right:10px}
-  .house .l3{right:20%;padding-left:10px}
+  .walls{min-height:0;padding-block:10vh 2vh}
+  .house{--g:14px;width:min(40%, 170px);margin-block:5.2rem 4.6rem}
+  .house .lbl{font-size:.56rem;letter-spacing:.16em;max-width:11em}
+  .house .lbl b{font-size:1.02rem;margin-top:.25rem;white-space:nowrap}
   .props.stagger,.props.three{grid-template-columns:1fr}
   .props.stagger .prop:nth-child(n),.props.three .prop:nth-child(n){grid-column:1 / -1;margin-top:0}
   .prop .ph,.props.stagger .prop:nth-child(n) .ph{aspect-ratio:4/3.4}
