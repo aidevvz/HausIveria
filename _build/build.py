@@ -3,7 +3,7 @@
 import os, sys, json, re, subprocess, datetime, html as _html
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261027b"  # Cache-Version für CSS/JS
+V = "20261027c"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -322,10 +322,10 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
         <path class="arch" d="M 22 50 Q 50 22 78 50"/>
         <line class="iline" x1="50" y1="38" x2="50" y2="78"/>
       </svg>
-      <div class="lbl l1">Erste Wand<b>Erfahrung</b></div>
+      <div class="lbl l1">Erste Wand<b>Persönlich</b></div>
       <div class="lbl l2">Zweite Wand<b>Sorgfalt</b></div>
-      <div class="lbl l3">Dritte Wand<b>Persönlich</b></div>
-      <div class="lbl l4">Das Dach<b>Nur im Erfolgsfall</b></div>
+      <div class="lbl l3">Dritte Wand<b>Transparenz</b></div>
+      <div class="lbl l4">Das Dach<b>11 Jahre Erfahrung</b></div>
     </div>
   </div>
 </section>

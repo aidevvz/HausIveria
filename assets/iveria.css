@@ -120,7 +120,7 @@ em{font-style:italic;color:var(--bronze)}
 .house .w,.house .arch{fill:none;stroke:var(--ink);stroke-width:.7;stroke-linecap:round}
 .house .iline{stroke:var(--bronze);stroke-width:1;stroke-linecap:round}
 .house .lbl{position:absolute;font:400 .68rem/1.35 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);width:max-content;max-width:12em}
-.house .lbl b{display:block;font:400 1.3rem/1.1 var(--display);letter-spacing:0;text-transform:none;color:var(--ink);margin-top:.35rem}
+.house .lbl b{display:block;font:400 1.3rem/1.1 var(--display);letter-spacing:0;text-transform:none;color:var(--ink);margin-top:.35rem;white-space:nowrap}
 /* Alle vier Beschriftungen im gleichen Abstand --g zur Zeichnung */
 .house .l1{right:100%;top:64.6%;transform:translateY(-50%);text-align:right;padding-right:var(--g)}
 .house .l3{left:100%;top:64.6%;transform:translateY(-50%);padding-left:var(--g)}
