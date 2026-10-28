@@ -160,7 +160,8 @@
       .to('#hWin', {'--shade':1, duration:.6}, .3)
       .to('.h-line', {color:'#FAFAF7', duration:.4, ease:'none'}, .3)
       .to('.h-l1', {y:function(){ return innerHeight*.06; }, duration:1, ease:'power2.inOut'}, 0)
-      .to('.h-meta', {opacity:0, duration:.25}, 0)
+      // eigene Elemente (Kinder), damit sich Intro und Scroll nicht in die Quere kommen; bleibt die ersten ~13 % sichtbar
+      .fromTo('.h-meta > span', {opacity:1}, {opacity:0, duration:.2, ease:'none', immediateRender:false}, .1)
       .fromTo('#hCopy', {opacity:0, y:30}, {opacity:1, y:0, duration:.35}, .75);
     if(mobile) ht.to('.h-l2', {opacity:0, duration:.3}, .55);
   }
