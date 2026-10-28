@@ -3,7 +3,7 @@
 import os, sys, json, re, subprocess, datetime, html as _html
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261028a"
+V = "20261028b"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -304,7 +304,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
     <p>Persönliche Immobilienvermittlung in Wien, Niederösterreich, Burgenland und Kärnten. Mit Sorgfalt, Erfahrung und einem Auge für Details.</p>
     <a href="kaufen.html" class="link">Objekte entdecken {ARR}</a>
   </div>
-  <div class="h-meta wrap" aria-hidden="true"><span class="sc">Scroll<i></i></span><span>Wien &amp; Niederösterreich<br>Seit über 10 Jahren</span></div>
+  <div class="h-meta wrap" aria-hidden="true"><span class="sc">Scroll<i></i><svg class="finger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(180 12 12)"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-4 0"/><path d="M14 10V9a2 2 0 0 0-4 0v1"/><path d="M10 9.5V4a2 2 0 0 0-4 0v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g></svg></span><span>Wien &amp; Niederösterreich<br>Seit über 10 Jahren</span></div>
 </section>
 
 <section class="walls" id="walls">

@@ -106,6 +106,7 @@ em{font-style:italic;color:var(--bronze)}
 .h-copy p{max-width:40ch;margin:1.4rem 0 2rem;font-size:1.05rem;color:rgba(250,250,247,.9)}
 .h-meta{position:absolute;left:0;right:0;bottom:4.5%;z-index:3;display:flex;gap:3rem;align-items:end;font:400 .66rem/1.4 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute)}
 .h-meta .sc{display:flex;flex-direction:column;gap:.8rem}
+.h-meta .finger{display:none}
 .h-meta .sc i{display:block;width:1px;height:46px;background:currentColor;transform-origin:top;animation:drip 2.2s var(--ease-out) infinite}
 @keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
@@ -405,8 +406,9 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .h-l2{bottom:4%;padding-left:20%}
   .h-meta{bottom:4.6%;font-size:.56rem;letter-spacing:.24em}
   .h-meta > span:not(.sc){display:none}
-  .h-meta .sc{gap:.6rem}
-  .h-meta .sc i{height:34px}
+  .h-meta .sc{font-size:0;letter-spacing:0;gap:0}
+  .h-meta .sc i{display:none}
+  .h-meta .finger{display:block;width:38px;height:38px;color:var(--ink);animation:point 1.8s ease-in-out infinite}
   .h-copy{bottom:16%}
   .walls{padding-block:10vh 2vh}
   .house{--g:14px;width:min(40%, 170px);margin-block:5.2rem 4.6rem}
@@ -447,3 +449,6 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 
 /* Honeypot gegen Spam: für Menschen und Screenreader unsichtbar, für Bots vorhanden */
 .hp{position:absolute !important;left:-10000px !important;top:auto !important;width:1px !important;height:1px !important;overflow:hidden !important}
+
+@keyframes point{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media (prefers-reduced-motion:reduce){.h-meta .finger{animation:none}}
