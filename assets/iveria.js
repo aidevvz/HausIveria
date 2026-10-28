@@ -92,12 +92,23 @@
   var intro = $('#intro');
   if(reduce || !window.gsap || !window.ScrollTrigger){
     if(intro) intro.remove();
+    document.documentElement.classList.add('ready');
     var hc = $('#hCopy'); if(hc){ hc.style.opacity = 1; hc.classList.add('on'); }
     if(wa) wa.classList.remove('wait');
     $$('.phero').forEach(function(p){ p.classList.add('inverted'); });
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
+  // Startanimationen erst abspielen, wenn die Schriften da sind; dann Hero freigeben
+  var startTls = [];
+  function whenReady(tl){ tl.pause(); startTls.push(tl); }
+  (function(){
+    var done = false;
+    function go(){ if(done) return; done = true; document.documentElement.classList.add('ready'); startTls.forEach(function(t){ t.play(); }); }
+    var fr = document.fonts && document.fonts.ready;
+    if(fr) fr.then(function(){ requestAnimationFrame(go); }); else requestAnimationFrame(go);
+    setTimeout(go, 1500);
+  })();
   // Adressleiste am Handy soll keine Neuberechnung auslösen
   ScrollTrigger.config({ignoreMobileResize:true});
 
@@ -133,6 +144,7 @@
     var firstVisit = true; try { firstVisit = localStorage.getItem('hi-intro-seen') !== 'yes'; localStorage.setItem('hi-intro-seen','yes'); } catch(e){}
     if(lenis) lenis.stop();
     var tl = gsap.timeline({onComplete:function(){ if(intro) intro.remove(); if(lenis) lenis.start(); }});
+    whenReady(tl);
     if(intro && firstVisit){
       var arch = $('#introArch'), il = $('#introI'), L = arch.getTotalLength();
       gsap.set(arch, {strokeDasharray:L, strokeDashoffset:L}); gsap.set(il, {strokeDasharray:40, strokeDashoffset:40});
@@ -192,8 +204,8 @@
     var h1 = $('h1', ph); if(h1) split(h1);
     var cs = getComputedStyle(win).clipPath;
     var rev = revealLayer(win);
-    gsap.timeline({defaults:{ease:'expo.out'}})
-      .from(rev, {clipPath:'inset(100% 0% 0% 0%)', duration:1.5, ease:'expo.inOut'})
+    var ptl = gsap.timeline({defaults:{ease:'expo.out'}}); whenReady(ptl);
+    ptl.from(rev, {clipPath:'inset(100% 0% 0% 0%)', duration:1.5, ease:'expo.inOut'})
       .from(rev, {scale:1.2, duration:2.2}, '<')
       .from($$('.wd', ph), {yPercent:110, duration:1.2, stagger:.05}, '-=1.3')
       .from([$('.eyebrow', ph), $('.ph-text p', ph)], {opacity:0, y:16, duration:1, stagger:.1}, '-=1');

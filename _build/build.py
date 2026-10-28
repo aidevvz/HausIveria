@@ -3,7 +3,7 @@
 import os, sys, json, re, subprocess, datetime, html as _html
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261028e"
+V = "20261028f"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -65,8 +65,9 @@ def head(title, desc, preload=None, canonical=None, schema=(), noindex=False):
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{pl}<link href="{FONTS}" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="{FONTS}" rel="stylesheet"></noscript>
+{pl}<link href="{FONTS}" rel="stylesheet">
 <link rel="stylesheet" href="assets/iveria.css?v={V}">
+<script>document.documentElement.classList.add('js');setTimeout(function(){{document.documentElement.classList.add('ready')}},2500)</script>
 {ld}</head>
 '''
 

@@ -453,3 +453,6 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 
 @keyframes point{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 @media (prefers-reduced-motion:reduce){.h-meta .finger{animation:none}}
+
+/* Bis die Startanimation bereit ist (Schriften + JS), Hero nicht zeigen: verhindert das kurze Aufblitzen */
+.js:not(.ready) #hero,.js:not(.ready) .phero,.js:not(.ready) body[data-page="index"] .site-header{visibility:hidden}
