@@ -3,7 +3,7 @@
 import os, sys, json, re, subprocess, datetime, html as _html
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261027d"
+V = "20261028a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)

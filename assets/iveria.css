@@ -403,7 +403,10 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .h-line{font-size:clamp(2.6rem, 12.5vw, 4rem);white-space:normal}
   .h-l1{top:max(84px, 11%);padding-right:12%}
   .h-l2{bottom:4%;padding-left:20%}
-  .h-meta{display:none}
+  .h-meta{bottom:4.6%;font-size:.56rem;letter-spacing:.24em}
+  .h-meta > span:not(.sc){display:none}
+  .h-meta .sc{gap:.6rem}
+  .h-meta .sc i{height:34px}
   .h-copy{bottom:16%}
   .walls{padding-block:10vh 2vh}
   .house{--g:14px;width:min(40%, 170px);margin-block:5.2rem 4.6rem}
