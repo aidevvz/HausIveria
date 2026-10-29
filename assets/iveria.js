@@ -172,7 +172,7 @@
     tl.from(hRev, {clipPath:'inset(100% 0% 0% 0%)', duration:1.5, ease:'expo.inOut'}, intro ? '-=.55' : 0)
       .from(hRev, {scale:1.14, duration:2.2, ease:'expo.out'}, '<')
       .from('.h-line .wd', {yPercent:110, duration:1.3, ease:'expo.out', stagger:.06}, '-=1.1')
-      .from(['.site-header','.h-meta'], {opacity:0, y:-10, duration:.9, ease:'power2.out'}, '-=.8');
+      .from(['.site-header','.h-meta'], {opacity:0, y:-10, duration:.9, ease:'power2.out', clearProps:'transform'}, '-=.8');
 
     var startClip = mobile ? 'inset(33% 12% 21% 12% round 50vw 50vw 0vw 0vw)' : 'inset(29% 34% 17% 34% round 50vw 50vw 0vw 0vw)';
     var ht = gsap.timeline({scrollTrigger:{trigger:hero, start:'top top', end:'+=130%', pin:true, scrub:1,
