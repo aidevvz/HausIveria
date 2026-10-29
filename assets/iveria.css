@@ -187,7 +187,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 .prop .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-top:1px solid var(--line);padding-top:1rem}
 
 /* ---------- Gestapelte Karten ---------- */
-.card{position:sticky;top:max(84px, 11vh);height:min(78svh, 760px);margin-bottom:6vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);overflow:hidden;transform-origin:50% 0}
+.card{position:sticky;top:max(84px, 11vh);min-height:min(78svh, 760px);margin-bottom:6vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);overflow:hidden;transform-origin:50% 0}
 .card:nth-child(1){background:var(--paper-warm)}
 .card:nth-child(2){background:var(--ink);color:var(--paper)}
 .card:nth-child(3){background:var(--paper-dark)}
@@ -379,7 +379,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .walls{padding-block:12vh 2vh}
   .house{width:min(44%, 280px);margin-block:6.5rem 5rem}
   .faq .side{position:static}
-  .card{grid-template-columns:1fr;grid-template-rows:38% 1fr;height:min(84svh,760px)}
+  .card{grid-template-columns:1fr;grid-template-rows:clamp(150px,28svh,300px) auto;height:auto;min-height:min(70svh,640px)}
   .card .txt{justify-content:flex-start}
   .card .num{display:none}
   .ftop{grid-template-columns:1fr 1fr}

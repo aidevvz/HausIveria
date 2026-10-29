@@ -88,6 +88,18 @@
   addEventListener('scroll', function(){ syncHeader(); syncSolid(); }, {passive:true});
   syncHeader(); syncSolid();
 
+  /* Gestapelte Karten: Höhe richtet sich nach dem Inhalt. Ist eine Karte höher als der Platz,
+     klebt sie weiter oben, damit ihr unteres Ende (Liste, Link) sichtbar bleibt. */
+  function fitCards(){
+    $$('.card').forEach(function(c){
+      var t = Math.max(84, innerHeight*.11), h = c.offsetHeight;
+      c.style.top = Math.min(t, innerHeight - h - 16) + 'px';
+    });
+  }
+  fitCards();
+  addEventListener('resize', fitCards);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitCards);
+
   /* ---------- Ohne Animation: alles sichtbar ---------- */
   var intro = $('#intro');
   if(reduce || !window.gsap || !window.ScrollTrigger){
