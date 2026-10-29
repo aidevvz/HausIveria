@@ -424,7 +424,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
     <textarea name="wuensche"></textarea>
 </form>
 '''
-page("index.html","index","Immobilienmakler Wien &amp; Projektvermarktung · Iveria Immobilien",
+page("index.html","index","Iveria Immobilien · Immobilienmakler in Wien",
      "Iveria Immobilien — persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.",
      index_main, preload="Images/hero-kaufen.webp", wa_wait=True,
      schema=[{"@context":"https://schema.org","@type":"WebSite","@id":f"{DOMAIN}/#website","url":DOMAIN+"/","name":cfg('markenname'),"inLanguage":"de-AT","publisher":{"@id":ORG_ID}}])
