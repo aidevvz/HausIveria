@@ -13,7 +13,7 @@ preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
 preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_quelle: "Durchschnittswerte, Iveria-Markteinschätzung"
 lagen: ["Gründerzeitviertel um die Meidlinger Hauptstraße", "ruhigeres Hetzendorf und Altmannsdorf", "Lagen rund um Theresienbad und Grüner Berg"]
 objektarten: ["Gründerzeit-Altbauwohnungen", "Neubau-Eigentumswohnungen", "einzelne Häuser in Hetzendorf und Altmannsdorf"]
 image: /Images/standorte/immobilienmakler-meidling.webp
@@ -40,7 +40,7 @@ Fällig wird die Provision nur, wenn der Verkauf tatsächlich zustande kommt, un
 
 ## Was ist meine Immobilie in Meidling wert?
 
-In Meidling entscheidet vor allem die Mikrolage: Eine sanierte Altbauwohnung nahe der U4 oder U6 liegt preislich klar über einem unsanierten Gründerzeitobjekt im ruhigeren Teil. Die genannten Quadratmeterpreise stammen aus öffentlichen Angebotspreisen und dienen nur als grobe Orientierung.
+In Meidling entscheidet vor allem die Mikrolage: Eine sanierte Altbauwohnung nahe der U4 oder U6 liegt preislich klar über einem unsanierten Gründerzeitobjekt im ruhigeren Teil. Es handelt sich um reine Durchschnittswerte zur groben Orientierung; der konkrete Preis hängt immer von der Individualität der einzelnen Wohnung ab.
 
 Wertbestimmend sind Zustand, Stockwerk, Grundriss und die Nähe zur U-Bahn. Für die wenigen Häuser in Hetzendorf oder Altmannsdorf lässt sich kein pauschaler Preis nennen, hier entscheiden Objekt und Mikrolage. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 

@@ -13,7 +13,7 @@ preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
 preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_quelle: "Durchschnittswerte, Iveria-Markteinschätzung"
 lagen: ["Gründerzeit-Zinshausviertel rund um die Reindorfgasse", "Lagen nahe der westlichen Mariahilfer Straße", "Grätzl um Stadthalle und Westbahnhof"]
 objektarten: ["Gründerzeit-Altbauwohnungen", "Anleger- und Vorsorgewohnungen", "sanierte Zinshaus-Einheiten", "Neubau-Eigentumswohnungen"]
 image: /Images/standorte/immobilienmakler-rudolfsheim-fuenfhaus.webp
@@ -40,7 +40,7 @@ Die Provision wird nur im Erfolgsfall fällig und muss vorab schriftlich vereinb
 
 ## Was ist meine Immobilie in Rudolfsheim-Fünfhaus wert?
 
-Der Wert hängt stark von Zustand und Lage ab: Eine sanierte Altbauwohnung nahe der Mariahilfer Straße liegt deutlich über einer unsanierten Einheit in einem Zinshaus mit Sanierungsbedarf. Die genannten Quadratmeterpreise stammen aus öffentlichen Angebotspreisen und dienen nur als grobe Orientierung.
+Der Wert hängt stark von Zustand und Lage ab: Eine sanierte Altbauwohnung nahe der Mariahilfer Straße liegt deutlich über einer unsanierten Einheit in einem Zinshaus mit Sanierungsbedarf. Es sind reine Durchschnittswerte; der erzielbare Preis hängt von der Individualität der Wohnung und der Mikrolage ab und kann im Einzelfall stark abweichen.
 
 Bei vermieteten Anlegerwohnungen spielen zusätzlich der laufende Mietzins und der Vertragstyp eine Rolle für den erzielbaren Preis. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 

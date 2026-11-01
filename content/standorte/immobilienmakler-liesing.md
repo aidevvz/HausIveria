@@ -13,7 +13,7 @@ preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
 preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_quelle: "Durchschnittswerte, Iveria-Markteinschätzung"
 lagen: ["Villen- und Einfamilienhauslagen in Mauer, Rodaun und Kalksburg", "dichter bebaute Ortskerne in Atzgersdorf und Inzersdorf", "Neubaugebiete um In der Wiesen und Siebenhirten"]
 objektarten: ["Einfamilienhäuser und Villen am Wienerwald", "Neubau-Eigentumswohnungen", "Alt- und Bestandswohnungen in den Ortskernen"]
 image: /Images/standorte/immobilienmakler-liesing.webp
@@ -40,7 +40,7 @@ Fällig wird die Provision nur, wenn der Verkauf zustande kommt, und nur bei vor
 
 ## Was ist meine Immobilie in Liesing wert?
 
-In Liesing entscheidet die Lage über große Preisunterschiede: Ein Haus in Mauer oder Rodaun am Wienerwald liegt klar über einer Bestandswohnung in einem Ortskern. Die angegebenen Quadratmeterpreise beziehen sich auf Eigentumswohnungen aus öffentlichen Angebotspreisen und sind nur eine grobe Orientierung.
+In Liesing entscheidet die Lage über große Preisunterschiede: Ein Haus in Mauer oder Rodaun am Wienerwald liegt klar über einer Bestandswohnung in einem Ortskern. Die Werte sind Durchschnittswerte zur Orientierung; der tatsächliche Preis bestimmt sich über die Individualität der Immobilie und die Mikrolage.
 
 Für Häuser lässt sich kein pauschaler Preis angeben, er hängt stark vom Haus selbst und der genauen Lage ab. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 

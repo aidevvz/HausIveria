@@ -7,13 +7,13 @@ title: "Immobilienmakler in Hietzing (1130): verkaufen und bewerten"
 seo_title: "Immobilienmakler Hietzing 1130 · Iveria"
 description: "Villa oder Wohnung in Hietzing (1130) verkaufen oder bewerten lassen: Maklerkosten, Quadratmeterpreise, Villenlagen und diskreter Verkauf mit Iveria."
 hub: "immobilienmakler-wien"
-preis_wohnung_min: 7000
-preis_wohnung_max: 10400
+preis_wohnung_min: 3800
+preis_wohnung_max: 8000
 preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
 preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_quelle: "Durchschnittswerte, Iveria-Markteinschätzung"
 lagen: ["Villenlagen in Ober St. Veit und Lainz", "Hietzinger Cottage nahe Schönbrunn", "ruhige Grünlagen am Lainzer Tiergarten"]
 objektarten: ["Villen und Einfamilienhäuser", "hochwertige Altbau-Eigentumswohnungen", "Neubau in gehobener Ausstattung"]
 image: /Images/standorte/immobilienmakler-hietzing.webp
@@ -40,7 +40,7 @@ Fällig wird die Provision ausschließlich im Erfolgsfall und nur bei vorab schr
 
 ## Was ist meine Immobilie in Hietzing wert?
 
-Bei Hietzinger Villen und Häusern zählen Grundstück, Lage und Ausblick oft mehr als die reine Wohnfläche, hier ist jedes Objekt ein Einzelfall. Die angegebenen Quadratmeterpreise beziehen sich auf Eigentumswohnungen aus öffentlichen Angebotspreisen und dienen nur als grobe Orientierung.
+Bei Hietzinger Villen und Häusern zählen Grundstück, Lage und Ausblick oft mehr als die reine Wohnfläche, hier ist jedes Objekt ein Einzelfall. Die angegebenen Zahlen sind nur Durchschnittswerte; der tatsächliche Preis richtet sich nach der Individualität des Objekts und der Mikrolage und kann deutlich darüber oder darunter liegen.
 
 Für Villen und Häuser lässt sich kein allgemeiner Quadratmeterpreis nennen, der Wert hängt stark vom Objekt selbst und der Mikrolage ab. Gerade deshalb sehen wir uns Ihr Objekt persönlich an und erstellen eine individuelle [Immobilienbewertung](/bewertung.html).
 

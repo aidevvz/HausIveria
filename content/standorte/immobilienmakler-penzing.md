@@ -13,7 +13,7 @@ preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
 preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_quelle: "Durchschnittswerte, Iveria-Markteinschätzung"
 lagen: ["Gründerzeitlagen in Breitensee und Baumgarten", "Hütteldorf am Rand des Wienerwalds", "grünes Hadersdorf-Weidlingau mit Häusern"]
 objektarten: ["Gründerzeit-Altbauwohnungen", "Neubau-Eigentumswohnungen", "Einfamilienhäuser in Hadersdorf-Weidlingau"]
 image: /Images/standorte/immobilienmakler-penzing.webp
@@ -40,7 +40,7 @@ Bezahlt wird die Provision nur im Erfolgsfall und auf Basis einer vorab schriftl
 
 ## Was ist meine Immobilie in Penzing wert?
 
-In Penzing bestimmt das Grätzl den Preis: Eine Gründerzeitwohnung in Breitensee bewegt sich in einer anderen Klasse als ein Haus im grünen Hadersdorf-Weidlingau. Die genannten Quadratmeterpreise stammen aus öffentlichen Angebotspreisen für Wohnungen und sind nur eine grobe Orientierung.
+In Penzing bestimmt das Grätzl den Preis: Eine Gründerzeitwohnung in Breitensee bewegt sich in einer anderen Klasse als ein Haus im grünen Hadersdorf-Weidlingau. Die Zahlen sind Durchschnittswerte zur groben Orientierung; entscheidend für den Preis sind die Individualität der Immobilie und die Mikrolage.
 
 Für ein Haus am westlichen Bezirksrand lässt sich kein allgemeiner Quadratmeterpreis nennen, entscheidend sind das Objekt selbst und die Mikrolage. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
