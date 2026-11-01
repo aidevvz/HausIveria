@@ -23,7 +23,7 @@ Der Süden von Wien ist unser Zuhause: Unser Büro liegt in 1120 Wien, direkt an
 
 ## Liesing (1230 Wien)
 
-Liesing ist der 23. Bezirk am südwestlichen Stadtrand und reicht vom Wienerwald mit den Villengegenden in Mauer, Rodaun und Kalksburg bis zu den dichter bebauten Teilen in Atzgersdorf, Inzersdorf und Siebenhirten. Diese Mischung aus grünen Einfamilienhauslagen und urbanen Neubauwohnungen macht Liesing für sehr unterschiedliche Käufer interessant. Für uns ist es das Grätzl direkt vor der Haustür.
+Liesing, der 23. Bezirk am südwestlichen Stadtrand, ist das Grätzl direkt vor unserer Haustür und der Übergang von der Stadt ins südliche Umland. Weil hier besonders viel Nachfrage herrscht, führen wir dafür eine eigene Seite: [Immobilienmakler in Liesing](/immobilienmakler-liesing.html).
 
 ## Perchtoldsdorf
 
