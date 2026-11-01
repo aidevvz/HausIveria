@@ -16,7 +16,7 @@ faq:
     a: "Ja. Eine Bewertung ist unverbindlich und auch dann sinnvoll, wenn Sie noch unentschlossen sind. Sie erhalten eine ehrliche Einschätzung und entscheiden danach in Ruhe."
 related: []
 seiten: []
-draft: true
+draft: false
 noindex: true
 ---
 Niederösterreich ist für Iveria kein entferntes Zusatzgebiet, sondern direkt vor der Tür: Unser Büro liegt in 1120 Wien an der Grenze zum Süden, von wo aus die Thermenregion und der Bezirk Mödling in wenigen Minuten erreichbar sind. Auf dieser Seite finden Sie unsere Ortsseiten in Niederösterreich, darüber automatisch verlinkt. Wir begleiten Eigentümer beim Verkauf, bei der Vermietung und bei der Bewertung.

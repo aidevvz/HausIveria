@@ -28,7 +28,7 @@ faq:
     a: "Mödling liegt rund 15 Kilometer südlich von Wien und ist über die Südbahn mit Pendlerzügen sowie über die Autobahnen A2 und A23 angebunden. Diese Nähe zur Stadt bei gleichzeitiger Lage am Wienerwald prägt die Nachfrage."
 related: [immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
-draft: true
+draft: false
 noindex: true
 ---
 Mödling ist eine der gefragtesten Wohnadressen im Süden Wiens: Bezirkshauptstadt am Rand des Wienerwalds, mit sanierter Altstadt, Weinbau und direkter Anbindung an die Stadt. Von unserem Büro in 1120 Wien sind es nur wenige Kilometer hierher. Diese Seite richtet sich an Eigentümerinnen und Eigentümer, die ihre Immobilie in Mödling verkaufen oder zuerst bewerten lassen möchten, und erklärt Kosten, Markt und Ablauf.

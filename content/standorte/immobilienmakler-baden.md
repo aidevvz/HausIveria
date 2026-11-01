@@ -28,7 +28,7 @@ faq:
     a: "Ja. Baden und die Thermenregion gehören zu unserem Kerngebiet. Über die A2 und die Badner Bahn sind wir rasch vor Ort und betreuen jedes Mandat persönlich."
 related: [immobilienmakler-moedling, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
-draft: true
+draft: false
 noindex: true
 ---
 Baden bei Wien ist eine der bekanntesten Adressen südlich von Wien: Kurstadt mit Biedermeier-Kern, Thermalquellen und Weinbau, seit 2021 Teil des UNESCO-Welterbes der bedeutenden Kurstädte Europas. Von unserem Büro in 1120 Wien sind es über die A2 und die Badner Bahn nur wenige Fahrminuten. Diese Seite richtet sich an Eigentümer, die ihre Immobilie in Baden verkaufen oder zuerst bewerten lassen möchten.
