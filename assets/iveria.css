@@ -517,3 +517,6 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 .st-orte .st-p{font-size:.85rem;color:var(--ink-mute)}
 .st-orte .ar{color:var(--bronze);transition:transform 400ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){.st-orte a:hover .ar{transform:translateX(6px)}}
+.form-aus{display:grid;gap:1.2rem;justify-items:start;padding:2.4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.form-aus p:not(.eyebrow){color:var(--ink-soft);max-width:44ch;margin:0}
+.dark .form-aus{border-color:var(--line-d)}.dark .form-aus p:not(.eyebrow){color:rgba(250,250,247,.75)}

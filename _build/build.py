@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261101c"
+V = "20261101d"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -200,6 +200,14 @@ def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa
     if crumb or crumbs: sc.append(breadcrumb(crumb, url, crumbs))
     html = head(title, desc, preload, None if noindex else url, sc, noindex, og_type, og_image, og_image_alt, article_times, extra_head) + f'<body data-page="{pid}">\n' + extra_before_header + header() + '\n<main>\n' + main + '\n</main>\n\n' + FOOTER + '\n' + tail(wa_wait)
     FAQ_CURRENT = []
+    if not cfg('formulare_aktiv'):
+        # Formulare vorübergehend aus (Netlify Forms nicht aktiv): statt Formular ein E-Mail-Hinweis
+        BETREFF = {'kontakt': 'Kontaktanfrage', 'bewertung': 'Bewertungsanfrage', 'suchauftrag': 'Suchauftrag'}
+        def ersatz(m):
+            b = BETREFF.get(m.group(1), 'Anfrage')
+            return (f'<div class="form-aus"><p class="eyebrow">{b}</p><p>Schreiben Sie uns Ihr Anliegen bitte per E-Mail.'
+                    f'</p><a href="mailto:{cfg("email")}?subject={b.replace(" ", "%20")}" class="btn solid magnetic">{cfg("email")}</a></div>')
+        html = re.sub(r'<form class="form" data-form="([a-z]+)".*?</form>', ersatz, html, flags=re.S)
     if fname == '404.html' or '/' in fname:
         # Seiten außerhalb des Hauptordners: alle lokalen Pfade absolut machen
         html = re.sub(r'(href|src)="(?!/|https?:|mailto:|tel:|#|data:)([^"]+)"', r'\1="/\2"', html)

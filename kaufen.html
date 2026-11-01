@@ -30,9 +30,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="Images/hero-kaufen.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/iveria.css?v=20261101c">
+<link rel="stylesheet" href="assets/iveria.css?v=20261101d">
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('ready')},2500)</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","@id":"https://iveria.at/#organization","name":"Iveria Immobilien","legalName":"Iveria Immobilien e.U.","url":"https://iveria.at/","logo":"https://iveria.at/icon-512.png","image":"https://iveria.at/Images/og-image.jpg","email":"office@iveria.at","address":{"@type":"PostalAddress","addressLocality":"Wien","addressCountry":"AT"},"areaServed":[{"@type":"State","name":"Wien"},{"@type":"State","name":"Niederösterreich"},{"@type":"State","name":"Burgenland"},{"@type":"State","name":"Kärnten"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","@id":"https://iveria.at/#organization","name":"Iveria Immobilien","legalName":"Iveria Immobilien e.U.","url":"https://iveria.at/","logo":"https://iveria.at/icon-512.png","image":"https://iveria.at/Images/og-image.jpg","email":"office@iveria.at","address":{"@type":"PostalAddress","postalCode":"1120","addressLocality":"Wien","addressCountry":"AT"},"areaServed":[{"@type":"State","name":"Wien"},{"@type":"State","name":"Niederösterreich"},{"@type":"State","name":"Burgenland"},{"@type":"State","name":"Kärnten"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://iveria.at/"},{"@type":"ListItem","position":2,"name":"Suchen & Kaufen","item":"https://iveria.at/kaufen.html"}]}</script>
 </head>
 <body data-page="kaufen">
@@ -85,22 +85,7 @@
         <p>Viele unserer schönsten Objekte erscheinen nie auf einer Plattform. Vermögende Verkäufer schätzen Diskretion, Bauträger geben uns Vorab-Tipps zu kommenden Projekten.</p>
         <p>Wenn Sie uns Ihre Wünsche schildern, kontaktieren wir Sie persönlich, sobald ein passendes Objekt verfügbar wird. Oft Wochen, bevor es öffentlich beworben wird.</p>
       </div>
-      <form class="form" data-form="suchauftrag" name="suchauftrag" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" data-rise>
-        <input type="hidden" name="form-name" value="suchauftrag">
-        <div class="hp" aria-hidden="true"><label>Nicht ausfüllen <input name="bot-field" tabindex="-1" autocomplete="off"></label></div>
-        <div class="frow">
-          <div><label for="s-name">Name</label><input type="text" id="s-name" name="name" autocomplete="name" required></div>
-          <div><label for="s-email">E-Mail</label><input type="email" id="s-email" name="email" autocomplete="email" required></div>
-        </div>
-        <div class="frow three">
-          <div><label for="s-typ">Typ</label><select id="s-typ" name="typ"><option>Wohnung</option><option>Haus</option><option>Anlage</option><option>Grundstück</option><option>Gewerbe</option></select></div>
-          <div><label for="s-region">Region</label><select id="s-region" name="region"><option>Wien</option><option>Niederösterreich</option><option>Burgenland</option><option>Kärnten</option><option>Andere</option></select></div>
-          <div><label for="s-budget">Budget</label><input type="text" id="s-budget" name="budget" placeholder="bis € 800.000"></div>
-        </div>
-        <div><label for="s-wuensche">Was ist Ihnen wichtig?</label><textarea id="s-wuensche" name="wuensche" placeholder="Größe, Lage, besondere Wünsche, Zeithorizont"></textarea></div>
-        <p class="note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
-        <button type="submit" class="btn solid">Suchauftrag senden →</button>
-      </form>
+      <div class="form-aus"><p class="eyebrow">Suchauftrag</p><p>Schreiben Sie uns Ihr Anliegen bitte per E-Mail.</p><a href="mailto:office@iveria.at?subject=Suchauftrag" class="btn solid magnetic">office@iveria.at</a></div>
     </div>
   </div>
 </section>
@@ -120,7 +105,7 @@
       <div><h2 class="fh">Leistungen</h2><ul><li><a href="verkaufen.html">Verkaufen &amp; Vermieten</a></li><li><a href="kaufen.html">Objekte ansehen</a></li><li><a href="bautraeger.html">Bauträgervermarktung</a></li><li><a href="bewertung.html">Bewertung anfragen</a></li></ul></div>
       <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
       
-      <div><h2 class="fh">Kontakt</h2><ul><li>Iveria Immobilien e.U.</li><li><a href="mailto:office@iveria.at">office@iveria.at</a></li><li style="color:rgba(250,250,247,.6)">Wien</li><li style="color:rgba(250,250,247,.6)">Mo bis Fr · 9 bis 18 Uhr</li></ul></div>
+      <div><h2 class="fh">Kontakt</h2><ul><li>Iveria Immobilien e.U.</li><li><a href="mailto:office@iveria.at">office@iveria.at</a></li><li style="color:rgba(250,250,247,.6)">1120 Wien</li><li style="color:rgba(250,250,247,.6)">Mo bis Fr · 9 bis 18 Uhr</li></ul></div>
     </div>
     <div class="wordmark" id="wordmark" aria-hidden="true"><span>I</span><span>V</span><span>E</span><span>R</span><span>I</span><span>A</span></div>
     <div class="fbot"><span>© 2026 Iveria Immobilien. Alle Rechte vorbehalten.</span><em>Wo aus vier Wänden Zuhause wird.</em></div>
@@ -136,6 +121,6 @@
 <script src="assets/vendor/gsap.min.js?v=3.12.5"></script>
 <script src="assets/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
 <script src="assets/vendor/lenis.min.js?v=1.1.13"></script>
-<script src="assets/iveria.js?v=20261101c"></script>
+<script src="assets/iveria.js?v=20261101d"></script>
 </body>
 </html>

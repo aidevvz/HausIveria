@@ -4,7 +4,7 @@
   "markenname": "Iveria Immobilien",
   "inhaber": null,
   "strasse": null,
-  "plz": null,
+  "plz": "1120",
   "ort": "Wien",
   "land": "Österreich",
   "telefon_anzeige": null,
@@ -25,5 +25,6 @@
   "google_business_profile_url": null,
   "domain": "https://iveria.at",
   "ratgeber_autor": "Giorgi Gorgodze, MA",
+  "formulare_aktiv": false,
   "verifizierung": {"google": null, "bing": "C7BC172C3DC1CD94C1CFCB15260BC638"}
 }
