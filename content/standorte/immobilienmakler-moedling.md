@@ -17,8 +17,8 @@ preis_stand: "2025/2026"
 preis_quelle: "Angebotspreise, immopreise.at und ohne-makler.at"
 lagen: ["Altstadt und Fußgängerzone", "Vorderbrühl", "Grünlagen am Wienerwaldrand und an der Klausen"]
 objektarten: ["Altbauwohnungen in der Altstadt", "Villen und Einfamilienhäuser in Grünlage", "Neubau-Eigentumswohnungen", "Reihenhäuser"]
-image:
-image_alt: ""
+image: /Images/standorte/immobilienmakler-moedling.webp
+image_alt: "Ortskern von Mödling mit Kirchtürmen und Weingärten am Rand des Wienerwalds im Abendlicht"
 faq:
   - q: "Verkauft Iveria auch Immobilien in Mödling, obwohl das Büro in Wien ist?"
     a: "Ja. Unser Büro liegt in 1120 Wien, nur wenige Kilometer von Mödling entfernt. Der Süden Wiens und der angrenzende Bezirk Mödling sind unser Kerngebiet, wir sind rasch vor Ort."

@@ -17,8 +17,8 @@ preis_stand: "2025"
 preis_quelle: "Angebotspreise, immopreise.at"
 lagen: ["Kurstadt-Zentrum und Biedermeier-Villenviertel", "Weikersdorf", "Weinlagen am Stadtrand Richtung Thermenregion"]
 objektarten: ["Biedermeier- und Gründerzeit-Altbau", "Villen im Kurviertel", "Neubau-Eigentumswohnungen", "Zinshäuser"]
-image:
-image_alt: ""
+image: /Images/standorte/immobilienmakler-baden.webp
+image_alt: "Biedermeier-Fassaden und Kurpark in Baden bei Wien im warmen Abendlicht"
 faq:
   - q: "Wie weit ist Baden von Wien entfernt?"
     a: "Baden liegt rund 26 Kilometer südlich von Wien. Die Badner Bahn fährt direkt in die Innenstadt, dazu kommen die Südbahn und die A2. Diese Anbindung ist einer der Gründe für die stabile Nachfrage."
