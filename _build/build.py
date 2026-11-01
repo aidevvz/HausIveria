@@ -203,6 +203,7 @@ def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa
         html = re.sub(r'(href|src)="(?!/|https?:|mailto:|tel:|#|data:)([^"]+)"', r'\1="/\2"', html)
     html = img_dims(html)
     if not noindex: PAGES.append((fname, url, hashlib.sha1(main.encode()).hexdigest()))
+    if os.environ.get('NETLIFY'): html = html.replace('</html>', f'<!-- build {os.environ.get("COMMIT_REF", "")[:7]} -->\n</html>', 1)
     os.makedirs(os.path.dirname(os.path.join(OUT, fname)), exist_ok=True)
     open(os.path.join(OUT, fname), 'w').write(html)
     print('geschrieben', fname, len(html)//1024, 'KB')
