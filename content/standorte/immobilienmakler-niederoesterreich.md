@@ -17,7 +17,7 @@ faq:
 related: []
 seiten: []
 draft: false
-noindex: true
+noindex: false
 ---
 Niederösterreich ist für Iveria kein entferntes Zusatzgebiet, sondern direkt vor der Tür: Unser Büro liegt in 1120 Wien an der Grenze zum Süden, von wo aus die Thermenregion und der Bezirk Mödling in wenigen Minuten erreichbar sind. Auf dieser Seite finden Sie unsere Ortsseiten in Niederösterreich, darüber automatisch verlinkt. Wir begleiten Eigentümer beim Verkauf, bei der Vermietung und bei der Bewertung.
 

@@ -29,7 +29,7 @@ faq:
 related: [immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
 draft: false
-noindex: true
+noindex: false
 ---
 Mödling ist eine der gefragtesten Wohnadressen im Süden Wiens: Bezirkshauptstadt am Rand des Wienerwalds, mit sanierter Altstadt, Weinbau und direkter Anbindung an die Stadt. Von unserem Büro in 1120 Wien sind es nur wenige Kilometer hierher. Diese Seite richtet sich an Eigentümerinnen und Eigentümer, die ihre Immobilie in Mödling verkaufen oder zuerst bewerten lassen möchten, und erklärt Kosten, Markt und Ablauf.
 

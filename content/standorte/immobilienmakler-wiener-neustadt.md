@@ -28,7 +28,7 @@ faq:
 related: [immobilienmakler-moedling, immobilienmakler-baden, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
 draft: false
-noindex: true
+noindex: false
 ---
 Wiener Neustadt ist die größte Stadt im Süden Niederösterreichs und ein eigenständiges Zentrum, keine bloße Wiener Vorstadt: Statutarstadt mit Altstadt, Dom, der Theresianischen Militärakademie und einem starken Wirtschaftsstandort. Von unserem Büro in 1120 Wien führt die Südbahn direkt hierher. Diese Seite richtet sich an Eigentümer, die ihre Immobilie in Wiener Neustadt verkaufen oder zuerst bewerten lassen möchten.
 

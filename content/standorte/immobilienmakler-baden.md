@@ -8,13 +8,13 @@ seo_title: "Immobilienmakler Baden · Iveria Immobilien"
 description: "Immobilie in Baden bei Wien verkaufen oder bewerten lassen: Maklerkosten, Marktpreise, gefragte Lagen in der Kurstadt und Ablauf des Verkaufs mit Iveria."
 hub: "immobilienmakler-niederoesterreich"
 # --- echte Marktzahlen, kommen von Iveria, nie erfinden ---
-preis_wohnung_min: null
-preis_wohnung_max: null
+preis_wohnung_min: 3800
+preis_wohnung_max: 5200
 preis_haus_min: 3800
 preis_haus_max: 4600
 preis_haus_einheit: "m2"
-preis_stand: "2025"
-preis_quelle: "Angebotspreise, immopreise.at"
+preis_stand: "2026-Q4"
+preis_quelle: "Iveria-Markteinschätzung"
 lagen: ["Kurstadt-Zentrum und Biedermeier-Villenviertel", "Weikersdorf", "Weinlagen am Stadtrand Richtung Thermenregion"]
 objektarten: ["Biedermeier- und Gründerzeit-Altbau", "Villen im Kurviertel", "Neubau-Eigentumswohnungen", "Zinshäuser"]
 image: /Images/standorte/immobilienmakler-baden.webp
@@ -29,7 +29,7 @@ faq:
 related: [immobilienmakler-moedling, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
 draft: false
-noindex: true
+noindex: false
 ---
 Baden bei Wien ist eine der bekanntesten Adressen südlich von Wien: Kurstadt mit Biedermeier-Kern, Thermalquellen und Weinbau, seit 2021 Teil des UNESCO-Welterbes der bedeutenden Kurstädte Europas. Von unserem Büro in 1120 Wien sind es über die A2 und die Badner Bahn nur wenige Fahrminuten. Diese Seite richtet sich an Eigentümer, die ihre Immobilie in Baden verkaufen oder zuerst bewerten lassen möchten.
 
@@ -41,7 +41,7 @@ Fällig wird die Provision ausschließlich im Erfolgsfall und nur, wenn sie vora
 
 ## Was ist meine Immobilie in Baden wert?
 
-Was eine Badener Immobilie wert ist, entscheidet sich stark am Objekttyp: Ein sanierter Biedermeier-Altbau im Kurviertel, eine Villa in Weikersdorf und eine Neubauwohnung folgen jeweils eigenen Preislogiken. Die unten genannten Werte sind Orientierungsspannen aus öffentlichen Angebotspreisen und ersetzen keine Besichtigung.
+Was eine Badener Immobilie wert ist, entscheidet sich stark am Objekttyp: Ein sanierter Biedermeier-Altbau im Kurviertel, eine Villa in Weikersdorf und eine Neubauwohnung folgen jeweils eigenen Preislogiken. Die unten genannten Spannen sind unsere Markteinschätzung als Orientierung und ersetzen keine Besichtigung.
 
 Besonders wertbestimmend sind in Baden die Nähe zum Kurpark und zur historischen Innenstadt, der Zustand der oft denkmalnahen Altbausubstanz und die Weinlagen am Stadtrand. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
