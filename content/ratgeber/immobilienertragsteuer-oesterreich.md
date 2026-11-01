@@ -7,7 +7,7 @@ category: Recht & Steuern
 image: /Images/ratgeber/immobilienertragsteuer-oesterreich.webp
 image_alt: "Klassische Wiener Altbaufassade mit Stuckornamentik im warmen Abendlicht als Symbolbild für den Immobilienverkauf in Österreich"
 cta: bewertung
-related: []
+related: [maklerprovision-oesterreich]
 faq:
   - q: "Wie hoch ist die Immobilienertragsteuer in Österreich?"
     a: "Der besondere Steuersatz beträgt 30 Prozent des Gewinns. Bei Altgrundstücken, die vor dem 31.3.2002 angeschafft wurden, sinkt die effektive Belastung über eine Pauschale meist auf 4,2 Prozent des Verkaufserlöses. Für Kaufverträge ab dem 1. Jänner 2027 steigt dieser effektive Satz auf 6 Prozent."
@@ -81,4 +81,4 @@ Deshalb unser Rat: Klären Sie die steuerliche Seite mit einem Steuerberater, be
 
 ## Ihre Immobilie vor dem Verkauf richtig einschätzen
 
-Ob Hauptwohnsitzbefreiung, Altvermögen oder Umwidmungszuschlag: Was am Ende an Steuer bleibt, entscheidet sich lange vor dem Kaufvertrag. Eine realistische [Immobilienbewertung](/bewertung.html) ist die Grundlage, um den zu erwartenden Gewinn und die Steuer überhaupt abschätzen zu können. Wenn Sie den [Verkauf Ihrer Immobilie](/verkaufen.html) planen, klären wir die steuerlichen Eckpunkte gemeinsam, bevor Sie etwas unterschreiben, und holen für die verbindliche Berechnung einen Notar oder Steuerberater dazu.
+Ob Hauptwohnsitzbefreiung, Altvermögen oder Umwidmungszuschlag: Was am Ende an Steuer bleibt, entscheidet sich lange vor dem Kaufvertrag. Eine realistische [Immobilienbewertung](/bewertung.html) ist die Grundlage, um den zu erwartenden Gewinn und die Steuer überhaupt abschätzen zu können. Wenn Sie den [Verkauf Ihrer Immobilie](/verkaufen.html) planen, klären wir die steuerlichen Eckpunkte gemeinsam, bevor Sie etwas unterschreiben, und holen für die verbindliche Berechnung einen Notar oder Steuerberater dazu. Welche Kosten beim Verkauf sonst noch anfallen, lesen Sie in unserem Ratgeber zur [Maklerprovision](/ratgeber/maklerprovision-oesterreich.html).
