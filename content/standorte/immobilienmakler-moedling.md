@@ -8,13 +8,13 @@ seo_title: "Immobilienmakler Mödling · Iveria Immobilien"
 description: "Immobilie in Mödling verkaufen oder bewerten lassen: Maklerkosten, Marktpreise, gefragte Lagen und Ablauf des Verkaufs, erklärt von Iveria Immobilien."
 hub: "immobilienmakler-niederoesterreich"
 # --- echte Marktzahlen, kommen von Iveria, nie erfinden ---
-preis_wohnung_min: null
-preis_wohnung_max: null
-preis_haus_min: null
-preis_haus_max: null
+preis_wohnung_min: 4600
+preis_wohnung_max: 6800
+preis_haus_min: 4900
+preis_haus_max: 6400
 preis_haus_einheit: "m2"
-preis_stand: null
-preis_quelle: null
+preis_stand: "2025/2026"
+preis_quelle: "Angebotspreise, immopreise.at und ohne-makler.at"
 lagen: ["Altstadt und Fußgängerzone", "Vorderbrühl", "Grünlagen am Wienerwaldrand und an der Klausen"]
 objektarten: ["Altbauwohnungen in der Altstadt", "Villen und Einfamilienhäuser in Grünlage", "Neubau-Eigentumswohnungen", "Reihenhäuser"]
 image:
@@ -43,7 +43,7 @@ Die Provision fällt nur im Erfolgsfall an, also erst, wenn tatsächlich verkauf
 
 Der Wert einer Mödlinger Immobilie hängt vor allem von Lage, Zustand und Objektart ab, eine seriöse Zahl ergibt sich erst aus der konkreten Besichtigung. Eine Altbauwohnung in der Altstadt, eine Villa am Wienerwaldrand und eine Neubauwohnung unterscheiden sich deutlich im Quadratmeterpreis.
 
-Wertbestimmend sind in Mödling besonders die Nähe zur Altstadt und zur Fußgängerzone, die Grünlage Richtung Wienerwald und Klausen sowie die Anbindung an die Südbahn. Eine genaue, unverbindliche Einschätzung erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
+Die genannten Werte sind Orientierungsspannen aus öffentlichen Angebotspreisen, die tatsächlich erzielten Preise können abweichen. Wertbestimmend sind in Mödling besonders die Nähe zur Altstadt und zur Fußgängerzone, die Grünlage Richtung Wienerwald und Klausen sowie die Anbindung an die Südbahn. Eine genaue, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Mödling?
 
