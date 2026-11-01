@@ -26,7 +26,7 @@ faq:
   - q: "Betreut Iveria auch Verkäufe in Klosterneuburg?"
     a: "Ja. Klosterneuburg grenzt unmittelbar an Wien, von unserem Büro aus sind wir rasch vor Ort. Gerade im gehobenen Segment legen wir Wert auf diskrete, persönliche Betreuung."
 related: [immobilienmakler-moedling, immobilienmakler-baden, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
-footer: true
+footer: false
 draft: false
 noindex: false
 ---

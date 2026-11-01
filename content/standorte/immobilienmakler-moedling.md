@@ -27,7 +27,7 @@ faq:
   - q: "Wie gut ist Mödling an Wien angebunden?"
     a: "Mödling liegt rund 15 Kilometer südlich von Wien und ist über die Südbahn mit Pendlerzügen sowie über die Autobahnen A2 und A23 angebunden. Diese Nähe zur Stadt bei gleichzeitiger Lage am Wienerwald prägt die Nachfrage."
 related: [immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
-footer: true
+footer: false
 draft: false
 noindex: false
 ---

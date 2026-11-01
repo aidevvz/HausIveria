@@ -26,7 +26,7 @@ faq:
   - q: "Betreut Iveria auch Verkäufe in Wiener Neustadt?"
     a: "Ja. Wiener Neustadt liegt an der Südbahn-Achse, die von unserem Büro in 1120 Wien direkt hierher führt. Wir betreuen jedes Mandat persönlich und sind für Termine vor Ort."
 related: [immobilienmakler-moedling, immobilienmakler-baden, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
-footer: true
+footer: false
 draft: false
 noindex: false
 ---

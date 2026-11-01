@@ -27,7 +27,7 @@ faq:
   - q: "Verkauft Iveria auch Immobilien in Baden, obwohl das Büro in Wien ist?"
     a: "Ja. Baden und die Thermenregion gehören zu unserem Kerngebiet. Über die A2 und die Badner Bahn sind wir rasch vor Ort und betreuen jedes Mandat persönlich."
 related: [immobilienmakler-moedling, immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
-footer: true
+footer: false
 draft: false
 noindex: false
 ---
