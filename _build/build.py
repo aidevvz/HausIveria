@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261101b"
+V = "20261101c"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -25,6 +25,7 @@ FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0
 LOGO = lambda stroke="currentColor": f'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="{stroke}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="1.8" stroke-linecap="round"/></svg>'
 ARR = '<span class="ar">→</span>'
 exec(compile(open(os.path.join(HERE, 'ratgeber.py'), encoding='utf-8').read(), 'ratgeber.py', 'exec'))  # Ratgeber: lädt POSTS, definiert build_ratgeber()
+exec(compile(open(os.path.join(HERE, 'standorte.py'), encoding='utf-8').read(), 'standorte.py', 'exec'))  # Standorte: lädt STANDORTE, definiert build_standorte()
 ARCHLINE = '<svg class="arch-line" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66" style="stroke-width:1.4"/></svg>'
 
 def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head=''):
@@ -124,7 +125,7 @@ def faq_schema(items):
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in items]}
 
 def header():
-    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + [("ratgeber/","ratgeber","Ratgeber")] + [("kontakt.html","kontakt","Kontakt")]
+    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + ([(ST_MENU["slug"] + ".html","standorte","Standorte")] if ST_MENU else []) + [("ratgeber/","ratgeber","Ratgeber")] + [("kontakt.html","kontakt","Kontakt")]
     nav = "\n".join(f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links)
     return f'''<header class="site-header" id="siteHeader">
   <div class="wrap">
@@ -148,7 +149,7 @@ FOOT_NAP = "".join([
     f'<li style="color:rgba(250,250,247,.6)">{cfg("oeffnungszeiten_anzeige")}</li>'])
 FOOTER = f'''<footer class="site-footer dark">
   <div class="wrap">
-    <div class="ftop">
+    <div class="ftop{' c5' if st_footer_spalte() else ''}">
       <div>
         <a href="index.html" class="brand" aria-label="Iveria Immobilien, Startseite">
           {LOGO("#FAFAF7")}
@@ -158,6 +159,7 @@ FOOTER = f'''<footer class="site-footer dark">
       </div>
       <div><h2 class="fh">Leistungen</h2><ul><li><a href="verkaufen.html">Verkaufen &amp; Vermieten</a></li><li><a href="kaufen.html">Objekte ansehen</a></li><li><a href="bautraeger.html">Bauträgervermarktung</a></li><li><a href="bewertung.html">Bewertung anfragen</a></li></ul></div>
       <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      {st_footer_spalte()}
       <div><h2 class="fh">Kontakt</h2><ul>{FOOT_NAP}</ul></div>
     </div>
     <div class="wordmark" id="wordmark" aria-hidden="true"><span>I</span><span>V</span><span>E</span><span>R</span><span>I</span><span>A</span></div>
@@ -190,10 +192,10 @@ def tail(wa_wait=False):
 
 PAGES = []
 def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa_wait=False, schema=(), crumb=None, noindex=False,
-         url_override=None, crumbs=None, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head=''):
+         url_override=None, crumbs=None, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head='', org=True):
     global FAQ_CURRENT
     url = url_override or (DOMAIN + '/' if fname == 'index.html' else f'{DOMAIN}/{fname}')
-    sc = [org_schema()] + list(schema)
+    sc = ([org_schema()] if org else []) + list(schema)
     if FAQ_CURRENT: sc.append(faq_schema(FAQ_CURRENT))
     if crumb or crumbs: sc.append(breadcrumb(crumb, url, crumbs))
     html = head(title, desc, preload, None if noindex else url, sc, noindex, og_type, og_image, og_image_alt, article_times, extra_head) + f'<body data-page="{pid}">\n' + extra_before_header + header() + '\n<main>\n' + main + '\n</main>\n\n' + FOOTER + '\n' + tail(wa_wait)
@@ -902,6 +904,9 @@ page("404.html","404","Seite nicht gefunden · Iveria Immobilien","Die gesuchte 
 # SITEMAP (lastmod = letzter Commit der jeweiligen Seite, sonst heute)
 # =====================================================================
 build_ratgeber()
+for _f in glob.glob(os.path.join(OUT, 'ratgeber', '*.html')):   # nicht mehr veröffentlichte Artikel entfernen
+    if os.path.basename(_f) != 'index.html' and os.path.basename(_f)[:-5] not in {p['slug'] for p in POSTS}: os.remove(_f); print('  entfernt', _f)
+build_standorte()
 
 # lastmod: Datum der letzten inhaltlichen Änderung (Hash des <main>-Inhalts, gemerkt in _build/lastmod.json).
 # Ratgeber-Artikel nehmen updated/date aus dem Front-Matter, die Übersicht das neueste Artikeldatum.
@@ -921,7 +926,7 @@ PRIO = {'index.html': ('weekly', '1.0'), 'verkaufen.html': ('monthly', '0.9'), '
 PRIO['ratgeber/index.html'] = ('weekly', '0.8')
 urls = []
 for fname, url, h in PAGES:
-    cf, pr = PRIO.get(fname, ('monthly', '0.6') if fname.startswith('ratgeber/') else (None, None))
+    cf, pr = PRIO.get(fname, ('monthly', '0.6') if fname.startswith('ratgeber/') else ('monthly', '0.8') if fname[:-5] in ST_BY else (None, None))
     if not cf: continue
     urls.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{lastmod(fname, h)}</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
 try: json.dump(LM, open(LM_PATH, 'w', encoding='utf-8'), indent=1, ensure_ascii=False, sort_keys=True)
@@ -949,7 +954,7 @@ llms = f"""# {cfg('firmenname')}
 - [Bewertung]({DOMAIN}/bewertung.html): Kostenfreie Schnellbewertung online oder Bewertung vor Ort (€ 290 bis € 490, bei späterem Verkaufsmandat verrechenbar).
 - [Über uns]({DOMAIN}/ueber-uns.html): Über zehn Jahre Erfahrung im österreichischen Immobilienmarkt.
 
-""" + ("## Ratgeber\n\n" + "\n".join(f"- [{p['title']}]({p['url']}): {p['desc']}" for p in POSTS) + "\n\n" if POSTS else "") + """## Einzugsgebiet
+""" + ("## Standorte\n\n" + "\n".join(f"- [{x['title']}]({x['url']}): {x['desc']}" for x in STANDORTE if _st_live(x)) + "\n\n" if any(_st_live(x) for x in STANDORTE) else "") + ("## Ratgeber\n\n" + "\n".join(f"- [{p['title']}]({p['url']}): {p['desc']}" for p in POSTS) + "\n\n" if POSTS else "") + """## Einzugsgebiet
 
 Wien, Niederösterreich, Burgenland und Kärnten.
 

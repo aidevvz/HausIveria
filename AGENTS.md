@@ -20,9 +20,15 @@ Bei einem Fehler bleibt die alte Version online, die Fehlerliste steht im Netlif
 
 Für eine Freigabe vor Veröffentlichung: Branch + Pull Request statt Push auf `main`. Netlify erstellt eine Vorschau-URL (Deploy Preview).
 
+## Standortseiten (Ortsseiten und Hubs)
+
+**Regeln: [`content/standorte/README.md`](content/standorte/README.md).** Gleiche Mechanik wie der Ratgeber, eigene Prüfungen
+(H2-Gerüst, Pflicht-Links, Doorway-Schutz). Bis zur Freigabe durch Gio bleiben alle Standortseiten auf `draft: true` und `noindex: true`.
+Marktzahlen, Lagen und Objektarten nur von Gio bzw. aus angegebener Quelle, nie selbst befüllen.
+
 ## Nicht anfassen
 
-- Die generierten `*.html`, `ratgeber/`, `sitemap.xml`, `llms.txt` (werden bei jedem Build überschrieben)
+- Die generierten `*.html` (auch `immobilienmakler-*.html`), `ratgeber/`, `sitemap.xml`, `llms.txt` (werden bei jedem Build überschrieben)
 - `_build/`, `assets/`, `_build/site.json` (Firmendaten), `netlify.toml`, `_redirects`
 - Bestehende Artikel nicht umbenennen oder löschen (URL ginge verloren). Überarbeiten: Text ändern und `updated` setzen
 

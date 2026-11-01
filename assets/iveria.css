@@ -496,3 +496,24 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 .rt-related .rt-grid{margin-top:2.4rem}
 @media (max-width:980px){.rt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4rem 1.6rem}}
 @media (max-width:600px){.rt-grid{grid-template-columns:1fr;gap:3.4rem}.rt-hero{margin-bottom:2.4rem}.rt-body blockquote{font-size:1.25rem}}
+
+/* ---------- Standorte ---------- */
+.st-entwurf{display:inline-block;margin:0 0 1.2rem;padding:.4rem .8rem;border:1px solid var(--bronze);color:var(--bronze);font:400 .66rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase}
+.st-preise{margin-bottom:.6rem !important}
+.rt-body .st-quelle{font-size:.82rem;color:var(--ink-mute);margin:0 0 2rem}
+.st-listen{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem 2.4rem;margin:1.6rem 0 2.2rem}
+.st-liste .eyebrow{margin-bottom:.4rem}
+.st-hub{margin:3rem 0 0}
+.st-card h3{font-size:clamp(1.7rem,2.4vw,2.2rem)}
+.ftop.c5{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr}
+@media (min-width:981px) and (max-width:1240px){.nav{gap:1.5rem;letter-spacing:.14em}.brand-name small{display:none}}
+@media (max-width:1100px){.ftop.c5{grid-template-columns:1fr 1fr 1fr}}
+@media (max-width:600px){.ftop.c5{grid-template-columns:1fr}}
+.st-entwurf{margin-right:1rem}
+.st-orte{margin:0 0 3.4rem}
+.st-orte ul{list-style:none;margin:1rem 0 0;padding:0;border-top:1px solid var(--line)}
+.st-orte a{display:grid;grid-template-columns:1fr auto auto;align-items:baseline;gap:1.4rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.st-orte .st-o{font:300 clamp(1.5rem,2.4vw,2rem)/1.15 var(--display);color:var(--ink)}
+.st-orte .st-p{font-size:.85rem;color:var(--ink-mute)}
+.st-orte .ar{color:var(--bronze);transition:transform 400ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.st-orte a:hover .ar{transform:translateX(6px)}}

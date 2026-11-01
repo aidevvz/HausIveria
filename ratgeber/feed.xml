@@ -6,6 +6,13 @@
   <atom:link href="https://iveria.at/ratgeber/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Ratgeber rund um Immobilien in Wien und Niederösterreich</description>
   <language>de-AT</language>
-
+  <item>
+    <title>Immobilienertragsteuer in Österreich: Wer zahlt wie viel beim Verkauf?</title>
+    <link>https://iveria.at/ratgeber/immobilienertragsteuer-oesterreich.html</link>
+    <guid isPermaLink="true">https://iveria.at/ratgeber/immobilienertragsteuer-oesterreich.html</guid>
+    <description>Wie hoch ist die Immobilienertragsteuer beim Immobilienverkauf in Österreich? Steuersatz, Hauptwohnsitzbefreiung, Altvermögen und der neue Umwidmungszuschlag.</description>
+    <category>Recht &amp; Steuern</category>
+    <pubDate>Sun, 01 Nov 2026 08:00:00 +0100</pubDate>
+  </item>
 </channel>
 </rss>
