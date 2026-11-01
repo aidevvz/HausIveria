@@ -13,52 +13,52 @@ preis_wohnung_max: null
 preis_haus_min: null
 preis_haus_max: null
 preis_haus_einheit: "m2"
-preis_stand: "2026-Q4"
+preis_stand: null
 preis_quelle: null
-lagen: []
-objektarten: []
+lagen: ["Altstadt und Fußgängerzone", "Vorderbrühl", "Grünlagen am Wienerwaldrand und an der Klausen"]
+objektarten: ["Altbauwohnungen in der Altstadt", "Villen und Einfamilienhäuser in Grünlage", "Neubau-Eigentumswohnungen", "Reihenhäuser"]
 image:
 image_alt: ""
 faq:
-  - q: "[PLATZHALTER: Ortsbezogene Frage 1]"
-    a: "[PLATZHALTER: Antwort in 1 bis 3 Sätzen]"
-  - q: "[PLATZHALTER: Ortsbezogene Frage 2]"
-    a: "[PLATZHALTER: Antwort in 1 bis 3 Sätzen]"
-  - q: "[PLATZHALTER: Ortsbezogene Frage 3]"
-    a: "[PLATZHALTER: Antwort in 1 bis 3 Sätzen]"
+  - q: "Verkauft Iveria auch Immobilien in Mödling, obwohl das Büro in Wien ist?"
+    a: "Ja. Unser Büro liegt in 1120 Wien, nur wenige Kilometer von Mödling entfernt. Der Süden Wiens und der angrenzende Bezirk Mödling sind unser Kerngebiet, wir sind rasch vor Ort."
+  - q: "Welche Objekte sind in Mödling typisch?"
+    a: "Vor allem Altbauwohnungen in der Altstadt, Villen und Einfamilienhäuser in den Grünlagen am Wienerwaldrand sowie Neubau-Eigentumswohnungen. Die Bandbreite reicht von der sanierten Stadtwohnung bis zum Haus im Grünen."
+  - q: "Wie gut ist Mödling an Wien angebunden?"
+    a: "Mödling liegt rund 15 Kilometer südlich von Wien und ist über die Südbahn mit Pendlerzügen sowie über die Autobahnen A2 und A23 angebunden. Diese Nähe zur Stadt bei gleichzeitiger Lage am Wienerwald prägt die Nachfrage."
 related: [immobilienertragsteuer-oesterreich, maklerprovision-oesterreich]
 footer: true
 draft: true
 noindex: true
 ---
-[PLATZHALTER: Einleitung, 2 bis 4 Sätze. Wer Iveria in Mödling ist, für wen die Seite gedacht ist, Nähe zum Büro in 1120 Wien.]
+Mödling ist eine der gefragtesten Wohnadressen im Süden Wiens: Bezirkshauptstadt am Rand des Wienerwalds, mit sanierter Altstadt, Weinbau und direkter Anbindung an die Stadt. Von unserem Büro in 1120 Wien sind es nur wenige Kilometer hierher. Diese Seite richtet sich an Eigentümerinnen und Eigentümer, die ihre Immobilie in Mödling verkaufen oder zuerst bewerten lassen möchten, und erklärt Kosten, Markt und Ablauf.
 
 ## Was kostet ein Immobilienmakler in Mödling?
 
-[PLATZHALTER: Kurze Antwort in 1 bis 2 Sätzen zur Provision nach Immobilienmaklerverordnung (IMV).]
+Die Maklerprovision richtet sich in ganz Österreich nach der Immobilienmaklerverordnung. Beim Verkauf liegt der Höchstsatz bei einem Kaufpreis über 48.448,51 Euro bei 3 Prozent zuzüglich 20 Prozent USt je Partei, und sie ist verhandelbar.
 
-[PLATZHALTER: Vertiefung. Details stehen im Ratgeber [Maklerprovision in Österreich](/ratgeber/maklerprovision-oesterreich.html).]
+Die Provision fällt nur im Erfolgsfall an, also erst, wenn tatsächlich verkauft wird, und wird vorab schriftlich vereinbart. Die genauen Staffelungen und die Regeln bei Miete haben wir im Ratgeber [Maklerprovision in Österreich](/ratgeber/maklerprovision-oesterreich.html) zusammengestellt.
 
 ## Was ist meine Immobilie in Mödling wert?
 
-[PLATZHALTER: Kurze Antwort in 1 bis 2 Sätzen. Hier erscheint automatisch die Preistabelle aus den Preisfeldern.]
+Der Wert einer Mödlinger Immobilie hängt vor allem von Lage, Zustand und Objektart ab, eine seriöse Zahl ergibt sich erst aus der konkreten Besichtigung. Eine Altbauwohnung in der Altstadt, eine Villa am Wienerwaldrand und eine Neubauwohnung unterscheiden sich deutlich im Quadratmeterpreis.
 
-[PLATZHALTER: Vertiefung, was den Wert in Mödling beeinflusst. Genaue Einschätzung: [Bewertung anfragen](/bewertung.html).]
+Wertbestimmend sind in Mödling besonders die Nähe zur Altstadt und zur Fußgängerzone, die Grünlage Richtung Wienerwald und Klausen sowie die Anbindung an die Südbahn. Eine genaue, unverbindliche Einschätzung erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Mödling?
 
-[PLATZHALTER: Kurze Antwort in 1 bis 2 Sätzen. Hier erscheinen automatisch die Listen der Objektarten und Lagen.]
+Mödling verbindet städtisches Leben mit Lage am Wienerwald und ist damit bei Familien, Pendlern und Käufern aus Wien gleichermaßen gefragt. Als Bezirkshauptstadt mit rund 20.000 Einwohnern bietet der Ort eine breite Mischung an Objekten.
 
-[PLATZHALTER: Vertiefung zum lokalen Markt: Nachfrage, Käufergruppen, Verkehrsanbindung.]
+Die Nachfrage kommt stark aus Wien: Wer mehr Platz und Grün sucht, aber die Stadt in Pendeldistanz behalten will, landet oft im Bezirk Mödling. Die Südbahn und die Autobahnen A2 und A23 halten die Wege kurz, während Altstadt, Heurige und der Wienerwald den Standort über den reinen Pendlerwert hinaus attraktiv machen.
 
 ## Wie läuft der Verkauf in Mödling ab?
 
-[PLATZHALTER: Kurze Antwort in 1 bis 2 Sätzen.]
+Von der ersten Bewertung über die Vermarktung bis zur Übergabe begleiten wir Sie persönlich und mit kurzen Wegen, weil Mödling direkt vor unserer Tür liegt. Sie haben einen festen Ansprechpartner, der die Termine vor Ort selbst wahrnimmt.
 
-[PLATZHALTER: Ablauf mit lokalem Bezug. Mehr zum Ablauf: [Immobilie verkaufen mit Iveria](/verkaufen.html).]
+Wie wir Objekte aufbereiten, vermarkten und durch die Kaufvertragsabwicklung begleiten, lesen Sie auf unserer Seite [Immobilie verkaufen](/verkaufen.html). Der erste Schritt ist immer ein unverbindliches Gespräch mit einer ehrlichen Einschätzung.
 
 ## Welche Steuern fallen beim Verkauf an?
 
-[PLATZHALTER: Kurze Antwort in 1 bis 2 Sätzen zur Immobilienertragsteuer.]
+Beim Verkauf kann die Immobilienertragsteuer anfallen, in der Regel 30 Prozent auf den Gewinn, wobei es wichtige Ausnahmen wie die Hauptwohnsitzbefreiung gibt. Für viele selbst genutzte Objekte in Mödling greift eine Befreiung.
 
-[PLATZHALTER: Kurz vertiefen, Verweis auf den Ratgeber [Immobilienertragsteuer in Österreich](/ratgeber/immobilienertragsteuer-oesterreich.html).]
+Welche Fristen und Befreiungen gelten und was sich 2027 für Altvermögen ändert, erklären wir im Ratgeber zur [Immobilienertragsteuer](/ratgeber/immobilienertragsteuer-oesterreich.html). Die verbindliche Berechnung übernimmt im Verkaufsfall der Notar oder ein Steuerberater.
