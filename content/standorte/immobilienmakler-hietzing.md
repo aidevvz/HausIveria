@@ -7,7 +7,7 @@ title: "Immobilienmakler in Hietzing (1130): verkaufen und bewerten"
 seo_title: "Immobilienmakler Hietzing 1130 · Iveria"
 description: "Villa oder Wohnung in Hietzing (1130) verkaufen oder bewerten lassen: Maklerkosten, Quadratmeterpreise, Villenlagen und diskreter Verkauf mit Iveria."
 hub: "immobilienmakler-wien"
-preis_wohnung_min: 3800
+preis_wohnung_min: 6000
 preis_wohnung_max: 8000
 preis_haus_min: null
 preis_haus_max: null
