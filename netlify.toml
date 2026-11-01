@@ -12,3 +12,8 @@
   for = "/ratgeber/feed.xml"
   [headers.values]
     Content-Type = "application/rss+xml; charset=utf-8"
+
+# Keine Netlify-Nachbearbeitung der Links: interne Links bleiben bei .html,
+# passend zu Canonical und Sitemap (sonst schreibt "Pretty URLs" /seite.html zu /seite um).
+[build.processing]
+  skip_processing = true
