@@ -42,7 +42,7 @@ Fällig wird die Provision nur, wenn der Verkauf zustande kommt, und nur bei vor
 
 In Liesing entscheidet die Lage über große Preisunterschiede: Ein Haus in Mauer oder Rodaun am Wienerwald liegt klar über einer Bestandswohnung in einem Ortskern. Die angegebenen Quadratmeterpreise beziehen sich auf Eigentumswohnungen aus öffentlichen Angebotspreisen und sind nur eine grobe Orientierung.
 
-Bei Einfamilienhäusern und Villen zählen Grundstück, Hanglage und Ausblick weit mehr als ein Durchschnittswert. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
+Für Häuser lässt sich kein pauschaler Preis angeben, er hängt stark vom Haus selbst und der genauen Lage ab. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Liesing?
 

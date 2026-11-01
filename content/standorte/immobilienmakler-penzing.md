@@ -42,7 +42,7 @@ Bezahlt wird die Provision nur im Erfolgsfall und auf Basis einer vorab schriftl
 
 In Penzing bestimmt das Grätzl den Preis: Eine Gründerzeitwohnung in Breitensee bewegt sich in einer anderen Klasse als ein Haus im grünen Hadersdorf-Weidlingau. Die genannten Quadratmeterpreise stammen aus öffentlichen Angebotspreisen für Wohnungen und sind nur eine grobe Orientierung.
 
-Für Häuser am westlichen Bezirksrand gelten eigene Maßstäbe, hier spielen Grundstück und Grünlage die Hauptrolle. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
+Für ein Haus am westlichen Bezirksrand lässt sich kein allgemeiner Quadratmeterpreis nennen, entscheidend sind das Objekt selbst und die Mikrolage. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Penzing?
 

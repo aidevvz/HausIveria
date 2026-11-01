@@ -42,7 +42,7 @@ Fällig wird die Provision nur, wenn der Verkauf tatsächlich zustande kommt, un
 
 In Meidling entscheidet vor allem die Mikrolage: Eine sanierte Altbauwohnung nahe der U4 oder U6 liegt preislich klar über einem unsanierten Gründerzeitobjekt im ruhigeren Teil. Die genannten Quadratmeterpreise stammen aus öffentlichen Angebotspreisen und dienen nur als grobe Orientierung.
 
-Wertbestimmend sind Zustand, Stockwerk, Grundriss und die Nähe zur U-Bahn. Für ein Haus in Hetzendorf oder Altmannsdorf gelten wieder eigene Maßstäbe. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
+Wertbestimmend sind Zustand, Stockwerk, Grundriss und die Nähe zur U-Bahn. Für die wenigen Häuser in Hetzendorf oder Altmannsdorf lässt sich kein pauschaler Preis nennen, hier entscheiden Objekt und Mikrolage. Eine konkrete, unverbindliche Einschätzung für Ihr Objekt erhalten Sie über unsere [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Meidling?
 

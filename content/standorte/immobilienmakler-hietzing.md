@@ -42,7 +42,7 @@ Fällig wird die Provision ausschließlich im Erfolgsfall und nur bei vorab schr
 
 Bei Hietzinger Villen und Häusern zählen Grundstück, Lage und Ausblick oft mehr als die reine Wohnfläche, hier ist jedes Objekt ein Einzelfall. Die angegebenen Quadratmeterpreise beziehen sich auf Eigentumswohnungen aus öffentlichen Angebotspreisen und dienen nur als grobe Orientierung.
 
-Ein Einfamilienhaus in Ober St. Veit lässt sich nicht sinnvoll über einen Durchschnittswert bewerten. Gerade deshalb sehen wir uns Ihr Objekt persönlich an und erstellen eine individuelle [Immobilienbewertung](/bewertung.html).
+Für Villen und Häuser lässt sich kein allgemeiner Quadratmeterpreis nennen, der Wert hängt stark vom Objekt selbst und der Mikrolage ab. Gerade deshalb sehen wir uns Ihr Objekt persönlich an und erstellen eine individuelle [Immobilienbewertung](/bewertung.html).
 
 ## Wie ist der Immobilienmarkt in Hietzing?
 
