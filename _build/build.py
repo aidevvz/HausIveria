@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Baut alle Seiten von Iveria Immobilien aus gemeinsamen Bausteinen."""
-import os, sys, json, re, subprocess, datetime, html as _html
+import os, sys, json, re, subprocess, datetime, hashlib, html as _html
+from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261029b"
+V = "20261101a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -23,28 +24,38 @@ FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox=
 FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
 LOGO = lambda stroke="currentColor": f'<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M 22 80 L 22 50 Q 50 22 78 50 L 78 80" fill="none" stroke="{stroke}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="50" y1="38" x2="50" y2="78" stroke="#B08D57" stroke-width="1.8" stroke-linecap="round"/></svg>'
 ARR = '<span class="ar">→</span>'
+exec(compile(open(os.path.join(HERE, 'ratgeber.py'), encoding='utf-8').read(), 'ratgeber.py', 'exec'))  # Ratgeber: lädt POSTS, definiert build_ratgeber()
 ARCHLINE = '<svg class="arch-line" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66" style="stroke-width:1.4"/></svg>'
 
-def head(title, desc, preload=None, canonical=None, schema=(), noindex=False):
+def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head=''):
     pl = f'<link rel="preload" as="image" href="{preload}" fetchpriority="high">\n' if preload else ''
     can = f'<link rel="canonical" href="{canonical}">\n' if canonical else ''
     robots = '<meta name="robots" content="noindex, follow">\n' if noindex else ''
     og = ''
     if canonical:
-        og = f'''<meta property="og:type" content="website">
+        img = og_image or f'{DOMAIN}/Images/og-image.jpg'
+        img_alt = _html.escape(og_image_alt) if og_image_alt else 'Iveria Immobilien – Wo aus vier Wänden Zuhause wird.'
+        dims = '' if og_image else '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+        if og_image:
+            try:
+                w, h = _Img.open(os.path.join(OUT, og_image.replace(DOMAIN + '/', ''))).size
+                dims = f'<meta property="og:image:width" content="{w}">\n<meta property="og:image:height" content="{h}">\n'
+            except Exception: pass
+        art = ''
+        if article_times:
+            art = f'<meta property="article:published_time" content="{article_times[0].isoformat()}">\n<meta property="article:modified_time" content="{article_times[1].isoformat()}">\n'
+        og = f'''<meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="de_AT">
 <meta property="og:site_name" content="{cfg('markenname')}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{DOMAIN}/Images/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Iveria Immobilien – Wo aus vier Wänden Zuhause wird.">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{img}">
+{dims}<meta property="og:image:alt" content="{img_alt}">
+{art}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="{DOMAIN}/Images/og-image.jpg">
+<meta name="twitter:image" content="{img}">
 '''
     ver = ''
     v = SITE.get('verifizierung') or {}
@@ -67,7 +78,7 @@ def head(title, desc, preload=None, canonical=None, schema=(), noindex=False):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {pl}<link href="{FONTS}" rel="stylesheet">
 <link rel="stylesheet" href="assets/iveria.css?v={V}">
-<script>document.documentElement.classList.add('js');setTimeout(function(){{document.documentElement.classList.add('ready')}},2500)</script>
+{extra_head}<script>document.documentElement.classList.add('js');setTimeout(function(){{document.documentElement.classList.add('ready')}},2500)</script>
 {ld}</head>
 '''
 
@@ -97,10 +108,10 @@ def org_schema():
     if cfg('google_business_profile_url'): o["sameAs"] = [cfg('google_business_profile_url')]
     return o
 
-def breadcrumb(name, url):
+def breadcrumb(name, url, crumbs=None):
+    items = [("Startseite", DOMAIN + '/')] + (crumbs or [(name, url)])
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Startseite", "item": DOMAIN + '/'},
-        {"@type": "ListItem", "position": 2, "name": name, "item": url}]}
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
 
 def service(name, desc, url, offers=None):
     o = {"@context": "https://schema.org", "@type": "Service", "name": name, "description": strip_tags(desc),
@@ -113,7 +124,7 @@ def faq_schema(items):
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in items]}
 
 def header():
-    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns"),("kontakt.html","kontakt","Kontakt")]
+    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + ([("ratgeber/","ratgeber","Ratgeber")] if POSTS else []) + [("kontakt.html","kontakt","Kontakt")]
     nav = "\n".join(f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links)
     return f'''<header class="site-header" id="siteHeader">
   <div class="wrap">
@@ -146,7 +157,7 @@ FOOTER = f'''<footer class="site-footer dark">
         <p>Persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.</p>
       </div>
       <div><h2 class="fh">Leistungen</h2><ul><li><a href="verkaufen.html">Verkaufen &amp; Vermieten</a></li><li><a href="kaufen.html">Objekte ansehen</a></li><li><a href="bautraeger.html">Bauträgervermarktung</a></li><li><a href="bewertung.html">Bewertung anfragen</a></li></ul></div>
-      <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li>{'<li><a href="ratgeber/">Ratgeber</a></li>' if POSTS else ''}<li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
       <div><h2 class="fh">Kontakt</h2><ul>{FOOT_NAP}</ul></div>
     </div>
     <div class="wordmark" id="wordmark" aria-hidden="true"><span>I</span><span>V</span><span>E</span><span>R</span><span>I</span><span>A</span></div>
@@ -178,23 +189,24 @@ def tail(wa_wait=False):
 '''
 
 PAGES = []
-def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa_wait=False, schema=(), crumb=None, noindex=False):
+def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa_wait=False, schema=(), crumb=None, noindex=False,
+         url_override=None, crumbs=None, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head=''):
     global FAQ_CURRENT
-    url = DOMAIN + '/' if fname == 'index.html' else f'{DOMAIN}/{fname}'
+    url = url_override or (DOMAIN + '/' if fname == 'index.html' else f'{DOMAIN}/{fname}')
     sc = [org_schema()] + list(schema)
     if FAQ_CURRENT: sc.append(faq_schema(FAQ_CURRENT))
-    if crumb: sc.append(breadcrumb(crumb, url))
-    html = head(title, desc, preload, None if noindex else url, sc, noindex) + f'<body data-page="{pid}">\n' + extra_before_header + header() + '\n<main>\n' + main + '\n</main>\n\n' + FOOTER + '\n' + tail(wa_wait)
+    if crumb or crumbs: sc.append(breadcrumb(crumb, url, crumbs))
+    html = head(title, desc, preload, None if noindex else url, sc, noindex, og_type, og_image, og_image_alt, article_times, extra_head) + f'<body data-page="{pid}">\n' + extra_before_header + header() + '\n<main>\n' + main + '\n</main>\n\n' + FOOTER + '\n' + tail(wa_wait)
     FAQ_CURRENT = []
+    if fname == '404.html' or '/' in fname:
+        # Seiten außerhalb des Hauptordners: alle lokalen Pfade absolut machen
+        html = re.sub(r'(href|src)="(?!/|https?:|mailto:|tel:|#|data:)([^"]+)"', r'\1="/\2"', html)
     html = img_dims(html)
-    if not noindex: PAGES.append((fname, url))
-    if fname == '404.html':
-        html = html.replace('="assets/', '="/assets/').replace('="Images/', '="/Images/')
-        html = re.sub(r'href="([a-z0-9-]+\.html)"', r'href="/\1"', html)
+    if not noindex: PAGES.append((fname, url, hashlib.sha1(main.encode()).hexdigest()))
+    os.makedirs(os.path.dirname(os.path.join(OUT, fname)), exist_ok=True)
     open(os.path.join(OUT, fname), 'w').write(html)
     print('geschrieben', fname, len(html)//1024, 'KB')
 
-from PIL import Image as _Img
 def img_dims(h):
     """Setzt width/height aus der Bilddatei und loading=lazy auf allen Bildern außer dem ersten (Hero)."""
     def fix(m):
@@ -888,20 +900,31 @@ page("404.html","404","Seite nicht gefunden · Iveria Immobilien","Die gesuchte 
 # =====================================================================
 # SITEMAP (lastmod = letzter Commit der jeweiligen Seite, sonst heute)
 # =====================================================================
-def lastmod(fname):
-    try:
-        d = subprocess.run(['git', '-C', OUT, 'log', '-1', '--format=%cs', '--', fname], capture_output=True, text=True).stdout.strip()
-        dirty = subprocess.run(['git', '-C', OUT, 'status', '--porcelain', '--', fname], capture_output=True, text=True).stdout.strip()
-        if d and not dirty: return d
-    except Exception: pass
-    return datetime.date.today().isoformat()
+build_ratgeber()
+
+# lastmod: Datum der letzten inhaltlichen Änderung (Hash des <main>-Inhalts, gemerkt in _build/lastmod.json).
+# Ratgeber-Artikel nehmen updated/date aus dem Front-Matter, die Übersicht das neueste Artikeldatum.
+LM_PATH = os.path.join(HERE, 'lastmod.json')
+try: LM = json.load(open(LM_PATH, encoding='utf-8'))
+except Exception: LM = {}
+POST_LM = {f'ratgeber/{p["slug"]}.html': p['updated'].isoformat() for p in POSTS}
+if POSTS: POST_LM['ratgeber/index.html'] = max(p['updated'] for p in POSTS).isoformat()
+def lastmod(fname, h):
+    if fname in POST_LM: return POST_LM[fname]
+    e = LM.get(fname)
+    if not e or e.get('hash') != h:
+        e = LM[fname] = {'hash': h, 'date': datetime.date.today().isoformat()}
+    return e['date']
 PRIO = {'index.html': ('weekly', '1.0'), 'verkaufen.html': ('monthly', '0.9'), 'kaufen.html': ('weekly', '0.9'), 'bautraeger.html': ('monthly', '0.9'),
         'bewertung.html': ('monthly', '0.8'), 'ueber-uns.html': ('monthly', '0.7'), 'kontakt.html': ('monthly', '0.7'), 'impressum.html': ('yearly', '0.3'), 'datenschutz.html': ('yearly', '0.3')}
+PRIO['ratgeber/index.html'] = ('weekly', '0.8')
 urls = []
-for fname, url in PAGES:
-    if fname not in PRIO: continue
-    cf, pr = PRIO[fname]
-    urls.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{lastmod(fname)}</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
+for fname, url, h in PAGES:
+    cf, pr = PRIO.get(fname, ('monthly', '0.6') if fname.startswith('ratgeber/') else (None, None))
+    if not cf: continue
+    urls.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{lastmod(fname, h)}</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
+try: json.dump(LM, open(LM_PATH, 'w', encoding='utf-8'), indent=1, ensure_ascii=False, sort_keys=True)
+except Exception: pass
 open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n')
 print('geschrieben sitemap.xml', len(urls), 'URLs')
 
@@ -925,7 +948,7 @@ llms = f"""# {cfg('firmenname')}
 - [Bewertung]({DOMAIN}/bewertung.html): Kostenfreie Schnellbewertung online oder Bewertung vor Ort (€ 290 bis € 490, bei späterem Verkaufsmandat verrechenbar).
 - [Über uns]({DOMAIN}/ueber-uns.html): Über zehn Jahre Erfahrung im österreichischen Immobilienmarkt.
 
-## Einzugsgebiet
+""" + ("## Ratgeber\n\n" + "\n".join(f"- [{p['title']}]({p['url']}): {p['desc']}" for p in POSTS) + "\n\n" if POSTS else "") + """## Einzugsgebiet
 
 Wien, Niederösterreich, Burgenland und Kärnten.
 

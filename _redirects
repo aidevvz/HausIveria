@@ -1,2 +1,7 @@
-# Generator und Daten nicht öffentlich ausliefern
+# Generator, Daten und Artikel-Quellen nicht öffentlich ausliefern
 /_build/*  /404.html  404!
+/content/*  /404.html  404!
+/requirements.txt  /404.html  404!
+/netlify.toml  /404.html  404!
+/AGENTS.md  /404.html  404!
+/CLAUDE.md  /404.html  404!

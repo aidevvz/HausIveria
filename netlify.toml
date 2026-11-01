@@ -1,0 +1,14 @@
+# Netlify baut die Website bei jedem Push auf main selbst neu.
+# Neue Ratgeber-Artikel (content/ratgeber/*.md) gehen damit ohne lokalen Build live.
+# Schlägt der Build fehl (z. B. Pflichtfeld fehlt), bleibt die letzte funktionierende Version online.
+[build]
+  command = "pip install -q -r requirements.txt && python3 _build/build.py"
+  publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+[[headers]]
+  for = "/ratgeber/feed.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
