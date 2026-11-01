@@ -5,6 +5,8 @@ Jeder Push auf `main` löst auf Netlify `python3 _build/build.py` aus und geht a
 
 ## Ratgeber-Artikel veröffentlichen (SEO-Agent)
 
+**Aktueller SEO-Stand, offene Punkte und Prioritäten: [`docs/seo-briefing.md`](docs/seo-briefing.md).**
+
 **Alle Regeln, Felder und Prüfungen: [`content/ratgeber/README.md`](content/ratgeber/README.md). Vor dem ersten Artikel lesen.**
 
 Ablauf:

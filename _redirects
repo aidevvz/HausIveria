@@ -5,3 +5,4 @@
 /netlify.toml  /404.html  404!
 /AGENTS.md  /404.html  404!
 /CLAUDE.md  /404.html  404!
+/docs/*  /404.html  404!
