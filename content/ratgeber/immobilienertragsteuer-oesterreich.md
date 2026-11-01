@@ -4,6 +4,8 @@ seo_title: "Immobilienertragsteuer Österreich: Wer zahlt wie viel?"
 description: "Wie hoch ist die Immobilienertragsteuer beim Immobilienverkauf in Österreich? Steuersatz, Hauptwohnsitzbefreiung, Altvermögen und der neue Umwidmungszuschlag."
 date: 2026-11-01
 category: Recht & Steuern
+image: /Images/ratgeber/immobilienertragsteuer-oesterreich.webp
+image_alt: "Feine Linienillustration dreier Haussilhouetten in Bronzetönen auf cremefarbenem Hintergrund als Symbolbild für den Immobilienverkauf in Österreich"
 cta: bewertung
 related: []
 faq:
