@@ -116,7 +116,11 @@ def _lesezeit(body): return max(1, math.ceil(len(re.findall(r'\w+', body)) / 200
 
 def _author_schema(p):
     a = p['author'] or cfg('ratgeber_autor')
-    return {"@type": "Person", "name": a} if a else {"@id": ORG_ID}
+    if not a: return {"@id": ORG_ID}
+    name, _, suffix = a.partition(', ')
+    o = {"@type": "Person", "name": name, "worksFor": {"@id": ORG_ID}}
+    if suffix: o["honorificSuffix"] = suffix
+    return o
 
 def _card(p, h='h3'):
     img = f'<div class="ph"><img src="{p["image"]}" alt="{_html.escape(p["image_alt"])}" loading="lazy"></div>' if p['image'] else '<div class="ph ph-empty" aria-hidden="true">' + LOGO() + '</div>'

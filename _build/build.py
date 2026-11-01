@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261101a"
+V = "20261101b"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -124,7 +124,7 @@ def faq_schema(items):
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in items]}
 
 def header():
-    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + ([("ratgeber/","ratgeber","Ratgeber")] if POSTS else []) + [("kontakt.html","kontakt","Kontakt")]
+    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + [("ratgeber/","ratgeber","Ratgeber")] + [("kontakt.html","kontakt","Kontakt")]
     nav = "\n".join(f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links)
     return f'''<header class="site-header" id="siteHeader">
   <div class="wrap">
@@ -157,7 +157,7 @@ FOOTER = f'''<footer class="site-footer dark">
         <p>Persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.</p>
       </div>
       <div><h2 class="fh">Leistungen</h2><ul><li><a href="verkaufen.html">Verkaufen &amp; Vermieten</a></li><li><a href="kaufen.html">Objekte ansehen</a></li><li><a href="bautraeger.html">Bauträgervermarktung</a></li><li><a href="bewertung.html">Bewertung anfragen</a></li></ul></div>
-      <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li>{'<li><a href="ratgeber/">Ratgeber</a></li>' if POSTS else ''}<li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
       <div><h2 class="fh">Kontakt</h2><ul>{FOOT_NAP}</ul></div>
     </div>
     <div class="wordmark" id="wordmark" aria-hidden="true"><span>I</span><span>V</span><span>E</span><span>R</span><span>I</span><span>A</span></div>
