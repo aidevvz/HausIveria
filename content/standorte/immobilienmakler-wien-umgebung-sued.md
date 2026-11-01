@@ -16,6 +16,7 @@ faq:
     a: "Für größere Orte wie Mödling führen wir eigene Ortsseiten mit Marktdaten. Die kleineren Gemeinden stellen wir hier gebündelt vor, weil die Nachfrage dort zu klein für eine eigene Seite ist, die Betreuung aber dieselbe bleibt."
 related: []
 seiten: [immobilienmakler-moedling]
+menu: false                        # nicht im Hauptmenü (Variante a), Footer bleibt
 draft: false
 noindex: false
 ---

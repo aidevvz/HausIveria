@@ -29,7 +29,7 @@ ST_FELDER = {
     'ortsseite': {'typ', 'ort', 'region', 'plz', 'title', 'seo_title', 'description', 'hub', 'preis_wohnung_min', 'preis_wohnung_max', 'preis_haus_min',
                   'preis_haus_max', 'preis_haus_einheit', 'preis_stand', 'preis_quelle', 'lagen', 'objektarten', 'image', 'image_alt', 'faq', 'related',
                   'footer', 'draft', 'noindex'},
-    'hub': {'typ', 'name', 'region', 'title', 'seo_title', 'description', 'image', 'image_alt', 'faq', 'related', 'seiten', 'draft', 'noindex'},
+    'hub': {'typ', 'name', 'region', 'title', 'seo_title', 'description', 'image', 'image_alt', 'faq', 'related', 'seiten', 'menu', 'draft', 'noindex'},
 }
 
 def _ja(v, default=False):
@@ -140,7 +140,7 @@ def load_standorte():
             for l in ST_PFLICHTLINKS:
                 if f']({l}' not in body: streng.append(f'{name}: Pflicht-Link auf {l} fehlt im Text')
         else:
-            s['name'] = str(fm.get('name') or '').strip(); s['seiten'] = _liste(fm.get('seiten'))
+            s['name'] = str(fm.get('name') or '').strip(); s['seiten'] = _liste(fm.get('seiten')); s['menu'] = _ja(fm.get('menu'), True)
         if len(fehler) > n0: kaputt.add(slug); continue
         seiten.append(s)
 
@@ -175,7 +175,18 @@ ST_SICHTBAR = [s for s in STANDORTE if _st_sichtbar(s)]
 ST_HUBS = [s for s in ST_SICHTBAR if s['typ'] == 'hub']
 ST_ORTE = [s for s in ST_SICHTBAR if s['typ'] == 'ortsseite']
 def _st_kinder(h): return [s for s in ST_ORTE if s['hub'] == h['slug']] + [ST_BY[x] for x in h['seiten'] if x in ST_BY and ST_BY[x] in ST_SICHTBAR and ST_BY[x]['hub'] != h['slug']]
-ST_MENU = max(ST_HUBS, key=lambda h: (len(_st_kinder(h)), h['slug']), default=None)
+# Menü: nur Hubs (menu: true, Standard), alphabetisch. Ortsseiten nie im Menü, sie hängen an ihrem Hub.
+ST_MENU_HUBS = sorted([h for h in ST_HUBS if h['menu']], key=lambda h: h['name'])
+
+def st_nav():
+    """Menüpunkt "Standorte": bei einem Hub ein Link, bei mehreren ein Link + Untermenü (Desktop: Aufklappen, Handy: eingerückt)."""
+    if not ST_MENU_HUBS: return ''
+    erster = ST_MENU_HUBS[0]
+    if len(ST_MENU_HUBS) == 1:
+        return f'      <a href="{erster["slug"]}.html" data-page="standorte">Standorte</a>\n'
+    sub = ''.join(f'<a href="{h["slug"]}.html">{_html.escape(h["name"])}</a>' for h in ST_MENU_HUBS)
+    return (f'      <div class="nav-group"><a href="{erster["slug"]}.html" data-page="standorte" aria-haspopup="true">Standorte</a>'
+            f'<div class="nav-sub" aria-label="Standorte">{sub}</div></div>\n')
 
 def st_footer_spalte():
     if not ST_HUBS and not ST_ORTE: return ''

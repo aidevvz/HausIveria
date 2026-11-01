@@ -119,10 +119,14 @@ seo_title: "..."
 description: "..."
 faq: [...]                        # 3 bis 6
 seiten: [immobilienmakler-moedling]   # optional: zusätzliche Ortsseiten, die nicht diesen Hub als `hub` haben
+menu: true                        # Standard true: Hub erscheint im Menü unter „Standorte“. false = nur Footer
 draft: true
 noindex: true
 ---
 ```
+
+**Menü:** Unter „Standorte“ stehen nur Hubs (live und `menu: true`, alphabetisch), nie einzelne Ortsseiten. Ab zwei Hubs klappt ein Untermenü auf (Handy: eingerückt).
+**Footer:** alle Live-Hubs plus Ortsseiten mit `footer: true`. **Sitemap:** alle Live-Seiten, unabhängig von Menü und Footer.
 
 Alle Ortsseiten mit `hub: <dieser Hub>` werden automatisch oben als Liste verlinkt (ItemList-Schema).
 Kleine Orte ohne eigene Seite (z. B. Perchtoldsdorf, Brunn am Gebirge) bekommen im Hub-Text eine eigene `##`-Überschrift

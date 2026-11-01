@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261101d"
+V = "20261102a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -125,8 +125,8 @@ def faq_schema(items):
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in items]}
 
 def header():
-    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + ([(ST_MENU["slug"] + ".html","standorte","Standorte")] if ST_MENU else []) + [("ratgeber/","ratgeber","Ratgeber")] + [("kontakt.html","kontakt","Kontakt")]
-    nav = "\n".join(f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links)
+    links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + [("STANDORTE","",""), ("ratgeber/","ratgeber","Ratgeber"), ("kontakt.html","kontakt","Kontakt")]
+    nav = "\n".join(st_nav().rstrip("\n") if h == "STANDORTE" else f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links if h != "STANDORTE" or st_nav())
     return f'''<header class="site-header" id="siteHeader">
   <div class="wrap">
     <a href="index.html" class="brand" aria-label="Iveria Immobilien, Startseite">
