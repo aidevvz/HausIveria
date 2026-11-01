@@ -13,7 +13,7 @@ faq:
     a: "Vor allem bei der Hauptwohnsitzbefreiung: wenn Sie ab Anschaffung durchgehend mindestens zwei Jahre dort gewohnt haben, oder innerhalb der letzten zehn Jahre mindestens fünf Jahre. Auch selbst hergestellte Gebäude sind beim Gebäudeanteil befreit."
   - q: "Wer führt die Immobilienertragsteuer ab?"
     a: "In der Regel berechnet und überweist der Notar oder Rechtsanwalt die Steuer im Zuge der Kaufvertragsabwicklung. Dann hat die Zahlung Endbesteuerungswirkung und muss nicht mehr in die Steuererklärung."
-draft: true
+draft: false
 ---
 Beim Verkauf einer Immobilie bleibt selten der volle Erlös übrig: Auf den Gewinn fällt in Österreich die Immobilienertragsteuer an. Dieser Ratgeber zeigt Ihnen, wie hoch sie ist, wann der Verkauf steuerfrei bleibt, wie Alt- und Neuvermögen gerechnet werden, was sich 2027 für Altvermögen ändert und was der Umwidmungszuschlag seit Juli 2025 bedeutet. Die Angaben sind eine Orientierung und ersetzen keine Steuerberatung im Einzelfall.
 
