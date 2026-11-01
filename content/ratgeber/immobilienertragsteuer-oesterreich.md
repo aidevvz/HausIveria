@@ -73,7 +73,9 @@ Entscheidend ist der spätere Verkauf: Veräußert der Erbe oder Beschenkte die 
 
 ## Aus der Praxis
 
-> **[PRAXIS-ABSATZ — wird von Gio ergänzt, hier wird nichts erfunden.]** An dieser Stelle kommt Ihre Praxiserfahrung: ein typischer Fehler, den Verkäufer bei der Hauptwohnsitzbefreiung machen, eine Überraschung bei Altvermögen, oder eine Faustregel, die Sie Mandanten regelmäßig mitgeben. Zwei bis drei Sätze in Ihren Worten.
+Der häufigste und teuerste Fehler aus unserer Erfahrung: Viele Eigentümer beschäftigen sich mit der Immobilienertragsteuer erst, wenn ein Kaufanbot auf dem Tisch liegt und angenommen werden soll. Für eine saubere Planung ist es dann oft zu spät. Wir haben mehr als einmal erlebt, dass ein Verkauf in letzter Minute platzt, weil der Verkäufer mit einer deutlich niedrigeren Steuer gerechnet hatte, als am Ende tatsächlich anfiel.
+
+Deshalb unser Rat: Klären Sie die steuerliche Seite mit einem Steuerberater, bevor Sie überhaupt einen Makler beauftragen. Ein Makler darf in Österreich nicht zu Steuerfragen beraten, der gesamte Verkaufsprozess baut aber auf einer realistischen Netto-Erwartung auf. Wer die ImmoESt von Beginn an kennt, setzt den Preis richtig an, verhandelt ruhiger und erlebt beim Abschluss keine böse Überraschung.
 
 ## Ihre Immobilie vor dem Verkauf richtig einschätzen
 
