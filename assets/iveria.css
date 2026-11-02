@@ -532,3 +532,8 @@ a.prop,.prop[data-cursor]{cursor:pointer}
   .nav.open .nav-sub{position:static;opacity:1;visibility:visible;transform:none;background:none;border:0;box-shadow:none;padding:0 0 0 1.2rem;margin:0;gap:.8rem;color:inherit;font:300 1.5rem/1.1 var(--display)}
   .nav.open .nav-sub::before{display:none}
 }
+.nav-label{appearance:none;background:none;border:0;padding:.35rem 0;margin:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:default;position:relative;opacity:.85}
+.nav-label::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform 450ms var(--ease-out)}
+.nav-label.active{opacity:1}.nav-label.active::after{transform:scaleX(1)}
+.nav-group:hover .nav-label,.nav-group:focus-within .nav-label{opacity:1}
+@media (max-width:980px){.nav.open .nav-label{padding:0;opacity:1}.nav.open .nav-label::after{display:none}}

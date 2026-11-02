@@ -175,23 +175,22 @@ ST_SICHTBAR = [s for s in STANDORTE if _st_sichtbar(s)]
 ST_HUBS = [s for s in ST_SICHTBAR if s['typ'] == 'hub']
 ST_ORTE = [s for s in ST_SICHTBAR if s['typ'] == 'ortsseite']
 def _st_kinder(h): return [s for s in ST_ORTE if s['hub'] == h['slug']] + [ST_BY[x] for x in h['seiten'] if x in ST_BY and ST_BY[x] in ST_SICHTBAR and ST_BY[x]['hub'] != h['slug']]
-# Menü: nur Hubs (menu: true, Standard), alphabetisch. Ortsseiten nie im Menü, sie hängen an ihrem Hub.
-ST_MENU_HUBS = sorted([h for h in ST_HUBS if h['menu']], key=lambda h: h['name'])
+# Menü und Footer-Spalte "Standorte": genau die Primär-Regionen, in dieser Reihenfolge (Wien zuerst = Kernmarkt).
+# Andere Hubs (z. B. "Wien Süd und Umgebung") und alle Ortsseiten erscheinen dort nicht, sondern nur über Hub-Listen und Sitemap.
+# Eine Region erscheint automatisch, sobald ihre Seite live ist (draft: false, noindex: false).
+ST_PRIMAER_REGIONEN = ['immobilienmakler-wien', 'immobilienmakler-niederoesterreich']
+ST_REGIONEN = [ST_BY[x] for x in ST_PRIMAER_REGIONEN if x in ST_BY and ST_BY[x] in ST_HUBS]
 
 def st_nav():
-    """Menüpunkt "Standorte": bei einem Hub ein Link, bei mehreren ein Link + Untermenü (Desktop: Aufklappen, Handy: eingerückt)."""
-    if not ST_MENU_HUBS: return ''
-    erster = ST_MENU_HUBS[0]
-    if len(ST_MENU_HUBS) == 1:
-        return f'      <a href="{erster["slug"]}.html" data-page="standorte">Standorte</a>\n'
-    sub = ''.join(f'<a href="{h["slug"]}.html">{_html.escape(h["name"])}</a>' for h in ST_MENU_HUBS)
-    return (f'      <div class="nav-group"><a href="{erster["slug"]}.html" data-page="standorte" aria-haspopup="true">Standorte</a>'
+    """Menüpunkt "Standorte": Label ohne eigenes Ziel, Untermenü mit den Primär-Regionen (Desktop aufklappend, Handy eingerückt)."""
+    if not ST_REGIONEN: return ''
+    sub = ''.join(f'<a href="{h["slug"]}.html">{_html.escape(h["name"])}</a>' for h in ST_REGIONEN)
+    return (f'      <div class="nav-group"><button type="button" class="nav-label" data-page="standorte" aria-haspopup="true">Standorte</button>'
             f'<div class="nav-sub" aria-label="Standorte">{sub}</div></div>\n')
 
 def st_footer_spalte():
-    if not ST_HUBS and not ST_ORTE: return ''
-    li = ''.join(f'<li><a href="{h["slug"]}.html">{_html.escape(h["name"])}</a></li>' for h in ST_HUBS)
-    li += ''.join(f'<li><a href="{o["slug"]}.html">{_html.escape(o["ort"])}</a></li>' for o in sorted(ST_ORTE, key=lambda o: o['ort']) if o['footer'])
+    if not ST_REGIONEN: return ''
+    li = ''.join(f'<li><a href="{h["slug"]}.html">{_html.escape(h["name"])}</a></li>' for h in ST_REGIONEN)
     return f'<div><h2 class="fh">Standorte</h2><ul>{li}</ul></div>'
 
 def _st_card(s):

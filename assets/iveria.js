@@ -10,7 +10,7 @@
   var wa = $('.wa');
 
   /* ---------- Aktiver Menüpunkt ---------- */
-  $$('.nav a[data-page]').forEach(function(a){ if(a.getAttribute('data-page') === page) a.classList.add('active'); });
+  $$('.nav [data-page]').forEach(function(a){ if(a.getAttribute('data-page') === page) a.classList.add('active'); });
 
   /* ---------- Mobiles Menü ---------- */
   var mb = $('#menuBtn'), nav = $('#nav');
