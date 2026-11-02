@@ -5,8 +5,8 @@ region: "Wien und Niederösterreich"
 title: "Immobilienmakler im Süden von Wien und Umgebung"
 seo_title: "Immobilienmakler Wien Süd & Umgebung · Iveria"
 description: "Iveria im Süden Wiens und im angrenzenden Niederösterreich: von Liesing und Meidling bis Mödling und in die Thermenregion. Verkauf und Bewertung."
-image:
-image_alt: ""
+image: /Images/standorte/immobilienmakler-wien-umgebung-sued.webp
+image_alt: "Herrschaftliche Wohnhäuser am Wienerwaldrand im Süden Wiens mit Weingärten und Stadtblick im Abendlicht"
 faq:
   - q: "Welches Gebiet deckt Iveria im Süden von Wien ab?"
     a: "Den Übergang von der Stadt ins Umland: im Süden Wiens die Bezirke Liesing und Meidling, im angrenzenden Niederösterreich Mödling und die Thermenregion mit Perchtoldsdorf, Brunn am Gebirge und Maria Enzersdorf. Das ist das direkte Umfeld unseres Büros in 1120 Wien."

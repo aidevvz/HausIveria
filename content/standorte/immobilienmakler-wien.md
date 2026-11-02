@@ -5,6 +5,8 @@ region: "Wien"
 title: "Immobilienmakler in Wien: West und Südwest"
 seo_title: "Immobilienmakler Wien West & Südwest · Iveria"
 description: "Ihr Immobilienmakler für den Westen und Südwesten Wiens: Meidling, Hietzing, Penzing, Rudolfsheim-Fünfhaus und Liesing. Verkauf und Bewertung aus erster Hand."
+image: /Images/standorte/immobilienmakler-wien.webp
+image_alt: "Klassische Wiener Dächer mit Stephansdom und Gründerzeithäusern im goldenen Abendlicht"
 faq:
   - q: "Welche Wiener Bezirke betreut Iveria?"
     a: "Unser Schwerpunkt liegt im Westen und Südwesten: Meidling (1120), Hietzing (1130), Penzing (1140), Rudolfsheim-Fünfhaus (1150) und Liesing (1230). Das ist der zusammenhängende Gürtel rund um unser Büro im 12. Bezirk."

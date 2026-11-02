@@ -5,8 +5,8 @@ region: "Niederösterreich"
 title: "Immobilienmakler in Niederösterreich"
 seo_title: "Immobilienmakler Niederösterreich · Iveria Immobilien"
 description: "Iveria Immobilien in Niederösterreich: Verkauf, Vermietung und Bewertung von Immobilien in Mödling, Baden, Wiener Neustadt, Klosterneuburg und Umgebung."
-image:
-image_alt: ""
+image: /Images/standorte/immobilienmakler-niederoesterreich.webp
+image_alt: "Weinberge und Dorf mit Kirche in der niederösterreichischen Thermenregion im Abendlicht"
 faq:
   - q: "In welchen Teilen Niederösterreichs ist Iveria tätig?"
     a: "Unser Schwerpunkt liegt im Süden Niederösterreichs, vor allem in den Bezirken Mödling und Baden, dazu Wiener Neustadt, Klosterneuburg und das Umland von Wien. Von unserem Büro in 1120 Wien sind die Wege dorthin kurz."
