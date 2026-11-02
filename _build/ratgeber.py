@@ -141,10 +141,10 @@ def build_ratgeber():
         liste = f'<div class="rt-grid">\n      {karten}\n    </div>'
     else:
         liste = '<p class="lead">Die ersten Beiträge erscheinen in Kürze.</p>'
-    main = f'''<section class="ehead warm">
+    main = f'''<section class="ehead warm rt-head">
   <div class="wrap">
     <p class="eyebrow">Ratgeber</p>
-    <h1 data-split>Wissen rund um <em>Immobilien</em>.</h1>
+    <h1>Wissen rund um <em>Immobilien</em>.</h1>
     <p class="lead">Verkaufen, kaufen, vermieten und bewerten in Wien und Niederösterreich: verständlich erklärt, mit Blick auf die Praxis.</p>
   </div>
 </section>

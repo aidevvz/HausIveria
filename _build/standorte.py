@@ -272,7 +272,7 @@ def _st_titel(s):
 
 def _st_entwurf(s):
     if s['draft']: return '<p class="st-entwurf">Entwurf · nicht veröffentlicht</p>'
-    if s['noindex']: return '<p class="st-entwurf">Nicht im Google-Index (noindex)</p>'
+    if s['noindex'] and ST_PREVIEW: return '<p class="st-entwurf">Nicht im Google-Index (noindex)</p>'  # nur in der Vorschau, nie öffentlich
     return ''
 
 def build_standorte():

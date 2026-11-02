@@ -537,3 +537,7 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 .nav-label.active{opacity:1}.nav-label.active::after{transform:scaleX(1)}
 .nav-group:hover .nav-label,.nav-group:focus-within .nav-label{opacity:1}
 @media (max-width:980px){.nav.open .nav-label{padding:0;opacity:1}.nav.open .nav-label::after{display:none}}
+
+/* Einheitliche Bildsprache: Titelbilder von Ratgeber und Standorten im Bogen wie auf den Hauptseiten */
+.rt-hero img{border-radius:50% 50% 0 0 / 34% 34% 0 0;aspect-ratio:16/11}
+@media (max-width:600px){.rt-hero img{border-radius:50% 50% 0 0 / 30% 30% 0 0;aspect-ratio:4/3.2}}
