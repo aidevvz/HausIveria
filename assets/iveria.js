@@ -19,9 +19,11 @@
       var o = nav.classList.toggle('open');
       mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Schließen' : 'Menü';
       header.classList.toggle('menu-open', o);
+      document.documentElement.classList.toggle('nav-lock', o);
+      $$('.nav-extra a', nav).forEach(function(x){ x.tabIndex = o ? 0 : -1; }); $$('.nav-extra', nav).forEach(function(x){ x.setAttribute('aria-hidden', o ? 'false' : 'true'); });
       if(o) header.classList.add('on-dark'); else syncHeader();
     });
-    $$('a', nav).forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); mb.setAttribute('aria-expanded', false); mb.textContent = 'Menü'; header.classList.remove('menu-open'); }); });
+    $$('a', nav).forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); mb.setAttribute('aria-expanded', false); mb.textContent = 'Menü'; header.classList.remove('menu-open'); document.documentElement.classList.remove('nav-lock'); }); });
   }
 
   /* ---------- Cookie-Hinweis ---------- */

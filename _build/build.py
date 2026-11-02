@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261102d"
+V = "20261102e"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -136,6 +136,12 @@ def header():
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menü</button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
 {nav}
+      <div class="nav-extra" aria-hidden="true">
+        <p class="eyebrow">Kontakt</p>
+        <a href="mailto:{cfg("email")}" tabindex="-1">{cfg("email")}</a>
+        <span>{cfg("oeffnungszeiten_anzeige")}</span>
+        <a href="bewertung.html" class="btn solid" tabindex="-1">Bewertung anfragen →</a>
+      </div>
     </nav>
   </div>
 </header>
