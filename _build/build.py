@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261102b"
+V = "20261102c"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -89,7 +89,7 @@ def jsonld(obj):
 def strip_tags(t):
     return _html.unescape(re.sub(r'<[^>]+>', '', t)).strip()
 
-AREAS = [{"@type": "State", "name": n} for n in ["Wien", "Niederösterreich", "Burgenland", "Kärnten"]]
+AREAS = [{"@type": "State", "name": n} for n in ["Wien", "Niederösterreich"]]
 ORG_ID = f'{DOMAIN}/#organization'
 def org_schema():
     o = {"@context": "https://schema.org", "@type": "RealEstateAgent", "@id": ORG_ID,
@@ -155,7 +155,7 @@ FOOTER = f'''<footer class="site-footer dark">
           {LOGO("#FAFAF7")}
           <span class="brand-name">Iveria <small>Immobilien</small></span>
         </a>
-        <p>Persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.</p>
+        <p>Persönliche Immobilienvermittlung und Projektvermarktung in Wien und Niederösterreich. Wo aus vier Wänden Zuhause wird.</p>
       </div>
       <div><h2 class="fh">Leistungen</h2><ul><li><a href="verkaufen.html">Verkaufen &amp; Vermieten</a></li><li><a href="kaufen.html">Objekte ansehen</a></li><li><a href="bautraeger.html">Bauträgervermarktung</a></li><li><a href="bewertung.html">Bewertung anfragen</a></li></ul></div>
       <div><h2 class="fh">Iveria Immobilien</h2><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="ratgeber/">Ratgeber</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
@@ -286,7 +286,7 @@ def stats(items, eyebrow=None, h2=None, cls="dark", regions=False):
     st = "\n".join(f'      <div class="stat"><b{(" data-to=%s data-suf=%s" % (chr(34)+str(to)+chr(34), chr(34)+suf+chr(34))) if to is not None else ""}>{disp}</b><span>{lab}</span></div>' for to,suf,disp,lab in items)
     hd = f'<p class="eyebrow">{eyebrow}</p>\n    <h2 class="h-l" data-split>{h2}</h2>' if h2 else ''
     rg = '''
-    <div class="regions" id="regions" aria-label="Wien, Niederösterreich, Burgenland, Kärnten"><span>Wien</span><i>·</i><span>Niederösterreich</span><i>·</i><span>Burgenland</span><i>·</i><span>Kärnten</span></div>''' if regions else ''
+    <div class="regions" id="regions" aria-label="Wien, Niederösterreich"><span>Wien</span><i>·</i><span>Niederösterreich</span></div>''' if regions else ''
     return f'''<section class="stats {cls} pad">
   <div class="wrap">
     {hd}
@@ -325,7 +325,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
   <div class="h-line h-l2 wrap" aria-hidden="true"><span class="in"><em>Zuhause</em> wird.</span></div>
   <div class="h-copy wrap" id="hCopy">
     <div class="eyebrow">Immobilien · Projektvermarktung · Bewertung</div>
-    <p>Persönliche Immobilienvermittlung in Wien, Niederösterreich, Burgenland und Kärnten. Mit Sorgfalt, Erfahrung und einem Auge für Details.</p>
+    <p>Persönliche Immobilienvermittlung in Wien und Niederösterreich. Mit Sorgfalt, Erfahrung und einem Auge für Details.</p>
     <a href="kaufen.html" class="link">Objekte entdecken {ARR}</a>
   </div>
   <div class="h-meta wrap" aria-hidden="true"><span class="sc">Scroll<i></i><svg class="finger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(180 12 12)"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-4 0"/><path d="M14 10V9a2 2 0 0 0-4 0v1"/><path d="M10 9.5V4a2 2 0 0 0-4 0v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g></svg></span><span>Wien &amp; Niederösterreich<br>Seit über 10 Jahren</span></div>
@@ -401,7 +401,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
       </article>
       <article class="card">
         <div class="img"><img src="Images/hero-bewertung.webp" alt="Gründerzeitfassade mit schmiedeeisernem Balkon" loading="lazy"></div>
-        <div class="txt"><div><span class="eyebrow">Für Käufer</span><h3>Suchen &amp; <em>Kaufen</em></h3><p>Aktuelle Objekte in Wien, Niederösterreich, Burgenland und Kärnten. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag, bevor Objekte öffentlich werden.</p>
+        <div class="txt"><div><span class="eyebrow">Für Käufer</span><h3>Suchen &amp; <em>Kaufen</em></h3><p>Aktuelle Objekte in Wien und Niederösterreich. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag, bevor Objekte öffentlich werden.</p>
           <ul><li>Kuratierte Objekte</li><li>Persönlicher Suchauftrag</li><li>Zugang vor der Veröffentlichung</li></ul>
           <a href="kaufen.html" class="link">Objekte ansehen {ARR}</a></div><div class="num">III</div></div>
       </article>
@@ -409,10 +409,10 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
   </div>
 </section>
 
-''' + stats([obj_stat(120),(10,"","10","Jahre Erfahrung"),(4,"","4","Bundesländer"),(100,"%","100%","Erfolgsbasiert")],
+''' + stats([obj_stat(120),(10,"","10","Jahre Erfahrung"),(2,"","2","Bundesländer"),(100,"%","100%","Erfolgsbasiert")],
             "Auf einen Blick", "Klassische Werte. <em>Messbare</em> Ergebnisse.", regions=True) + "\n" + faq([
   ("Was kostet die Vermittlung?","Unsere Provision orientiert sich an der Immobilienmaklerverordnung (IMV). Üblich sind 3 % zzgl. 20 % USt. vom Käufer und Verkäufer. Sie zahlen nur im Erfolgsfall. Bei Bauträgermandaten vereinbaren wir individuelle Konditionen."),
-  ("In welchen Regionen sind Sie tätig?","Schwerpunkt Wien, Niederösterreich, Burgenland und Kärnten. Bei Mandaten außerhalb dieser Regionen arbeiten wir mit ausgewählten lokalen Partnern zusammen. Die Betreuung bleibt aber bei uns."),
+  ("In welchen Regionen sind Sie tätig?","Schwerpunkt Wien und Niederösterreich. Bei Mandaten außerhalb dieser Regionen arbeiten wir mit ausgewählten lokalen Partnern zusammen. Die Betreuung bleibt aber bei uns."),
   ("Wie lange dauert ein Verkauf üblicherweise?","Vom Erstgespräch bis zur Übergabe rechnen wir mit drei bis sechs Monaten. Abhängig von Marktlage, Preisstellung und Komplexität. Wir geben Ihnen im Erstgespräch eine realistische Einschätzung."),
   ("Was unterscheidet Sie von größeren Maklerketten?","Wir nehmen weniger Mandate an, dafür betreuen wir jedes persönlich. Sie haben einen festen Ansprechpartner. Keine Hotline, kein Fallmanager. Bei jedem Termin sind wir selbst vor Ort."),
   ("Bieten Sie auch Bewertungen ohne Verkaufsabsicht an?","Ja. Eine Marktwerteinschätzung kostet zwischen € 290 und € 490. Abhängig vom Aufwand. Bei einem späteren Verkaufsmandat verrechnen wir den Betrag mit der Provision."),
@@ -448,7 +448,7 @@ index_main = f'''<section class="hero" id="hero" aria-label="Wo aus vier Wänden
 </form>
 '''
 page("index.html","index","Iveria Immobilien · Immobilienmakler in Wien",
-     "Iveria Immobilien — persönliche Immobilienvermittlung und Projektvermarktung in Wien, Niederösterreich, Burgenland und Kärnten. Wo aus vier Wänden Zuhause wird.",
+     "Iveria Immobilien — persönliche Immobilienvermittlung und Projektvermarktung in Wien und Niederösterreich. Wo aus vier Wänden Zuhause wird.",
      index_main, preload="Images/hero-kaufen.webp", wa_wait=True,
      schema=[{"@context":"https://schema.org","@type":"WebSite","@id":f"{DOMAIN}/#website","url":DOMAIN+"/","name":cfg('markenname'),"inLanguage":"de-AT","publisher":{"@id":ORG_ID}}])
 
@@ -497,7 +497,7 @@ verkaufen = phero("Images/hero-verkaufen.webp","Wohnzimmer mit Blick über die S
   ("Was kostet ein Verkauf konkret?","Sie zahlen nur im Erfolgsfall. 3 % des Kaufpreises zzgl. 20 % USt. Also brutto 3,6 %. Beispiel: Bei einem Kaufpreis von € 500.000 entstehen Kosten von € 18.000 brutto. Vorab fallen keine Kosten an."),
   ("Wie lange dauert ein Verkauf üblicherweise?","Vom Erstgespräch bis zur Übergabe rechnen wir mit drei bis sechs Monaten. Abhängig von Marktlage, Preisstellung und Komplexität. Wir geben Ihnen im Erstgespräch eine realistische Einschätzung."),
   ("Was unterscheidet Sie von Maklerketten?","Wir nehmen weniger Mandate an, dafür betreuen wir jedes persönlich. Sie haben einen festen Ansprechpartner. Keine Hotline, kein Fallmanager. Bei jedem Termin sind wir selbst vor Ort."),
-  ("Werden Sie auch außerhalb von Wien tätig?","Ja. Schwerpunkt ist Wien, Niederösterreich, Burgenland und Kärnten. Bei besonderen Mandaten arbeiten wir auch in anderen Regionen. Kommen Sie einfach auf uns zu."),
+  ("Werden Sie auch außerhalb von Wien tätig?","Ja. Schwerpunkt ist Wien und Niederösterreich. Bei besonderen Mandaten arbeiten wir auch in anderen Regionen. Kommen Sie einfach auf uns zu."),
   ("Können Sie auch Mietobjekte vermarkten?","Ja, wir vermarkten auch Mietwohnungen und Geschäftsflächen. Die Vorgehensweise ist ähnlich, die Provision orientiert sich an branchenüblichen Sätzen."),
   ("Was passiert, wenn ich nicht verkaufe?","Dann zahlen Sie nichts. Unsere Tätigkeit ist erfolgsbasiert. Sollten Sie aus unvorhergesehenen Gründen ausscheiden müssen, finden wir eine faire Lösung."),
 ])
@@ -507,7 +507,7 @@ page("verkaufen.html","verkaufen","Immobilie verkaufen in Wien mit Makler · Ive
 # =====================================================================
 # KAUFEN
 # =====================================================================
-kaufen = phero("Images/hero-kaufen.webp","Gründerzeithaus in Wien im Abendlicht","Für Käufer","Suchen &amp; <em>Kaufen</em>","Aktuelle Objekte in Wien, Niederösterreich, Burgenland und Kärnten. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag, bevor Objekte öffentlich werden.") + f'''
+kaufen = phero("Images/hero-kaufen.webp","Gründerzeithaus in Wien im Abendlicht","Für Käufer","Suchen &amp; <em>Kaufen</em>","Aktuelle Objekte in Wien und Niederösterreich. Kuratiert vermittelt. Auf Wunsch auch ein persönlicher Suchauftrag, bevor Objekte öffentlich werden.") + f'''
 <section class="pad">
   <div class="wrap">
     <div class="empty">
@@ -538,7 +538,7 @@ kaufen = phero("Images/hero-kaufen.webp","Gründerzeithaus in Wien im Abendlicht
         </div>
         <div class="frow three">
           <div><label for="s-typ">Typ</label><select id="s-typ" name="typ"><option>Wohnung</option><option>Haus</option><option>Anlage</option><option>Grundstück</option><option>Gewerbe</option></select></div>
-          <div><label for="s-region">Region</label><select id="s-region" name="region"><option>Wien</option><option>Niederösterreich</option><option>Burgenland</option><option>Kärnten</option><option>Andere</option></select></div>
+          <div><label for="s-region">Region</label><select id="s-region" name="region"><option>Wien</option><option>Niederösterreich</option><option>Andere</option></select></div>
           <div><label for="s-budget">Budget</label><input type="text" id="s-budget" name="budget" placeholder="bis € 800.000"></div>
         </div>
         <div><label for="s-wuensche">Was ist Ihnen wichtig?</label><textarea id="s-wuensche" name="wuensche" placeholder="Größe, Lage, besondere Wünsche, Zeithorizont"></textarea></div>
@@ -549,7 +549,7 @@ kaufen = phero("Images/hero-kaufen.webp","Gründerzeithaus in Wien im Abendlicht
   </div>
 </section>
 '''
-page("kaufen.html","kaufen","Immobilie kaufen &amp; Suchauftrag · Iveria Immobilien","Aktuelle Immobilien in Wien, Niederösterreich, Burgenland und Kärnten. Kuratiert vermittelt.", kaufen, preload="Images/hero-kaufen.webp", crumb="Suchen & Kaufen")
+page("kaufen.html","kaufen","Immobilie kaufen &amp; Suchauftrag · Iveria Immobilien","Aktuelle Immobilien in Wien und Niederösterreich. Kuratiert vermittelt.", kaufen, preload="Images/hero-kaufen.webp", crumb="Suchen & Kaufen")
 
 # =====================================================================
 # BAUTRÄGER
@@ -728,7 +728,7 @@ ueber = phero("Images/hero-ueber-uns.webp","Arbeitszimmer mit Ledersessel und B�
   </div>
 </section>
 
-''' + stats([obj_stat(80),(10,"+","10+","Jahre Erfahrung"),(3,"","3","Aktive Bauträgermandate"),(4,"","4","Bundesländer")], cls="warm") + f'''
+''' + stats([obj_stat(80),(10,"+","10+","Jahre Erfahrung"),(3,"","3","Aktive Bauträgermandate"),(2,"","2","Bundesländer")], cls="warm") + f'''
 <section class="pad">
   <div class="wrap">
     <div class="editorial">
@@ -964,7 +964,7 @@ llms = f"""# {cfg('firmenname')}
 
 """ + ("## Standorte\n\n" + "\n".join(f"- [{x['title']}]({x['url']}): {x['desc']}" for x in STANDORTE if _st_live(x)) + "\n\n" if any(_st_live(x) for x in STANDORTE) else "") + ("## Ratgeber\n\n" + "\n".join(f"- [{p['title']}]({p['url']}): {p['desc']}" for p in POSTS) + "\n\n" if POSTS else "") + """## Einzugsgebiet
 
-Wien, Niederösterreich, Burgenland und Kärnten.
+Wien und Niederösterreich.
 
 ## Kontakt
 

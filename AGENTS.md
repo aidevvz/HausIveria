@@ -38,5 +38,5 @@ Marktzahlen, Lagen und Objektarten nur von Gio bzw. aus angegebener Quelle, nie 
 
 Autor der Artikel ist zentral `ratgeber_autor` in `_build/site.json` (Giorgi Gorgodze, MA), das Feld `author` im Artikel nur bei Gastautoren setzen.
 
-Firmendaten (Name, E-Mail, Einzugsgebiet Wien, Niederösterreich, Burgenland, Kärnten, Öffnungszeiten) stehen in `_build/site.json`.
+Firmendaten (Name, E-Mail, Einzugsgebiet Wien und Niederösterreich, Öffnungszeiten) stehen in `_build/site.json`.
 Nichts erfinden, was dort oder auf der Website nicht steht: keine Adresse, Telefonnummer, Personennamen, Verkaufszahlen, Referenzen oder Kundenstimmen.

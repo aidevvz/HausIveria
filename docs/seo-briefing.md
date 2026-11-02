@@ -6,7 +6,7 @@ Stand: 1. November 2026 · für den SEO-Agent von Iveria Immobilien
 
 - **Unternehmen:** Iveria Immobilien e.U., Immobilienmakler. Ein Büro in **1120 Wien** (Grenze zu 1230 Liesing). Straße ist noch offen.
 - **Leistungen:** Verkauf, Vermietung, Bauträgervermarktung und Bewertung.
-- **Einzugsgebiet laut Website:** Wien, Niederösterreich, Burgenland, Kärnten. Der lokale Schwerpunkt für neue Inhalte ist Wien Süd und Niederösterreich Süd.
+- **Einzugsgebiet:** Wien und Niederösterreich (seit 02.11.2026). Der lokale Schwerpunkt ist Wien Süd und Niederösterreich Süd.
 - **Sprache und Markt:** Deutsch (de-AT), Österreich. Leser in der Sie-Form ansprechen.
 - **Status:** Die Gewerbeanmeldung und das Google-Unternehmensprofil sind noch ausständig. Deshalb bleiben alle Standortseiten Entwürfe (siehe Abschnitt 5).
 - **Rankings:** Google Österreich zeigte am 27.10.2026 noch kein Ranking. Die Sitemap wurde erst am 30.10.2026 eingereicht, Ergebnisse brauchen Wochen.
@@ -86,7 +86,6 @@ Auf allen Seiten gilt außerdem:
 - **Geplant:**
   - Tier 1: Baden, Wiener Neustadt, Klosterneuburg
   - Tier 2: St. Pölten, Tulln, Korneuburg
-  - Keine eigenen Seiten für Wiener Bezirke und Kärnten.
 - **Pflicht-Gerüst für jede Ortsseite:**
   - Die ersten fünf `##` haben einen festen Wortlaut, darunter jeweils zuerst eine Kurzantwort in 1–2 Sätzen.
   - Pflicht-Links: `/verkaufen.html`, `/bewertung.html`, `/ratgeber/maklerprovision-oesterreich.html`, `/ratgeber/immobilienertragsteuer-oesterreich.html`.

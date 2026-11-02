@@ -15,6 +15,10 @@
   "date": "2026-11-01",
   "hash": "dc7a7759a93e912311aa2b99969da80961210a93"
  },
+ "immobilienmakler-hietzing.html": {
+  "date": "2026-11-02",
+  "hash": "5b21be7dc237c32dd8fba4ef7668adf0adec7503"
+ },
  "immobilienmakler-klosterneuburg.html": {
   "date": "2026-11-01",
   "hash": "1abc2bc17901891b18d01830a6008cbda41ee22d"
@@ -23,13 +27,29 @@
   "date": "2026-11-01",
   "hash": "4993925dc70bec027cd9ca33f512e79e30ba2be5"
  },
+ "immobilienmakler-liesing.html": {
+  "date": "2026-11-02",
+  "hash": "57d45e938c5b9889abe7dfb0fb9095263ab0cad5"
+ },
+ "immobilienmakler-meidling.html": {
+  "date": "2026-11-02",
+  "hash": "43141c3222830b0e0206215147b2ca6805148add"
+ },
  "immobilienmakler-moedling.html": {
   "date": "2026-11-01",
   "hash": "18b2674953035c0bd3074bf631f8048ab70a8e40"
  },
  "immobilienmakler-niederoesterreich.html": {
-  "date": "2026-11-01",
-  "hash": "ef5a32cb31576dd01930d47f41c305e401381b16"
+  "date": "2026-11-02",
+  "hash": "8c7eaff530b33e103da51a0fc270a3a1d5789c6a"
+ },
+ "immobilienmakler-penzing.html": {
+  "date": "2026-11-02",
+  "hash": "0dc83c988a853d91407efd7cbcfe347c6cb7b843"
+ },
+ "immobilienmakler-rudolfsheim-fuenfhaus.html": {
+  "date": "2026-11-02",
+  "hash": "357451ecc328b8ed314fed96e7f869fe48a75775"
  },
  "immobilienmakler-st-poelten.html": {
   "date": "2026-11-01",
@@ -40,8 +60,12 @@
   "hash": "0029f9be039a1b5276198d0ee8e31823b0d08dc8"
  },
  "immobilienmakler-wien-umgebung-sued.html": {
-  "date": "2026-11-01",
-  "hash": "258bd85a35c04b593afdf9609cf14f77ad57c946"
+  "date": "2026-11-02",
+  "hash": "4885f85a102c161fb764de74d2a8e14a87f2e1ee"
+ },
+ "immobilienmakler-wien.html": {
+  "date": "2026-11-02",
+  "hash": "69086ade6b68190a963b79fc99b266bb98df4aaf"
  },
  "immobilienmakler-wiener-neustadt.html": {
   "date": "2026-11-01",
@@ -52,23 +76,23 @@
   "hash": "b17dd141b78f7b7bd3ab1fa842e45801a5f05e1d"
  },
  "index.html": {
-  "date": "2026-11-01",
-  "hash": "e4d2f5ddb71c013a78ef2e63a858da6d6ddf824e"
+  "date": "2026-11-02",
+  "hash": "d8931b8ce432938b931506d143baa73365a38ee8"
  },
  "kaufen.html": {
-  "date": "2026-11-01",
-  "hash": "87edb4b2985d5cd6ffc9c66311e9fbe9a2d08d66"
+  "date": "2026-11-02",
+  "hash": "f2a1e1716060d49879bfd846c5408c0468b4a7f9"
  },
  "kontakt.html": {
   "date": "2026-11-01",
   "hash": "d1ce511095030cdc8e25c4f581bf0453ba44e132"
  },
  "ueber-uns.html": {
-  "date": "2026-11-01",
-  "hash": "4feb2e5a02b22eb63fb8eb89e98a94938df2cf88"
+  "date": "2026-11-02",
+  "hash": "7e043adebc6367cc5641c1632d7befb07dd2a863"
  },
  "verkaufen.html": {
-  "date": "2026-11-01",
-  "hash": "5a409ee62eeef2dc6cd511155c3e4886054b0815"
+  "date": "2026-11-02",
+  "hash": "744c308c53bd4fa475a4d2ceddc3be57a3d05c1a"
  }
 }
