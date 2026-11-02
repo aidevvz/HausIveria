@@ -14,7 +14,7 @@ faq:
     a: "Unser Fokus liegt auf dem West- und Südwestgürtel, auf Anfrage sind wir aber auch darüber hinaus tätig. Für das südliche Wiener Umland in Niederösterreich führen wir eigene Standortseiten."
 seiten: []
 draft: false
-noindex: true
+noindex: false
 ---
 Iveria Immobilien ist in Wien zu Hause: Unser Büro liegt im 12. Bezirk Meidling, direkt an der Grenze zu Liesing. Von dort aus betreuen wir einen zusammenhängenden Gürtel im Westen und Südwesten der Stadt, vom dicht bebauten Gründerzeitviertel bis zur Villenlage am Wienerwald. Für jeden dieser Bezirke finden Sie oben eine eigene Seite mit Marktdaten, gefragten Lagen und dem Ablauf des Verkaufs.
 

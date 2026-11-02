@@ -28,7 +28,7 @@ faq:
 related: [immobilienmakler-moedling, immobilienmakler-meidling, immobilienertragsteuer-oesterreich]
 footer: false
 draft: false
-noindex: true
+noindex: false
 ---
 Liesing ist der flächengrößte Bezirk Wiens und einer der grünsten: Am Wienerwald liegen die begehrten Villenviertel Mauer, Rodaun und Kalksburg, daneben gibt es gewachsene Ortskerne in Atzgersdorf und Inzersdorf und große Neubaugebiete. Unser Büro liegt in 1120 direkt an der Bezirksgrenze, Liesing ist für uns das Grätzl nebenan. Diese Seite richtet sich an Eigentümer, die ihr Haus oder ihre Wohnung in Liesing verkaufen oder zuerst bewerten lassen möchten.
 

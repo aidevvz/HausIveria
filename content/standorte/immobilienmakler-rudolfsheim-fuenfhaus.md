@@ -28,7 +28,7 @@ faq:
 related: [immobilienmakler-penzing, immobilienmakler-meidling, immobilienertragsteuer-oesterreich]
 footer: false
 draft: false
-noindex: true
+noindex: false
 ---
 Rudolfsheim-Fünfhaus ist der dichteste und zugleich günstigste Bezirk im Westen Wiens: städtisch, lebendig und geprägt von Gründerzeit-Zinshäusern. Rund um die Reindorfgasse und die westliche Mariahilfer Straße hat eine spürbare Aufwertung eingesetzt. Häuser gibt es hier kaum, der Markt dreht sich um Altbau- und Anlegerwohnungen. Diese Seite richtet sich an Eigentümer, die ihre Immobilie in Rudolfsheim-Fünfhaus verkaufen oder zuerst bewerten lassen möchten.
 

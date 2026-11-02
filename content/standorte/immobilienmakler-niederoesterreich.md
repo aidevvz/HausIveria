@@ -27,6 +27,26 @@ Die gefragtesten Lagen für uns liegen entlang der Südbahn und der Thermenregio
 
 Jede Region hat ihren eigenen Markt: eine Villa am Wienerwaldrand folgt anderen Regeln als eine Neubauwohnung an der Bahn oder ein Weinbauernhaus in der Thermenregion. Deshalb behandeln wir jeden Ort einzeln, mit eigener Markteinschätzung statt pauschaler Durchschnittswerte.
 
+## Perchtoldsdorf
+
+Perchtoldsdorf, von vielen nur „Petersdorf“ genannt, grenzt unmittelbar an den Wiener Bezirk Liesing und zählt zu den begehrtesten Wohngemeinden im Süden. Der mittelalterliche Wehrturm, der Weinbau und die Heurigen prägen den Ort ebenso wie gepflegte Villenlagen am Wienerwald. Entsprechend hoch ist die Nachfrage nach Häusern und hochwertigen Wohnungen.
+
+## Brunn am Gebirge
+
+Brunn am Gebirge liegt zwischen Wien und Mödling am Fuß des Wienerwalds und hat sich in den letzten Jahren stark entwickelt. Der Ort verbindet gewachsene Wohnlagen mit Neubauprojekten und profitiert von der guten Anbindung über die Südbahn und die A2. Gefragt sind hier vor allem Familien, die Grün und Stadtnähe verbinden wollen.
+
+## Maria Enzersdorf
+
+Maria Enzersdorf schließt nördlich direkt an Mödling an und liegt malerisch am Wienerwald, überragt von der Burg Liechtenstein. Der Ort ist geprägt von ruhigen Villenlagen und viel Grün und zählt zu den gehobenen Adressen der Region. Die Nachfrage konzentriert sich auf Einfamilienhäuser und Villen in Hanglage.
+
+## Vösendorf
+
+Vösendorf liegt südlich der Wiener Stadtgrenze und ist vielen vor allem durch die Shopping City Süd ein Begriff. Neben dem starken Gewerbestandort gibt es gewachsene Wohnlagen, und die Anbindung über die Badner Bahn und die A2 ist ausgezeichnet. Das macht den Ort für Pendler und Anleger gleichermaßen attraktiv.
+
+## Gumpoldskirchen
+
+Gumpoldskirchen südlich von Mödling ist einer der bekanntesten Weinorte der Thermenregion, mit historischem Ortskern, Heurigen und Lagen am Weinberg. Der Ort ist klein, gehoben und begehrt, Immobilien kommen hier eher selten und oft diskret auf den Markt. Eine persönliche, vertrauliche Begleitung ist hier besonders wichtig.
+
 ## Was Iveria in Niederösterreich bietet
 
 Wir nehmen bewusst weniger Mandate an und betreuen jedes persönlich, mit einem festen Ansprechpartner, der die Termine vor Ort selbst wahrnimmt. Für Eigentümer außerhalb unseres Kerngebiets arbeiten wir mit ausgewählten lokalen Partnern zusammen, die Betreuung bleibt dabei bei uns.

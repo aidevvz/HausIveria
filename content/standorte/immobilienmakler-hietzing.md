@@ -28,7 +28,7 @@ faq:
 related: [immobilienmakler-penzing, immobilienmakler-meidling, immobilienertragsteuer-oesterreich]
 footer: false
 draft: false
-noindex: true
+noindex: false
 ---
 Hietzing ist eine der ersten Adressen Wiens: grün, ruhig und geprägt von Schönbrunn, dem Lainzer Tiergarten und den Villenvierteln in Ober St. Veit und Lainz. Der 13. Bezirk zählt zu den teuersten der Stadt, der Markt ist exklusiv und von viel Zurückhaltung geprägt. Diese Seite richtet sich an Eigentümer, die ihre Villa oder Wohnung in Hietzing verkaufen oder zuerst bewerten lassen möchten.
 
