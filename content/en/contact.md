@@ -13,7 +13,7 @@ service: false
 kontaktblock: true
 faq:
   - q: "Which languages can I speak with you?"
-    a: "English, German and Russian fluently, and also Georgian and French. Just write or call in whichever is easiest for you."
+    a: "English, German and Russian fluently, and also Georgian. Just write or call in whichever is easiest for you."
   - q: "What happens after I get in touch?"
     a: "We arrange a short, no-obligation first conversation to understand your situation, whether you want to buy, sell or simply find out what your property is worth. There is no cost and no commitment."
 draft: false

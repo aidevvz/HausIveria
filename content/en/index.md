@@ -13,7 +13,7 @@ service: false
 kontaktblock: false
 faq:
   - q: "Do you work with international and English-speaking clients?"
-    a: "Yes. A large part of our work is with international buyers, sellers and tenants in Vienna. We advise fluently in English, German and Russian, and also speak Georgian and French."
+    a: "Yes. A large part of our work is with international buyers, sellers and tenants in Vienna. We advise fluently in English, German and Russian, and also speak Georgian."
   - q: "Which areas do you cover?"
     a: "Our focus is the west and south-west of Vienna and the neighbouring part of Lower Austria, the area around our office in the 12th district. For other locations, just ask."
   - q: "Is the first consultation free?"
