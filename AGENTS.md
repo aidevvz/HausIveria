@@ -28,6 +28,12 @@ Für eine Freigabe vor Veröffentlichung: Branch + Pull Request statt Push auf `
 (H2-Gerüst, Pflicht-Links, Doorway-Schutz). Bis zur Freigabe durch Gio bleiben alle Standortseiten auf `draft: true` und `noindex: true`.
 Marktzahlen, Lagen und Objektarten nur von Gio bzw. aus angegebener Quelle, nie selbst befüllen.
 
+## Sprachversionen EN / RU
+
+**Regeln: [`content/en/README.md`](content/en/README.md).** Seiten unter `/en/` und `/ru/` aus `content/en/*.md` bzw. `content/ru/*.md`,
+UI-Texte in `_build/i18n/strings.<lang>.json`. Zuordnung zur deutschen Seite über `pendant:` (steuert hreflang und Sprachumschalter).
+Die deutsche Website bleibt unverändert.
+
 ## Nicht anfassen
 
 - Die generierten `*.html` (auch `immobilienmakler-*.html`), `ratgeber/`, `sitemap.xml`, `llms.txt` (werden bei jedem Build überschrieben)

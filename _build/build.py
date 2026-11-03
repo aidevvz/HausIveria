@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261102f"
+V = "20261103a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -26,11 +26,14 @@ LOGO = lambda stroke="currentColor": f'<svg viewBox="0 0 100 100" aria-hidden="t
 ARR = '<span class="ar">→</span>'
 exec(compile(open(os.path.join(HERE, 'ratgeber.py'), encoding='utf-8').read(), 'ratgeber.py', 'exec'))  # Ratgeber: lädt POSTS, definiert build_ratgeber()
 exec(compile(open(os.path.join(HERE, 'standorte.py'), encoding='utf-8').read(), 'standorte.py', 'exec'))  # Standorte: lädt STANDORTE, definiert build_standorte()
+exec(compile(open(os.path.join(HERE, 'i18n.py'), encoding='utf-8').read(), 'i18n.py', 'exec'))  # Sprachen EN/RU: lädt I18N, definiert build_i18n()
 ARCHLINE = '<svg class="arch-line" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66" style="stroke-width:1.4"/></svg>'
 
-def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head=''):
+def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head='',
+         html_lang='de-AT', og_locale='de_AT', alternates=()):
     pl = f'<link rel="preload" as="image" href="{preload}" fetchpriority="high">\n' if preload else ''
     can = f'<link rel="canonical" href="{canonical}">\n' if canonical else ''
+    can += ''.join(f'<link rel="alternate" hreflang="{h}" href="{u}">\n' for h, u in alternates)
     robots = '<meta name="robots" content="noindex, follow">\n' if noindex else ''
     og = ''
     if canonical:
@@ -46,7 +49,7 @@ def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og
         if article_times:
             art = f'<meta property="article:published_time" content="{article_times[0].isoformat()}">\n<meta property="article:modified_time" content="{article_times[1].isoformat()}">\n'
         og = f'''<meta property="og:type" content="{og_type}">
-<meta property="og:locale" content="de_AT">
+<meta property="og:locale" content="{og_locale}">
 <meta property="og:site_name" content="{cfg('markenname')}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -64,7 +67,7 @@ def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og
     if v.get('bing'): ver += f'<meta name="msvalidate.01" content="{v["bing"]}">\n'
     ld = ''.join(f'<script type="application/ld+json">{jsonld(x)}</script>\n' for x in schema)
     return f'''<!DOCTYPE html>
-<html lang="de-AT">
+<html lang="{html_lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -109,8 +112,8 @@ def org_schema():
     if cfg('google_business_profile_url'): o["sameAs"] = [cfg('google_business_profile_url')]
     return o
 
-def breadcrumb(name, url, crumbs=None):
-    items = [("Startseite", DOMAIN + '/')] + (crumbs or [(name, url)])
+def breadcrumb(name, url, crumbs=None, root=("Startseite", None)):
+    items = [(root[0], root[1] or DOMAIN + '/')] + (crumbs or [(name, url)])
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
 
@@ -124,7 +127,7 @@ def faq_schema(items):
     return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in items]}
 
-def header():
+def header(key=None):
     links = [("kaufen.html","kaufen","Objekte"),("verkaufen.html","verkaufen","Verkaufen"),("bautraeger.html","bautraeger","Bauträger"),("ueber-uns.html","ueber-uns","Über uns")] + [("STANDORTE","",""), ("ratgeber/","ratgeber","Ratgeber"), ("kontakt.html","kontakt","Kontakt")]
     nav = "\n".join(st_nav().rstrip("\n") if h == "STANDORTE" else f'      <a href="{h}" data-page="{p}">{t}</a>' for h,p,t in links if h != "STANDORTE" or st_nav())
     return f'''<header class="site-header" id="siteHeader">
@@ -133,7 +136,7 @@ def header():
       {LOGO()}
       <span class="brand-name">Iveria <small>Immobilien</small></span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menü</button>
+    {lang_switch(key, 'de', (DOMAIN + '/' if key == 'index.html' else f'{DOMAIN}/{key}') if key else None) if I18N_LANGS_LIVE else ''}<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menü</button>
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
 {nav}
       <div class="nav-extra" aria-hidden="true">
@@ -197,14 +200,22 @@ def tail(wa_wait=False):
 '''
 
 PAGES = []
+URL_ALT = {}
 def page(fname, pid, title, desc, main, preload=None, extra_before_header="", wa_wait=False, schema=(), crumb=None, noindex=False,
-         url_override=None, crumbs=None, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head='', org=True):
+         url_override=None, crumbs=None, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head='', org=True,
+         lang='de', alt_key=None):
     global FAQ_CURRENT
     url = url_override or (DOMAIN + '/' if fname == 'index.html' else f'{DOMAIN}/{fname}')
     sc = ([org_schema()] if org else []) + list(schema)
     if FAQ_CURRENT: sc.append(faq_schema(FAQ_CURRENT))
-    if crumb or crumbs: sc.append(breadcrumb(crumb, url, crumbs))
-    html = head(title, desc, preload, None if noindex else url, sc, noindex, og_type, og_image, og_image_alt, article_times, extra_head) + f'<body data-page="{pid}">\n' + extra_before_header + header() + '\n<main>\n' + main + '\n</main>\n\n' + FOOTER + '\n' + tail(wa_wait)
+    key = alt_key or fname
+    alternates = [] if noindex else i18n_alternates(key)
+    if crumb or crumbs: sc.append(breadcrumb(crumb, url, crumbs, root=("Startseite", None) if lang == 'de' else (STR[lang]['home'], _lang_url(lang, ''))))
+    S = STR[lang]
+    chrome = (header(key), FOOTER, tail(wa_wait)) if lang == 'de' else (header_i18n(lang, key, url), footer_i18n(lang), tail_i18n(lang, wa_wait))
+    html = head(title, desc, preload, None if noindex else url, sc, noindex, og_type, og_image, og_image_alt, article_times, extra_head,
+                S['html_lang'], S['og_locale'], alternates) + f'<body data-page="{pid}">\n' + extra_before_header + chrome[0] + '\n<main>\n' + main + '\n</main>\n\n' + chrome[1] + '\n' + chrome[2]
+    if alternates: URL_ALT[url] = alternates
     FAQ_CURRENT = []
     if not cfg('formulare_aktiv'):
         # Formulare vorübergehend aus (Netlify Forms nicht aktiv): statt Formular ein E-Mail-Hinweis
@@ -921,6 +932,7 @@ build_ratgeber()
 for _f in glob.glob(os.path.join(OUT, 'ratgeber', '*.html')):   # nicht mehr veröffentlichte Artikel entfernen
     if os.path.basename(_f) != 'index.html' and os.path.basename(_f)[:-5] not in {p['slug'] for p in POSTS}: os.remove(_f); print('  entfernt', _f)
 build_standorte()
+build_i18n()
 
 # lastmod: Datum der letzten inhaltlichen Änderung (Hash des <main>-Inhalts, gemerkt in _build/lastmod.json).
 # Ratgeber-Artikel nehmen updated/date aus dem Front-Matter, die Übersicht das neueste Artikeldatum.
@@ -940,12 +952,14 @@ PRIO = {'index.html': ('weekly', '1.0'), 'verkaufen.html': ('monthly', '0.9'), '
 PRIO['ratgeber/index.html'] = ('weekly', '0.8')
 urls = []
 for fname, url, h in PAGES:
-    cf, pr = PRIO.get(fname, ('monthly', '0.6') if fname.startswith('ratgeber/') else ('monthly', '0.8') if fname[:-5] in ST_BY else (None, None))
+    cf, pr = PRIO.get(fname, ('monthly', '0.6') if fname.startswith('ratgeber/') else ('monthly', '0.8') if fname[:-5] in ST_BY else ('monthly', '0.7') if fname.split('/')[0] in I18N_LANGS else (None, None))
     if not cf: continue
-    urls.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{lastmod(fname, h)}</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
+    alt = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{hl}" href="{u}"/>' for hl, u in URL_ALT.get(url, []))
+    urls.append(f'  <url>\n    <loc>{url}</loc>{alt}\n    <lastmod>{lastmod(fname, h)}</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
 try: json.dump(LM, open(LM_PATH, 'w', encoding='utf-8'), indent=1, ensure_ascii=False, sort_keys=True)
 except Exception: pass
-open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n')
+XNS = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' if URL_ALT else ''
+open(os.path.join(OUT, 'sitemap.xml'), 'w').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"{XNS}>\n' + '\n'.join(urls) + '\n</urlset>\n')
 print('geschrieben sitemap.xml', len(urls), 'URLs')
 
 # =====================================================================
