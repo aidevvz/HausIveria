@@ -27,9 +27,9 @@ Buying or selling a home in a foreign country is daunting when you don't speak t
 
 We help owners sell, buyers find the right home, and everyone understand what a property is really worth. Whether you are relocating to Vienna, investing from abroad, or selling an apartment you have owned for years, you get one dedicated contact from the first call to the handover of the keys.
 
-- [Buy a home in Vienna](/en/buy.html) — from the search to the signing, with the local knowledge and the language you need.
-- [Sell your property](/en/sell.html) — honest pricing, careful marketing, a calm and professional process.
-- [Property valuation](/en/valuation.html) — a free, no-obligation assessment of what your home is worth today.
+- [Buy a home in Vienna](/en/buy.html): from the search to the signing, with the local knowledge and the language you need.
+- [Sell your property](/en/sell.html): honest pricing, careful marketing, a calm and professional process.
+- [Property valuation](/en/valuation.html): a free, no-obligation assessment of what your home is worth today.
 
 ## Why Iveria
 

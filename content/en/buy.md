@@ -39,4 +39,4 @@ If you are buying from outside the EU, or simply want to understand the taxes an
 
 Beyond the price, expect roughly 9 to 12 percent in incidental costs: property transfer tax of 3.5 percent, land register registration of 1.1 percent, the notary or lawyer who draws up and settles the contract, and the agent's commission where it applies. We lay out the full number for your specific purchase before you make any commitment.
 
-Ready to start? Tell us what you are looking for and we'll do the rest — [get in touch](/en/contact.html). If you already own a property and are weighing a sale too, our [valuation](/en/valuation.html) is a good first step.
+Ready to start? Tell us what you are looking for and we'll do the rest. [Get in touch](/en/contact.html). If you already own a property and are weighing a sale too, our [valuation](/en/valuation.html) is a good first step.

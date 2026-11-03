@@ -44,7 +44,7 @@ Der Stichtag ist der 31. März 2002. Danach entscheidet sich, ob die Steuer auf 
 
 ## Was ändert sich 2027 für Altvermögen?
 
-Ab dem 1. Jänner 2027 wird der Verkauf von Altvermögen teurer. Das Budgetbegleitgesetz 2027–2028 senkt die pauschalen Anschaffungskosten für Altgrundstücke, der Steuersatz von 30 Prozent bleibt gleich, der steuerpflichtige Anteil steigt aber ([BMF](https://www.bmf.gv.at/rechtsnews/steuern-rechtsnews/neue-gesetze/2026/budgetbegleitgesetz-2027-und-2028-teil-steuern.html)).
+Ab dem 1. Jänner 2027 wird der Verkauf von Altvermögen teurer. Das Budgetbegleitgesetz 2027-2028 senkt die pauschalen Anschaffungskosten für Altgrundstücke, der Steuersatz von 30 Prozent bleibt gleich, der steuerpflichtige Anteil steigt aber ([BMF](https://www.bmf.gv.at/rechtsnews/steuern-rechtsnews/neue-gesetze/2026/budgetbegleitgesetz-2027-und-2028-teil-steuern.html)).
 
 Konkret sinkt die Pauschale bei Altgrundstücken von 86 auf 80 Prozent, die effektive Belastung steigt damit von 4,2 auf 6 Prozent des Erlöses. Bei umgewidmetem Altvermögen sinkt die Pauschale von 40 auf 30 Prozent, effektiv von 18 auf 21 Prozent des Grundanteils. Maßgeblich ist der Tag des Kaufvertrags, also des Verpflichtungsgeschäfts: Wird er nach dem 31.12.2026 abgeschlossen, gelten die neuen Sätze, unabhängig von Übergabe und Grundbucheintragung.
 
