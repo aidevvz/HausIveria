@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261103a"
+V = "20261104a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -27,6 +27,7 @@ ARR = '<span class="ar">→</span>'
 exec(compile(open(os.path.join(HERE, 'ratgeber.py'), encoding='utf-8').read(), 'ratgeber.py', 'exec'))  # Ratgeber: lädt POSTS, definiert build_ratgeber()
 exec(compile(open(os.path.join(HERE, 'standorte.py'), encoding='utf-8').read(), 'standorte.py', 'exec'))  # Standorte: lädt STANDORTE, definiert build_standorte()
 exec(compile(open(os.path.join(HERE, 'i18n.py'), encoding='utf-8').read(), 'i18n.py', 'exec'))  # Sprachen EN/RU: lädt I18N, definiert build_i18n()
+exec(compile(open(os.path.join(HERE, 'bewertungstool.py'), encoding='utf-8').read(), 'bewertungstool.py', 'exec'))  # Bewertungs-Assistent, definiert build_bewertungstool()
 ARCHLINE = '<svg class="arch-line" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66" style="stroke-width:1.4"/></svg>'
 
 def head(title, desc, preload=None, canonical=None, schema=(), noindex=False, og_type='website', og_image=None, og_image_alt=None, article_times=None, extra_head='',
@@ -707,6 +708,10 @@ bewertung = phero("Images/hero-bewertung.webp","Gründerzeitfassade mit schmiede
   </div>
 </section>
 '''
+if cfg('bewertungstool_auf_bewertungsseite'):
+    # Assistent ersetzt das alte Schnellbewertungs-Formular (erst bei Go-live einschalten, siehe AGENTS.md)
+    bewertung = re.sub(r'<section id="schnellbewertung".*?</section>\n', lambda m: bewertungstool_html(), bewertung, count=1, flags=re.S)
+    bewertung = bewertung.replace('href="#schnellbewertung"', 'href="#bewertungstool"')
 page("bewertung.html","bewertung","Immobilienbewertung Wien, online kostenlos · Iveria Immobilien","Marktwerteinschätzung Ihrer Immobilie. Kostenfrei online oder mit persönlichem Termin vor Ort.", bewertung, preload="Images/hero-bewertung.webp", crumb="Bewertung",
      schema=[service("Immobilienbewertung", "Schnell, persönlich oder vor Ort. Wir bieten zwei Wege zur ehrlichen Marktwerteinschätzung. Wählen Sie, was zu Ihnen passt.", f"{DOMAIN}/bewertung.html",
         offers=[{"@type":"Offer","name":"Schnellbewertung online","description":"Kostenfrei und unverbindlich.","price":"0","priceCurrency":"EUR"},
@@ -933,6 +938,7 @@ for _f in glob.glob(os.path.join(OUT, 'ratgeber', '*.html')):   # nicht mehr ver
     if os.path.basename(_f) != 'index.html' and os.path.basename(_f)[:-5] not in {p['slug'] for p in POSTS}: os.remove(_f); print('  entfernt', _f)
 build_standorte()
 build_i18n()
+build_bewertungstool()
 
 # lastmod: Datum der letzten inhaltlichen Änderung (Hash des <main>-Inhalts, gemerkt in _build/lastmod.json).
 # Ratgeber-Artikel nehmen updated/date aus dem Front-Matter, die Übersicht das neueste Artikeldatum.

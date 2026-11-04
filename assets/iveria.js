@@ -42,6 +42,109 @@
     f.addEventListener('submit', function(){ var b = $("button[type='submit']", f); if(b){ b.disabled = true; b.textContent = 'wird gesendet …'; } });
   });
 
+  /* ---------- Bewertungs-Assistent (mehrstufig) ---------- */
+  (function(){
+    var f = $('form.bw'); if(!f) return;
+    var panel = f.parentNode, prog = $('.bw-progress', panel), done = $('.bw-done', panel);
+    var steps = $$('.bw-step', f), back = $('.bw-back', f), next = $('.bw-next', f), sub = $('.bw-submit', f), status = $('.bw-status', f);
+    var cur = 0;
+    f.classList.add('js-on'); prog.hidden = false;
+    steps.forEach(function(s){ var h = $('.bw-h', s); if(h) h.setAttribute('tabindex', '-1'); });
+    function art(){ var r = $('input[name="Objektart"]:checked', f); return r ? r.value : ''; }
+    function setOff(box, off){ $$('input,textarea,select', box).forEach(function(el){ el.disabled = off; }); }
+    function apply(){
+      var a = art();
+      setOff(f, false);
+      $$('.bw-grp', f).forEach(function(g){ var on = !a || g.getAttribute('data-for').split('|').indexOf(a) > -1; g.hidden = !on; if(!on) setOff(g, true); });
+      steps.forEach(function(s){ var off = !!a && s.getAttribute('data-skip') === a; s.dataset.off = off ? '1' : ''; if(off) setOff(s, true); });
+    }
+    function active(){ return steps.filter(function(s){ return !s.dataset.off; }); }
+    function show(i, dir){
+      var list = active(); cur = Math.max(0, Math.min(i, list.length - 1));
+      steps.forEach(function(s){ s.classList.remove('on'); });
+      var s = list[cur]; s.classList.add('on');
+      $('.bw-cur', prog).textContent = 'Schritt ' + (cur + 1);
+      $('.bw-tot', prog).textContent = list.length;
+      $('.bw-name', prog).textContent = s.getAttribute('data-step');
+      $('.bw-bar i', prog).style.setProperty('--p', (cur + 1) / list.length);
+      back.hidden = cur === 0; next.hidden = cur === list.length - 1; sub.hidden = !next.hidden;
+      if(dir){
+        if(window.gsap && !reduce) gsap.fromTo(s, {opacity:0, x:18 * dir}, {opacity:1, x:0, duration:.5, ease:'power3.out', clearProps:'transform,opacity'});
+        var top = panel.getBoundingClientRect().top;
+        if(top < 60 || top > innerHeight * .4) window.scrollTo({top: scrollY + top - 84, behavior: reduce ? 'auto' : 'smooth'});
+        var h = $('.bw-h', s); if(h) h.focus({preventScroll:true});
+      }
+    }
+    function msg(el){
+      var v = el.validity;
+      if(el.type === 'checkbox') return 'Bitte bestätigen Sie die Einwilligung, damit wir Ihre Anfrage bearbeiten dürfen.';
+      if(el.type === 'radio') return 'Bitte wählen Sie eine Option.';
+      if(v.valueMissing) return 'Bitte ausfüllen.';
+      if(el.type === 'email') return 'Bitte eine gültige E-Mail-Adresse angeben, z. B. name@beispiel.at.';
+      if(el.type === 'number') return v.rangeUnderflow ? 'Bitte eine positive Zahl angeben.' : 'Bitte nur eine Zahl angeben.';
+      if(el.name === 'PLZ') return 'Bitte eine vierstellige PLZ angeben.';
+      return 'Bitte prüfen Sie diese Angabe.';
+    }
+    function errBox(el){ var q = el.closest('.bw-q') || el.closest('.bw-f'); return q ? $('.bw-err', q) : null; }
+    function mark(el, text){
+      var q = el.closest('.bw-q'), e = errBox(el);
+      var els = q ? $$('input', q) : [el];
+      els.forEach(function(x){ if(text) x.setAttribute('aria-invalid', 'true'); else x.removeAttribute('aria-invalid'); });
+      if(q) q.classList.toggle('bad', !!text);
+      if(e){ e.textContent = text || ''; e.hidden = !text; }
+    }
+    function check(step){
+      var first = null;
+      $$('.bw-q[data-req], .bw-f[data-req]', step).forEach(function(box){ var x = $('input,textarea', box); if(x && !x.disabled) $$('input,textarea', box).forEach(function(el){ el.required = true; }); });
+      var seen = {};
+      $$('input:not([type=hidden]):not([name="bot-field"]),textarea', step).forEach(function(el){
+        if(el.disabled || el.closest('[hidden]')) return;
+        if(el.type === 'radio'){ if(seen[el.name]) return; seen[el.name] = 1; }
+        var bad = el.type === 'radio' ? (el.required && !$('input[name="' + el.name + '"]:checked:not(:disabled)', el.closest('.bw-q'))) : !el.checkValidity();
+        mark(el, bad ? msg(el) : '');
+        if(bad && !first) first = el;
+      });
+      return first;
+    }
+    function go(dir){
+      if(dir > 0){ var bad = check(active()[cur]); if(bad){ bad.focus(); return; } }
+      show(cur + dir, dir);
+    }
+    next.addEventListener('click', function(){ go(1); });
+    back.addEventListener('click', function(){ go(-1); });
+    f.addEventListener('input', function(e){ if(e.target.getAttribute('aria-invalid')) mark(e.target, e.target.type === 'radio' || e.target.checkValidity() ? '' : msg(e.target)); });
+    f.addEventListener('change', function(e){
+      var t = e.target;
+      if(t.getAttribute('aria-invalid')) mark(t, '');
+      if(t.name === 'Objektart'){ apply(); show(cur); setTimeout(function(){ if(cur === 0) go(1); }, reduce ? 0 : 260); }
+    });
+    f.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' && e.target.tagName === 'INPUT' && e.target.type !== 'checkbox' && !next.hidden){ e.preventDefault(); go(1); }
+    });
+    function finish(preview){
+      f.hidden = true; prog.hidden = true; done.hidden = false;
+      $('.bw-done-vorschau', done).hidden = !preview;
+      if(window.gsap && !reduce) gsap.from(done, {opacity:0, y:14, duration:.7, ease:'power3.out', clearProps:'transform,opacity'});
+      done.focus();
+    }
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!next.hidden){ go(1); return; }
+      var list = active();
+      for(var i = 0; i < list.length; i++){ var bad = check(list[i]); if(bad){ if(i !== cur) show(i, i < cur ? -1 : 1); bad.focus(); return; } }
+      if(f.getAttribute('data-live') !== '1'){ finish(true); return; }
+      var label = sub.innerHTML; sub.disabled = true; sub.textContent = 'wird gesendet …'; status.hidden = true;
+      fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); finish(false); })
+        .catch(function(){
+          sub.disabled = false; sub.innerHTML = label; var m = f.getAttribute('data-mail');
+          status.innerHTML = 'Das hat leider nicht geklappt. Bitte versuchen Sie es noch einmal' + (m ? ' oder schreiben Sie uns an <a href="mailto:' + m + '">' + m + '</a>.' : '.');
+          status.hidden = false;
+        });
+    });
+    apply(); show(0);
+  })();
+
   /* ---------- FAQ weich öffnen ---------- */
   $$('.faq details').forEach(function(d){
     var s = $('summary', d), a = $('.ans', d);

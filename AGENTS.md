@@ -34,6 +34,14 @@ Marktzahlen, Lagen und Objektarten nur von Gio bzw. aus angegebener Quelle, nie 
 UI-Texte in `_build/i18n/strings.<lang>.json`. Zuordnung zur deutschen Seite über `pendant:` (steuert hreflang und Sprachumschalter).
 Die deutsche Website bleibt unverändert.
 
+## Bewertungs-Assistent (Lead-Formular)
+
+Mehrstufiges Formular unter `/bewertung-anfragen.html` (noindex, nicht in der Sitemap), Code in `_build/bewertungstool.py`,
+Netlify-Formularname `bewertung-anfrage`. Texte in `BW_TEXT` sind Entwürfe und werden mit Gio abgestimmt.
+Solange `formulare_aktiv` in `site.json` false ist, läuft es im Vorschaumodus (nichts wird übertragen).
+`bewertungstool_auf_bewertungsseite: true` ersetzt das alte Formular auf `bewertung.html` (erst zum Go-live, Absprache mit Gio).
+Nicht auf die Startseite, in Menü oder Sitemap verlinken, solange die Route noindex ist.
+
 ## Nicht anfassen
 
 - Die generierten `*.html` (auch `immobilienmakler-*.html`), `ratgeber/`, `sitemap.xml`, `llms.txt` (werden bei jedem Build überschrieben)
