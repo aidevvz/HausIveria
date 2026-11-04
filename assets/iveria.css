@@ -717,3 +717,4 @@ a.prop,.prop[data-cursor]{cursor:pointer}
 @media (max-width:980px){.bw-steps{display:none}}
 @media (prefers-reduced-motion:reduce){.bw-icons .bw-opt input:checked + span svg *{animation:none}.bw-icons .bw-opt:hover span{transform:none}}
 @media (max-width:560px){.bw-panel::before{left:0;right:0}}
+.btn{text-align:center}

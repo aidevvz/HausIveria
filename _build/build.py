@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261104b"
+V = "20261104c"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -645,7 +645,7 @@ bewertung = phero("Images/hero-bewertung.webp","Gründerzeitfassade mit schmiede
           <li><strong>Kostenfrei und unverbindlich</strong>Keine versteckten Gebühren, keine Verkaufsverpflichtung.</li>
           <li><strong>Spannweite, keine Punktschätzung</strong>Mit Empfehlung zum nächsten Schritt.</li>
         </ul>
-        <a href="#schnellbewertung" class="link">Formular ausfüllen <span class="ar">↓</span></a>
+        <div class="btns">{BTN("bewertung-anfragen.html","Jetzt kostenlose Bewertung anfragen →","solid")}</div>
       </div>
     </div>
     <div class="editorial reverse">
@@ -667,35 +667,13 @@ bewertung = phero("Images/hero-bewertung.webp","Gründerzeitfassade mit schmiede
 
 <section id="schnellbewertung" class="dark pad">
   <div class="wrap-narrow">
-    <div style="text-align:center;margin-bottom:5rem">
+    <div style="text-align:center;margin-bottom:3rem">
       <p class="eyebrow">Schnellbewertung</p>
       <h2 class="h-xl" data-split style="margin:1.4rem auto 1.6rem;max-width:18ch">Erzählen Sie uns von Ihrer <em>Immobilie</em>.</h2>
       <p class="lead" style="margin:0 auto">Je genauer Ihre Angaben, desto präziser unsere Einschätzung. Wir melden uns innerhalb von 48 Stunden.</p>
     </div>
-    <form class="form" data-form="bewertung" name="bewertung" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" data-rise>
-      <input type="hidden" name="form-name" value="bewertung">
-      <div class="hp" aria-hidden="true"><label>Nicht ausfüllen <input name="bot-field" tabindex="-1" autocomplete="off"></label></div>
-      <div class="frow">
-        <div><label for="b-name">Name *</label><input type="text" id="b-name" name="name" autocomplete="name" required></div>
-        <div><label for="b-email">E-Mail *</label><input type="email" id="b-email" name="email" autocomplete="email" required></div>
-      </div>
-      <div class="frow">
-        <div><label for="b-tel">Telefon</label><input type="tel" id="b-tel" name="telefon" autocomplete="tel"></div>
-        <div><label for="b-typ">Objekttyp *</label><select id="b-typ" name="typ" required><option>Wohnung</option><option>Einfamilienhaus</option><option>Doppelhaushälfte</option><option>Reihenhaus</option><option>Mehrparteienhaus</option><option>Anlage</option><option>Grundstück</option><option>Gewerbe</option></select></div>
-      </div>
-      <div class="frow three">
-        <div><label for="b-adresse">Adresse / PLZ *</label><input type="text" id="b-adresse" name="adresse" required placeholder="1010 Wien"></div>
-        <div><label for="b-flaeche">Wohnfläche (m²) *</label><input type="number" id="b-flaeche" name="flaeche" required></div>
-        <div><label for="b-zimmer">Zimmer</label><input type="number" id="b-zimmer" name="zimmer"></div>
-      </div>
-      <div class="frow">
-        <div><label for="b-bj">Baujahr</label><input type="number" id="b-bj" name="baujahr" placeholder="1995"></div>
-        <div><label for="b-zustand">Zustand</label><select id="b-zustand" name="zustand"><option>Erstbezug / neuwertig</option><option>Sehr gut</option><option>Gut</option><option>Sanierungsbedürftig</option><option>Abbruchhaus / Grundstück</option></select></div>
-      </div>
-      <div><label for="b-besonderheiten">Besonderheiten</label><textarea id="b-besonderheiten" name="besonderheiten" placeholder="Balkon, Terrasse, Lift, Tiefgarage, Garten, Energieklasse, kürzlich renoviert, Denkmalschutz, Vermietung"></textarea></div>
-      <p class="note">{PRIV} * = Pflichtfeld</p>
-      <button type="submit" class="btn solid">Bewertung anfordern →</button>
-    </form>
+    <div class="btns" style="justify-content:center" data-rise>{BTN("bewertung-anfragen.html","Jetzt kostenlose Bewertung anfragen →","solid")}</div>
+    <p class="note" style="text-align:center;margin-top:1.6rem;color:rgba(250,250,247,.55)">Schritt für Schritt in etwa drei Minuten. Unverbindlich, kein Maklerauftrag.</p>
   </div>
 </section>
 
