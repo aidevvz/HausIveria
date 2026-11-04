@@ -15,7 +15,6 @@ BW_TEXT = {  # ENTWURF, mit Gio abzustimmen
     'h1': 'Was ist Ihre Immobilie <em>wert</em>?',
     'lead': 'Ein paar Fragen, etwa drei Minuten. Danach sieht sich Giorgi Gorgodze Ihre Angaben persönlich an und meldet sich mit einer ehrlichen Einschätzung. Kein Auftrag, keine Verpflichtung.',
     'trust': ['Unverbindlich &amp; kostenlos', 'Antwort i. d. R. innerhalb von 24&nbsp;h', 'Ihre Daten werden vertraulich behandelt'],
-    'eigentum_hint': 'Wir bewerten ausschließlich Eigentum, keine Genossenschafts- oder Mietobjekte.',
     'lage_hint': 'Die genaue Adresse hilft uns bei der Einschätzung der Mikrolage, ist aber optional.',
     'consent': 'Ich bin damit einverstanden, dass Iveria Immobilien meine Angaben zur Erstellung einer unverbindlichen Immobilienbewertung verarbeitet und mich zu diesem Zweck kontaktiert. Die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> habe ich gelesen.',
     'submit': 'Unverbindliche Bewertung anfragen',
@@ -90,8 +89,7 @@ def bewertungstool_html(standalone=False):
     W, H, G, GEW = 'Wohnung', 'Haus', 'Grundstück', ['Gewerbeobjekt', 'Anlageobjekt / Zinshaus']
     schritte = [
         ('Objektart', 'Um welche Immobilie geht es?', None,
-         bw_wahl('Objektart', 'Objektart', list(_BW_ICON), req=True, kacheln=True, icons=True)
-         + f'<p class="bw-hint">{T["eigentum_hint"]}</p>'),
+         bw_wahl('Objektart', 'Objektart', list(_BW_ICON), req=True, kacheln=True, icons=True)),
         ('Lage', 'Wo liegt die Immobilie?', None,
          '<div class="bw-row">'
          + bw_feld('Bezirk_Ort', 'Bezirk oder Ort', req=True, attrs=' list="bw-orte" autocomplete="off" placeholder="z. B. Wien 12., Meidling oder Mödling"', breit=True)
