@@ -47,8 +47,19 @@
     var f = $('form.bw'); if(!f) return;
     var panel = f.parentNode, prog = $('.bw-progress', panel), done = $('.bw-done', panel);
     var steps = $$('.bw-step', f), back = $('.bw-back', f), next = $('.bw-next', f), sub = $('.bw-submit', f), status = $('.bw-status', f);
-    var cur = 0;
-    f.classList.add('js-on'); prog.hidden = false;
+    var cur = 0, far = 0, side = $('.bw-steps'), sum = $('.bw-sum', prog);
+    f.classList.add('js-on'); prog.hidden = false; if(side) side.hidden = false;
+    function val(n){ var el = $('[name="' + n + '"]:checked:not(:disabled)', f) || $('input[name="' + n + '"]:not([type=radio]):not(:disabled)', f); return el && el.value ? el.value : ''; }
+    function summary(){
+      var a = val('Objektart'), o = val('Bezirk_Ort'), m = val('Wohnflaeche_m2') || val('Nutzflaeche_m2') || val('Grundstuecksflaeche_m2');
+      var parts = [a, o, m ? m + ' m²' : ''].filter(Boolean);
+      sum.innerHTML = cur > 0 ? parts.map(function(p){ var d = document.createElement('span'); d.textContent = p; return d.outerHTML; }).join('') : '';
+    }
+    if(side) side.addEventListener('click', function(e){
+      var li = e.target.closest('li'); if(!li || li.querySelector('button').disabled) return;
+      var i = active().indexOf($('.bw-step[data-step="' + li.getAttribute('data-key') + '"]', f));
+      if(i > -1 && i < cur) show(i, -1);
+    });
     steps.forEach(function(s){ var h = $('.bw-h', s); if(h) h.setAttribute('tabindex', '-1'); });
     function art(){ var r = $('input[name="Objektart"]:checked', f); return r ? r.value : ''; }
     function setOff(box, off){ $$('input,textarea,select', box).forEach(function(el){ el.disabled = off; }); }
@@ -67,6 +78,16 @@
       $('.bw-tot', prog).textContent = list.length;
       $('.bw-name', prog).textContent = s.getAttribute('data-step');
       $('.bw-bar i', prog).style.setProperty('--p', (cur + 1) / list.length);
+      far = Math.max(far, cur);
+      if(side) $$('li', side).forEach(function(li){
+        var st = $('.bw-step[data-step="' + li.getAttribute('data-key') + '"]', f), k = list.indexOf(st);
+        li.hidden = k < 0; li.className = k === cur ? 'on' : (k > -1 && k < cur ? 'ok' : '');
+        if(k === cur) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+        $('button', li).disabled = !(k > -1 && k < cur);
+        $('.bw-sn', li).textContent = ('0' + (k + 1)).slice(-2);
+      });
+      $('.bw-n', s).textContent = ('0' + (cur + 1)).slice(-2);
+      summary();
       back.hidden = cur === 0; next.hidden = cur === list.length - 1; sub.hidden = !next.hidden;
       if(dir){
         if(window.gsap && !reduce) gsap.fromTo(s, {opacity:0, x:18 * dir}, {opacity:1, x:0, duration:.5, ease:'power3.out', clearProps:'transform,opacity'});
@@ -122,7 +143,7 @@
       if(e.key === 'Enter' && e.target.tagName === 'INPUT' && e.target.type !== 'checkbox' && !next.hidden){ e.preventDefault(); go(1); }
     });
     function finish(preview){
-      f.hidden = true; prog.hidden = true; done.hidden = false;
+      f.hidden = true; prog.hidden = true; done.hidden = false; if(side) $$('li', side).forEach(function(li){ if(!li.hidden) { li.className = 'ok'; $('button', li).disabled = true; } });
       $('.bw-done-vorschau', done).hidden = !preview;
       if(window.gsap && !reduce) gsap.from(done, {opacity:0, y:14, duration:.7, ease:'power3.out', clearProps:'transform,opacity'});
       done.focus();

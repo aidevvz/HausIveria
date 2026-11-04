@@ -15,6 +15,7 @@ BW_TEXT = {  # ENTWURF, mit Gio abzustimmen
     'h1': 'Was ist Ihre Immobilie <em>wert</em>?',
     'lead': 'Ein paar Fragen, etwa drei Minuten. Danach sieht sich Giorgi Gorgodze Ihre Angaben persönlich an und meldet sich mit einer ehrlichen Einschätzung. Kein Auftrag, keine Verpflichtung.',
     'trust': ['Unverbindlich &amp; kostenlos', 'Antwort i. d. R. innerhalb von 24&nbsp;h', 'Ihre Daten werden vertraulich behandelt'],
+    'eigentum_hint': 'Wir bewerten ausschließlich Eigentum, keine Genossenschafts- oder Mietobjekte.',
     'lage_hint': 'Die genaue Adresse hilft uns bei der Einschätzung der Mikrolage, ist aber optional.',
     'consent': 'Ich bin damit einverstanden, dass Iveria Immobilien meine Angaben zur Erstellung einer unverbindlichen Immobilienbewertung verarbeitet und mich zu diesem Zweck kontaktiert. Die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> habe ich gelesen.',
     'submit': 'Unverbindliche Bewertung anfragen',
@@ -89,7 +90,8 @@ def bewertungstool_html(standalone=False):
     W, H, G, GEW = 'Wohnung', 'Haus', 'Grundstück', ['Gewerbeobjekt', 'Anlageobjekt / Zinshaus']
     schritte = [
         ('Objektart', 'Um welche Immobilie geht es?', None,
-         bw_wahl('Objektart', 'Objektart', list(_BW_ICON), req=True, kacheln=True, icons=True)),
+         bw_wahl('Objektart', 'Objektart', list(_BW_ICON), req=True, kacheln=True, icons=True)
+         + f'<p class="bw-hint">{T["eigentum_hint"]}</p>'),
         ('Lage', 'Wo liegt die Immobilie?', None,
          '<div class="bw-row">'
          + bw_feld('Bezirk_Ort', 'Bezirk oder Ort', req=True, attrs=' list="bw-orte" autocomplete="off" placeholder="z. B. Wien 12., Meidling oder Mödling"', breit=True)
@@ -105,8 +107,7 @@ def bewertungstool_html(standalone=False):
              + '<div class="bw-row">' + bw_feld('Freiflaeche', 'Balkon, Loggia, Terrasse', attrs=' placeholder="z. B. Balkon 6 m²"')
              + bw_feld('Keller_Abstellraum', 'Keller oder Abstellraum', attrs=' placeholder="z. B. Kellerabteil"')
              + bw_feld('Parken', 'Parkplatz, Garage, Tiefgarage', attrs=' placeholder="z. B. TG-Platz"')
-             + bw_zahl('Betriebskosten_monatlich_EUR', 'Betriebskosten monatlich', einheit='€') + '</div>'
-             + bw_wahl('Rechtsform', 'Eigentum, Genossenschaft oder Miete', ['Eigentum', 'Genossenschaft', 'Miete'], kacheln=True))
+             + bw_zahl('Betriebskosten_monatlich_EUR', 'Betriebskosten monatlich', einheit='€') + '</div>')
          + _bw_grp([H], bw_wahl('Haustyp', 'Haustyp', ['Freistehend', 'Doppelhaushälfte', 'Reihenhaus'], req=True, kacheln=True)
              + '<div class="bw-row">' + bw_zahl('Wohnflaeche_m2', 'Wohnfläche', True, 'm²') + bw_zahl('Grundstuecksflaeche_m2', 'Grundstücksfläche', True, 'm²')
              + bw_zahl('Zimmer', 'Zimmer', True, mn=1, step='0.5') + bw_feld('Baujahr', 'Baujahr', req=True, attrs=' placeholder="z. B. 1985"')
@@ -145,6 +146,7 @@ def bewertungstool_html(standalone=False):
         <legend class="bw-h"><span class="bw-n">{k:02d}</span> {h}</legend>
         {body}
       </fieldset>''')
+    nav = ''.join(f'<li data-key="{key}"{" data-skip=" + chr(34) + _html.escape(ohne) + chr(34) if ohne else ""}><button type="button" disabled><span class="bw-sn">{k:02d}</span><span class="bw-st">{key}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg></button></li>' for k, (key, h, ohne, body) in enumerate(schritte, 1))
     trust = ''.join(f'<li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>{t}</li>' for t in T['trust'])
     hx = 'h1' if standalone else 'h2'
     return f'''<section class="bw-sec pad" id="bewertungstool">
@@ -153,12 +155,14 @@ def bewertungstool_html(standalone=False):
       <p class="eyebrow">{T["eyebrow"]}</p>
       <{hx} class="bw-title">{T["h1"]}</{hx}>
       <p class="lead">{T["lead"]}</p>
+      <ol class="bw-steps" aria-label="Schritte" hidden>{nav}</ol>
       <ul class="bw-trust">{trust}</ul>
     </div>
     <div class="bw-panel">
       <div class="bw-progress" hidden>
         <p class="bw-count" aria-live="polite"><span class="bw-cur">Schritt 1</span> von <span class="bw-tot">{n}</span><span class="bw-name"></span></p>
         <div class="bw-bar" aria-hidden="true"><i></i></div>
+        <p class="bw-sum" aria-hidden="true"></p>
       </div>
       <form class="bw" name="{BW_FORM}" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" novalidate data-live="{1 if live else 0}" data-mail="{_html.escape(cfg("email") or "")}">
         <input type="hidden" name="form-name" value="{BW_FORM}">
