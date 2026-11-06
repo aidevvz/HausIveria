@@ -3,6 +3,8 @@ title: "Kaufnebenkosten beim Immobilienkauf in Österreich"
 description: "Welche Nebenkosten fallen beim Immobilienkauf in Österreich an? Grunderwerbsteuer, Grundbuch, Pfandrecht, Notar und Makler, mit Beispielrechnung."
 date: 2026-11-06
 category: Kaufen
+image: /Images/ratgeber/kaufnebenkosten-oesterreich.webp
+image_alt: "Taschenrechner, gestapelte Münzen und Hausschlüssel auf einem Holztisch im warmen Licht als Symbolbild für die Kaufnebenkosten beim Immobilienkauf in Österreich"
 cta: kaufen
 related: [maklerprovision-oesterreich, immobilienertragsteuer-oesterreich]
 faq:
