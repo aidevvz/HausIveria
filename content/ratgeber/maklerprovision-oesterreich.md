@@ -16,7 +16,7 @@ faq:
     a: "Nur im Erfolgsfall, also wenn durch die Vermittlung tatsächlich ein Vertrag zustande kommt. Die Provision muss vorab schriftlich vereinbart sein."
 draft: false
 ---
-Die Maklerprovision ist einer der größten Nebenkostenpunkte bei einem Immobiliengeschäft, und zugleich einer der am häufigsten missverstandenen. Dieser Ratgeber zeigt Ihnen, wie hoch die Maklerprovision in Österreich höchstens sein darf, wer sie beim Kauf und bei der Miete zahlt und was sich mit dem Bestellerprinzip seit 2023 geändert hat. Die Angaben sind eine Orientierung und ersetzen keine Rechtsberatung im Einzelfall.
+Die Maklerprovision ist einer der größten Brocken bei einem Immobiliengeschäft, und zugleich der, über den das meiste Halbwissen kursiert. Dieser Ratgeber zeigt Ihnen, wie hoch die Maklerprovision in Österreich höchstens sein darf, wer sie beim Kauf und bei der Miete zahlt und was sich mit dem Bestellerprinzip seit 2023 geändert hat. Die Angaben sind eine Orientierung und ersetzen keine Rechtsberatung im Einzelfall.
 
 ## Wie hoch ist die Maklerprovision in Österreich?
 
@@ -58,7 +58,7 @@ Voraussetzung ist außerdem, dass die Provision vorab und schriftlich vereinbart
 
 ## Worauf Sie bei der Provision achten sollten
 
-Die Prozentsätze sind Höchstsätze, kein Fixpreis. Die Provision ist verhandelbar, gerade bei höherpreisigen Objekten lohnt sich das Gespräch darüber. Lassen Sie sich die vereinbarte Höhe, die Fälligkeit und die enthaltenen Leistungen schriftlich geben.
+Die Prozentsätze sind Höchstsätze, kein in Stein gemeißelter Fixpreis. Die Provision ist verhandelbar, gerade bei höherpreisigen Objekten lohnt sich das Gespräch darüber. Lassen Sie sich die vereinbarte Höhe, die Fälligkeit und die enthaltenen Leistungen schriftlich geben.
 
 Zwei Punkte, bei denen in der Praxis am häufigsten Unklarheit herrscht: Erstens rechnen Käufer die Provision oft nicht zu den übrigen Kaufnebenkosten dazu und unterschätzen so die Gesamtkosten. Drei Prozent plus USt auf den Kaufpreis sind ein erheblicher Betrag, der zusätzlich zur Grunderwerbsteuer anfällt. Zweitens kennen viele Mieter das Bestellerprinzip nicht und akzeptieren eine Provisionsforderung, obwohl sie den Makler gar nicht beauftragt haben. Fragen Sie im Zweifel nach, wer den Vermittlungsauftrag erteilt hat.
 

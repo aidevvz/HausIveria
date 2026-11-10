@@ -20,7 +20,7 @@ faq:
     a: "Neue Ausweise verwenden eine einfache EU-Skala von A bis G statt des bisherigen Punktesystems, der fGEE entfällt. Zusätzlich ist der Energieausweis nun auch bei der Verlängerung bestehender Mietverträge vorzulegen, und es gibt einen Renovierungspass. Bereits ausgestellte Ausweise bleiben gültig."
 draft: false
 ---
-Der Energieausweis ist beim Immobilienverkauf keine Formsache, sondern Pflicht, und er gehört zu den Dingen, die einen Verkauf verzögern, wenn man sie zu spät angeht. Dieser Ratgeber erklärt, wann Sie in Österreich einen Energieausweis brauchen, was er kostet, wie lange er gilt und was sich mit der Novelle 2026 geändert hat. Die Angaben sind eine Orientierung und ersetzen keine Rechtsberatung im Einzelfall.
+Der Energieausweis ist beim Immobilienverkauf keine lästige Zettelwirtschaft, sondern Pflicht, und er gehört zu den Dingen, die man besser nicht auf die lange Bank schiebt: zu spät bestellt, bremst er den ganzen Verkauf aus. Dieser Ratgeber erklärt, wann Sie in Österreich einen Energieausweis brauchen, was er kostet, wie lange er gilt und was sich mit der Novelle 2026 geändert hat. Die Angaben sind eine Orientierung und ersetzen keine Rechtsberatung im Einzelfall.
 
 ## Wann ist der Energieausweis in Österreich Pflicht?
 
@@ -66,4 +66,4 @@ Mit der EAVG-Novelle 2026 kommt die vereinfachte EU-Skala von A bis G; das bishe
 
 ## Aus der Praxis: früh genug erstellen lassen
 
-Der häufigste Fehler ist, den Energieausweis erst zu bestellen, wenn das Objekt schon vermarktet werden soll. Weil die Kennwerte bereits ins Inserat gehören und die Erstellung je nach Verfügbarkeit der Fachleute etwas dauert, lohnt es sich, den Energieausweis gleich zu Beginn anzugehen, am besten zusammen mit der [Immobilienbewertung](/bewertung.html). So vermeiden Sie Verzögerungen beim [Verkauf](/verkaufen.html) und wirken auf Käufer von Anfang an professionell. Wie sich die weiteren Kosten rund um den Verkauf zusammensetzen, lesen Sie im Ratgeber zur [Maklerprovision](/ratgeber/maklerprovision-oesterreich.html); was steuerlich auf Sie zukommt, im Ratgeber zur [Immobilienertragsteuer](/ratgeber/immobilienertragsteuer-oesterreich.html).
+Der häufigste Fehler ist, den Energieausweis erst zu bestellen, wenn das Objekt schon ins Schaufenster soll. Weil die Kennwerte bereits ins Inserat gehören und die Erstellung je nach Verfügbarkeit der Fachleute etwas dauert, lohnt es sich, den Energieausweis gleich zu Beginn anzugehen, am besten zusammen mit der [Immobilienbewertung](/bewertung.html). So vermeiden Sie Verzögerungen beim [Verkauf](/verkaufen.html) und wirken auf Käufer von Anfang an professionell, statt am Ende hudeln zu müssen. Wie sich die weiteren Kosten rund um den Verkauf zusammensetzen, lesen Sie im Ratgeber zur [Maklerprovision](/ratgeber/maklerprovision-oesterreich.html); was steuerlich auf Sie zukommt, im Ratgeber zur [Immobilienertragsteuer](/ratgeber/immobilienertragsteuer-oesterreich.html).

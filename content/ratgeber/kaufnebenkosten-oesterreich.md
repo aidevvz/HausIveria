@@ -16,7 +16,7 @@ faq:
     a: "Nein. Die befristete Befreiung galt nur für Grundbuchsanträge, die bis 1. Juli 2026 beim Gericht einlangten. Für Anträge danach ist sie ausgelaufen, es fallen also wieder 1,1 Prozent für das Eigentumsrecht und 1,2 Prozent für das Pfandrecht an."
 draft: false
 ---
-Beim Immobilienkauf zählt nicht nur der Kaufpreis. Dazu kommen Kaufnebenkosten, die viele Käufer unterschätzen und die bei einer finanzierten Immobilie rasch 10 bis 12 Prozent des Kaufpreises ausmachen. Dieser Ratgeber zeigt Ihnen, welche Nebenkosten beim Immobilienkauf in Österreich anfallen, wie hoch sie sind und womit Sie konkret rechnen müssen. Die Angaben sind eine Orientierung und ersetzen keine Rechts- oder Steuerberatung im Einzelfall.
+Beim Immobilienkauf schaut jeder zuerst auf den Kaufpreis. Die eigentliche Überraschung wartet aber gleich daneben: die Kaufnebenkosten. Viele Käufer unterschätzen sie, dabei machen sie bei einer finanzierten Immobilie rasch 10 bis 12 Prozent des Kaufpreises aus. Dieser Ratgeber zeigt Ihnen, welche Nebenkosten beim Immobilienkauf in Österreich anfallen, wie hoch sie sind und womit Sie konkret rechnen müssen. Die Angaben sind eine Orientierung und ersetzen keine Rechts- oder Steuerberatung im Einzelfall.
 
 ## Wie hoch sind die Kaufnebenkosten in Österreich?
 
@@ -79,7 +79,7 @@ Das sind etwa 10,6 Prozent zusätzlich zum Kaufpreis. Ohne Makler blieben rund 2
 
 ## Diese Nebenkosten können Sie beeinflussen
 
-Grunderwerbsteuer und Grundbucheintragung sind fix, daran lässt sich nichts drehen. Spielraum gibt es bei drei Punkten: Die Maklerprovision ist verhandelbar, gerade bei höherpreisigen Objekten lohnt das Gespräch. Das Honorar für Vertrag und Treuhand können Sie über ein Pauschalangebot vergleichen. Und wer weniger oder gar nicht finanziert, senkt oder vermeidet die Pfandrechtsgebühr.
+Grunderwerbsteuer und Grundbucheintragung sind fix, da beißt die Maus keinen Faden ab. Spielraum gibt es bei drei Punkten: Die Maklerprovision ist verhandelbar, gerade bei höherpreisigen Objekten lohnt das Gespräch. Das Honorar für Vertrag und Treuhand können Sie über ein Pauschalangebot vergleichen. Und wer weniger oder gar nicht finanziert, senkt oder vermeidet die Pfandrechtsgebühr.
 
 Der wichtigste Rat bleibt aber: Rechnen Sie die Nebenkosten von Anfang an in Ihr Budget ein. Viele Finanzierungen scheitern nicht am Kaufpreis, sondern an den rund 10 Prozent obendrauf, die zu spät bedacht wurden.
 

@@ -17,7 +17,7 @@ faq:
     a: "In der Regel berechnet und überweist der Notar oder Rechtsanwalt die Steuer im Zuge der Kaufvertragsabwicklung. Dann hat die Zahlung Endbesteuerungswirkung und muss nicht mehr in die Steuererklärung."
 draft: false
 ---
-Beim Verkauf einer Immobilie bleibt selten der volle Erlös übrig: Auf den Gewinn fällt in Österreich die Immobilienertragsteuer an. Dieser Ratgeber zeigt Ihnen, wie hoch sie ist, wann der Verkauf steuerfrei bleibt, wie Alt- und Neuvermögen gerechnet werden, was sich 2027 für Altvermögen ändert und was der Umwidmungszuschlag seit Juli 2025 bedeutet. Die Angaben sind eine Orientierung und ersetzen keine Steuerberatung im Einzelfall.
+Beim Verkauf einer Immobilie bleibt selten der volle Erlös in der Tasche: Auf den Gewinn streckt in Österreich auch das Finanzamt die Hand aus, in Form der Immobilienertragsteuer. Dieser Ratgeber zeigt Ihnen, wie hoch sie ist, wann der Verkauf steuerfrei bleibt, wie Alt- und Neuvermögen gerechnet werden, was sich 2027 für Altvermögen ändert und was der Umwidmungszuschlag seit Juli 2025 bedeutet. Die Angaben sind eine Orientierung und ersetzen keine Steuerberatung im Einzelfall.
 
 ## Wie hoch ist die Immobilienertragsteuer?
 
@@ -75,7 +75,7 @@ Entscheidend ist der spätere Verkauf: Veräußert der Erbe oder Beschenkte die 
 
 ## Aus der Praxis
 
-Der häufigste und teuerste Fehler aus unserer Erfahrung: Viele Eigentümer beschäftigen sich mit der Immobilienertragsteuer erst, wenn ein Kaufanbot auf dem Tisch liegt und angenommen werden soll. Für eine saubere Planung ist es dann oft zu spät. Wir haben mehr als einmal erlebt, dass ein Verkauf in letzter Minute platzt, weil der Verkäufer mit einer deutlich niedrigeren Steuer gerechnet hatte, als am Ende tatsächlich anfiel.
+Der häufigste und teuerste Fehler aus unserer Erfahrung: Viele Eigentümer beschäftigen sich mit der Immobilienertragsteuer erst, wenn das Kaufanbot schon am Tisch liegt und freudig unterschrieben werden soll. Dann ist guter Rat sprichwörtlich teuer. Für eine saubere Planung ist es dann oft zu spät. Wir haben mehr als einmal erlebt, dass ein Verkauf in letzter Minute platzt, weil der Verkäufer mit einer deutlich niedrigeren Steuer gerechnet hatte, als am Ende tatsächlich anfiel.
 
 Deshalb unser Rat: Klären Sie die steuerliche Seite mit einem Steuerberater, bevor Sie überhaupt einen Makler beauftragen. Ein Makler darf in Österreich nicht zu Steuerfragen beraten, der gesamte Verkaufsprozess baut aber auf einer realistischen Netto-Erwartung auf. Wer die ImmoESt von Beginn an kennt, setzt den Preis richtig an, verhandelt ruhiger und erlebt beim Abschluss keine böse Überraschung.
 
