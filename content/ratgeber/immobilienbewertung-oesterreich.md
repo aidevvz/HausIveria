@@ -16,44 +16,44 @@ faq:
     a: "Nein. Das Liegenschaftsbewertungsgesetz ist nur bei Gericht und in bestimmten Verwaltungsverfahren verpflichtend. Für einen normalen Verkauf genügt eine fundierte Markteinschätzung, ein formelles Gutachten ist gesetzlich nicht vorgeschrieben."
 draft: false
 ---
-Eine der häufigsten Fragen vor einem Verkauf lautet: Was ist meine Immobilie eigentlich wert? Eine seriöse Immobilienbewertung liefert darauf eine belastbare Antwort, und zwar keine feste Zahl pro Quadratmeter, sondern einen Wert, der sich aus Lage, Zustand und Markt ergibt. Dieser Ratgeber erklärt, wie die Bewertung in Österreich funktioniert, welche Verfahren es gibt, was sie kostet und wann Sie wirklich ein Gutachten brauchen.
+Was ist meine Immobilie wert? Die ehrliche Wiener Antwort vorweg: Kommt drauf an. Aber damit lassen wir Sie natürlich nicht stehen. Eine seriöse Immobilienbewertung gibt Ihnen eine belastbare Zahl an die Hand, und zwar keinen pauschalen Quadratmeterpreis von der Stange, sondern einen Wert, der sich aus Lage, Zustand und Markt ergibt. Dieser Ratgeber zeigt, wie die Immobilienbewertung in Österreich funktioniert, welche Verfahren es gibt, was der Spaß kostet und wann Sie wirklich ein Gutachten brauchen.
 
 ## Was bedeutet Immobilienbewertung?
 
-Im Kern geht es um den Verkehrswert: den Preis, der für eine Immobilie im redlichen Geschäftsverkehr üblicherweise zu erzielen ist. Dieser Begriff ist im Liegenschaftsbewertungsgesetz (LBG, BGBl. Nr. 150/1992) definiert und bildet die Grundlage für fast alle Bewertungsanlässe, vom Verkauf über die Erbschaft bis zur Scheidung ([RIS](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10002932)).
+Im Kern geht es um den Verkehrswert. Das klingt nach Beamtendeutsch, meint aber etwas ganz Handfestes: den Preis, den Ihre Immobilie im redlichen Geschäftsverkehr üblicherweise bringt. Definiert ist der Begriff im Liegenschaftsbewertungsgesetz (LBG, BGBl. Nr. 150/1992), und er ist die Grundlage für fast alle Anlässe, vom Verkauf über die Erbschaft bis zur Scheidung ([RIS](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10002932)).
 
-Wichtig zu verstehen: Der Verkehrswert ist keine mathematisch exakte Größe, sondern eine fundierte Schätzung innerhalb einer Spanne. Deshalb liefert kein pauschaler Quadratmeterpreis eine verlässliche Antwort. Gerade bei Häusern hängt der Wert stark vom einzelnen Objekt und seiner Mikrolage ab.
+Eines gleich vorweg, damit später niemand enttäuscht ist: Der Verkehrswert ist keine mathematisch exakte Größe, sondern eine fundierte Schätzung innerhalb einer Spanne. Wer Ihnen den Wert auf den Euro genau verspricht, schätzt nicht, der rät. Deshalb taugt auch kein pauschaler Quadratmeterpreis als Antwort. Gerade bei Häusern hängt am Ende alles am einzelnen Objekt und seiner Mikrolage.
 
 ## Die drei Bewertungsverfahren
 
-Das Liegenschaftsbewertungsgesetz kennt drei anerkannte Verfahren. Welches zum Einsatz kommt, hängt vom Objekttyp ab ([gesetzefinden.at](https://gesetzefinden.at/bundesrecht/bundesgesetze/lbg)).
+Klingt technisch, ist aber schnell erzählt. Das Liegenschaftsbewertungsgesetz kennt drei anerkannte Verfahren, und welches zum Zug kommt, hängt vom Objekt ab ([gesetzefinden.at](https://gesetzefinden.at/bundesrecht/bundesgesetze/lbg)).
 
-- **Vergleichswertverfahren (§ 4 LBG):** Der Wert wird aus tatsächlich erzielten Kaufpreisen vergleichbarer Objekte abgeleitet. Das ist das übliche Verfahren für Eigentumswohnungen und Grundstücke, weil es dort genügend Vergleichsfälle gibt.
-- **Ertragswertverfahren (§ 5 LBG):** Hier zählt der Ertrag, den die Immobilie abwirft. Es kommt bei vermieteten Wohnungen, Zinshäusern und Gewerbeobjekten zum Einsatz, bei denen die erzielbaren Mieteinnahmen den Wert bestimmen.
-- **Sachwertverfahren (§ 6 LBG):** Der Wert ergibt sich aus Bodenwert plus Bauwert, also aus der Substanz. Dieses Verfahren eignet sich für selbst genutzte Einfamilienhäuser, für die es kaum direkte Vergleichsobjekte gibt.
+- **Vergleichswertverfahren (§ 4 LBG):** Der Wert wird aus tatsächlich erzielten Kaufpreisen vergleichbarer Objekte abgeleitet. Das ist der Normalfall bei Eigentumswohnungen und Grundstücken, weil es dort genug Vergleichsfälle gibt.
+- **Ertragswertverfahren (§ 5 LBG):** Hier zählt, was die Immobilie abwirft. Es kommt bei vermieteten Wohnungen, Zinshäusern und Gewerbeobjekten zum Einsatz, wo die Mieteinnahmen den Wert bestimmen.
+- **Sachwertverfahren (§ 6 LBG):** Der Wert ergibt sich aus Bodenwert plus Bauwert, also aus der Substanz. Das passt für selbst genutzte Einfamilienhäuser, für die es kaum direkte Vergleichsobjekte gibt.
 
-In der Praxis werden oft zwei Verfahren kombiniert und gewichtet, um zu einem belastbaren Gesamtwert zu kommen.
+In der Praxis werden oft zwei Verfahren kombiniert und gewichtet. Doppelt hält hier tatsächlich besser.
 
 ## Online-Rechner, Makler oder Gutachten?
 
-Es gibt drei übliche Wege zu einer Wertangabe, und sie unterscheiden sich stark in Tiefe und Kosten.
+Es gibt drei übliche Wege zu einer Zahl, und sie trennen Welten, bei der Tiefe wie beim Preis.
 
-Ein **Online-Rechner** liefert in wenigen Minuten eine grobe Orientierung auf Basis von Durchschnittswerten. Für einen ersten Eindruck ist das brauchbar, den Zustand und die Mikrolage Ihrer konkreten Immobilie kann ein Algorithmus aber nicht erfassen.
+Ein **Online-Rechner** spuckt in wenigen Minuten eine grobe Orientierung aus. Nur ist er ungefähr so hilfreich wie der Wetterbericht fürs ganze Land: Für den ersten Eindruck nett, aber ob bei Ihnen daheim gerade die Sonne scheint, weiß er nicht. Zustand und Mikrolage Ihrer konkreten Wohnung kann ein Algorithmus schlicht nicht sehen.
 
-Eine **Markteinschätzung durch einen Makler** ist deutlich genauer, weil sie das Objekt vor Ort und aktuelle Verkaufsdaten aus der Region einbezieht. Beim geplanten Verkauf ist diese Einschätzung oft kostenlos und Teil der Leistung, die über die Provision abgedeckt wird.
+Eine **Markteinschätzung durch einen Makler** ist deutlich näher an der Wahrheit, weil sie das Objekt vor Ort anschaut und aktuelle Verkaufsdaten aus der Gegend einbezieht. Beim geplanten Verkauf ist diese Einschätzung oft kostenlos und Teil der Leistung, die über die Provision abgedeckt ist.
 
-Ein **Gutachten durch einen Sachverständigen** ist die ausführlichste Variante. Ein Verkehrswertgutachten umfasst leicht 30 bis 80 Seiten mit Befund, Berechnung und Begründung. Die Kosten liegen grob ab 500 bis 800 Euro und erreichen bei größeren Objekten rund 1 Prozent des Werts; für Gerichtsverfahren gilt ein fester Tarif nach dem Gebührenanspruchsgesetz ([finfo.at](https://www.finfo.at/finanzierung/immobilienbewertung/)).
+Ein **Gutachten durch einen Sachverständigen** ist die große Variante. Ein Verkehrswertgutachten umfasst locker 30 bis 80 Seiten mit Befund, Berechnung und Begründung. Die Kosten liegen grob ab 500 bis 800 Euro und erreichen bei größeren Objekten rund 1 Prozent des Werts; vor Gericht gilt ein fester Tarif nach dem Gebührenanspruchsgesetz ([finfo.at](https://www.finfo.at/finanzierung/immobilienbewertung/)). Für die Frage „verkaufen oder nicht" ist das meist mit Kanonen auf Spatzen geschossen.
 
 ## Was Ihre Immobilie wirklich wert macht
 
-Den größten Hebel hat die Lage, und zwar bis auf die Mikroebene: dieselbe Straße kann je nach Ausrichtung, Ruhe und Aussicht einen spürbaren Unterschied machen. Dazu kommen Zustand und Sanierungsgrad, Grundriss und Raumaufteilung, Stockwerk und Lift, Freiflächen wie Balkon oder Garten, Baujahr und die Energieeffizienz.
+Den größten Hebel hat die Lage, und in Wien heißt das oft: das Grätzl, manchmal sogar die Straßenseite. Dazu kommen Zustand und Sanierungsgrad, Grundriss und Raumaufteilung, Stockwerk und Lift, Freiflächen wie Balkon oder Garten, Baujahr und Energieeffizienz.
 
-Genau deshalb schwankt der erzielbare Quadratmeterpreis selbst im gleichen Grätzl erheblich. Eine sanierungsbedürftige Wohnung und eine frisch sanierte im selben Haus trennen oft mehrere tausend Euro pro Quadratmeter. Eine ehrliche Bewertung benennt diese Spanne, statt eine Scheingenauigkeit vorzutäuschen.
+Genau deshalb schwankt der erzielbare Quadratmeterpreis selbst im selben Haus erheblich. Eine sanierungsbedürftige Wohnung und eine frisch sanierte, Tür an Tür, trennen schnell mehrere tausend Euro pro Quadratmeter. Eine ehrliche Bewertung sagt Ihnen diese Spanne ins Gesicht, statt eine Scheingenauigkeit zu basteln, die beim ersten Besichtigungstermin ohnehin zerbröselt.
 
 ## Brauchen Sie ein Gutachten?
 
-Für einen normalen Verkauf nicht. Das Liegenschaftsbewertungsgesetz ist nur in gerichtlichen und bestimmten behördlichen Verfahren zwingend, etwa bei einer Enteignung ([finfo.at](https://www.finfo.at/finanzierung/immobilienbewertung/)). Für den freihändigen Verkauf oder die Preisverhandlung mit einem Käufer genügt eine fundierte Markteinschätzung.
+Für einen normalen Verkauf: nein. Das Liegenschaftsbewertungsgesetz ist nur in gerichtlichen und bestimmten behördlichen Verfahren zwingend, etwa bei einer Enteignung ([finfo.at](https://www.finfo.at/finanzierung/immobilienbewertung/)). Für den freihändigen Verkauf oder die Preisverhandlung mit einem Käufer genügt eine fundierte Markteinschätzung. Sie dürfen sich den Papierkram also sparen.
 
-Ein formelles Gutachten lohnt sich dort, wo ein neutraler, belastbarer Wert gebraucht wird: bei Erbauseinandersetzungen, Scheidungen, Gerichtsverfahren oder manchmal für die Bank. Für die reine Verkaufsentscheidung ist es in der Regel nicht nötig.
+Ein formelles Gutachten zahlt sich dort aus, wo ein neutraler, gerichtsfester Wert gebraucht wird: bei Erbauseinandersetzungen, Scheidungen, Gerichtsverfahren oder manchmal für die Bank. Also meist dann, wenn mehrere Parteien am Tisch sitzen und jede eine andere Vorstellung mitbringt.
 
-Der beste erste Schritt ist unkompliziert und kostenlos: Fordern Sie eine [persönliche Bewertung](/bewertung.html) an, und wir sagen Ihnen ehrlich, in welcher Spanne Ihre Immobilie liegt. Was beim Verkauf an Provision anfällt, lesen Sie im Ratgeber zur [Maklerprovision](/ratgeber/maklerprovision-oesterreich.html).
+Der erste Schritt kostet nichts und tut nicht weh: Fordern Sie eine [persönliche Bewertung](/bewertung.html) an, und wir sagen Ihnen ehrlich, in welcher Spanne Ihre Immobilie liegt. Kein Verkaufsdruck, kein Kleingedrucktes. Was beim Verkauf an Provision anfällt, lesen Sie in Ruhe im Ratgeber zur [Maklerprovision](/ratgeber/maklerprovision-oesterreich.html).
