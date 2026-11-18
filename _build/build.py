@@ -4,7 +4,7 @@ import os, sys, json, re, subprocess, datetime, hashlib, html as _html
 from PIL import Image as _Img
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(HERE)
-V = "20261104c"
+V = "20261118a"
 SITE = json.load(open(os.path.join(HERE, 'site.json'), encoding='utf-8'))
 DOMAIN = SITE['domain'].rstrip('/')
 def cfg(k): return SITE.get(k)
@@ -180,6 +180,35 @@ FOOTER = f'''<footer class="site-footer dark">
 
 WA_PATH = "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
 
+# Gründungs-Hinweis beim ersten Besuch (site.json "gruendungshinweis": true/false)
+LAUNCH_TEXT = {
+    'de': dict(aria='Hinweis: Unternehmen in Gründung', eyebrow='In Gründung', h='Wir starten im <em>Q1&nbsp;2027</em>.',
+               p='Iveria Immobilien befindet sich derzeit in Gründung. Der offizielle Start ist für das erste Quartal 2027 geplant. Erreichbar sind wir schon jetzt:',
+               ok='Verstanden', close='Hinweis schließen'),
+    'en': dict(aria='Notice: company being founded', eyebrow='Coming soon', h='We launch in <em>Q1&nbsp;2027</em>.',
+               p='Iveria Immobilien is currently being founded. The official launch is planned for the first quarter of 2027. You can already reach us at:',
+               ok='Got it', close='Close notice'),
+    'ru': dict(aria='Уведомление: компания в процессе основания', eyebrow='Скоро открытие', h='Мы начинаем работу в <em>I&nbsp;квартале&nbsp;2027</em>.',
+               p='Iveria Immobilien сейчас находится в процессе основания. Официальный запуск запланирован на первый квартал 2027 года. Связаться с нами можно уже сейчас:',
+               ok='Понятно', close='Закрыть уведомление'),
+}
+def launch_notice(lang='de'):
+    if not cfg('gruendungshinweis'): return ''
+    L, mail = LAUNCH_TEXT[lang], cfg('email') or ''
+    m = f' <a href="mailto:{mail}">{mail}</a>' if mail else ''
+    return f'''<div class="launch" id="launch-notice" role="dialog" aria-modal="true" aria-labelledby="launch-h" hidden>
+  <div class="launch-bg" data-close></div>
+  <div class="launch-card" tabindex="-1">
+    <button class="launch-x" type="button" data-close aria-label="{L['close']}"><span aria-hidden="true">×</span></button>
+    <svg class="launch-arch" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66"/></svg>
+    <p class="eyebrow">{L['eyebrow']}</p>
+    <p class="launch-h" id="launch-h">{L['h']}</p>
+    <p class="launch-p">{L['p']}{m}</p>
+    <button class="btn solid" type="button" data-close>{L['ok']}</button>
+  </div>
+</div>
+'''
+
 def tail(wa_wait=False):
     w = ' wait' if wa_wait else ''
     wa = f'''<a href="{WA_URL}" class="wa{w}" aria-label="WhatsApp" target="_blank" rel="noopener">
@@ -187,7 +216,7 @@ def tail(wa_wait=False):
 </a>
 ''' if WA_URL else ''
     return wa + f'''<div class="cursor" id="cursor" aria-hidden="true">Ansehen</div>
-<div class="cookie dark" id="cookie-banner" role="dialog" aria-label="Cookies und Datenschutz">
+{launch_notice()}<div class="cookie dark" id="cookie-banner" role="dialog" aria-label="Cookies und Datenschutz">
   <p class="ch">Cookies &amp; Datenschutz</p>
   <p>Wir verwenden ausschließlich technisch notwendige Cookies. Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
   <div class="btns"><button class="btn solid" id="cookie-accept">Akzeptieren</button><button class="btn" id="cookie-decline">Ablehnen</button></div>

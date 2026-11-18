@@ -30,12 +30,46 @@
   var cb = $('#cookie-banner');
   if(cb){
     var seen = null; try { seen = localStorage.getItem('hi-cookie-consent'); } catch(e){}
-    if(!seen) setTimeout(function(){ cb.classList.add('show'); }, 4000);
+    if(!seen) window.__cookieShow = function(ms){ setTimeout(function(){ cb.classList.add('show'); }, ms); };
     var set = function(v){ try { localStorage.setItem('hi-cookie-consent', v); } catch(e){} cb.classList.remove('show'); };
     var ab = $('#cookie-accept'), db = $('#cookie-decline');
     if(ab) ab.addEventListener('click', function(){ set('accepted'); });
     if(db) db.addEventListener('click', function(){ set('declined'); });
   }
+
+  /* ---------- Gründungs-Hinweis (einmal, dann 7 Tage Ruhe) ---------- */
+  var lnEl = $('#launch-notice'), lnShown = false;
+  if(lnEl){
+    var last = 0; try { last = +localStorage.getItem('hi-launch-seen') || 0; } catch(e){}
+    if(Date.now() - last > 7 * 864e5){
+      lnShown = true;
+      var prev = null;
+      var close = function(){
+        try { localStorage.setItem('hi-launch-seen', String(Date.now())); } catch(e){}
+        lnEl.classList.remove('show'); document.documentElement.classList.remove('launch-lock');
+        if(lenis) lenis.start();
+        document.removeEventListener('keydown', key);
+        setTimeout(function(){ lnEl.hidden = true; }, reduce ? 0 : 450);
+        if(prev && prev.focus) prev.focus({preventScroll:true});
+        if(window.__cookieShow) window.__cookieShow(1200);
+      };
+      var key = function(e){
+        if(e.key === 'Escape') close();
+        if(e.key === 'Tab'){ var f = $$('button,a', lnEl), a = f[0], z = f[f.length - 1];
+          if(e.shiftKey && document.activeElement === a){ e.preventDefault(); z.focus(); }
+          else if(!e.shiftKey && document.activeElement === z){ e.preventDefault(); a.focus(); } }
+      };
+      $$('[data-close]', lnEl).forEach(function(b){ b.addEventListener('click', close); });
+      setTimeout(function(){
+        prev = document.activeElement; lnEl.hidden = false;
+        document.documentElement.classList.add('launch-lock'); if(lenis) lenis.stop();
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ lnEl.classList.add('show'); }); });
+        lnEl.querySelector('.launch-card').focus({preventScroll:true});
+        document.addEventListener('keydown', key);
+      }, 900);
+    }
+  }
+  if(!lnShown && window.__cookieShow) window.__cookieShow(4000);
 
   /* ---------- Formulare: Rückmeldung beim Absenden ---------- */
   $$('form[data-form]').forEach(function(f){

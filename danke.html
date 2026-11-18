@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/iveria.css?v=20261104c">
+<link rel="stylesheet" href="assets/iveria.css?v=20261118a">
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('ready')},2500)</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","@id":"https://iveria.at/#organization","name":"Iveria Immobilien","legalName":"Iveria Immobilien e.U.","url":"https://iveria.at/","logo":"https://iveria.at/icon-512.png","image":"https://iveria.at/Images/og-image.jpg","email":"office@iveria.at","address":{"@type":"PostalAddress","postalCode":"1120","addressLocality":"Wien","addressCountry":"AT"},"areaServed":[{"@type":"State","name":"Wien"},{"@type":"State","name":"Niederösterreich"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]}</script>
 </head>
@@ -79,6 +79,17 @@
 </footer>
 
 <div class="cursor" id="cursor" aria-hidden="true">Ansehen</div>
+<div class="launch" id="launch-notice" role="dialog" aria-modal="true" aria-labelledby="launch-h" hidden>
+  <div class="launch-bg" data-close></div>
+  <div class="launch-card" tabindex="-1">
+    <button class="launch-x" type="button" data-close aria-label="Hinweis schließen"><span aria-hidden="true">×</span></button>
+    <svg class="launch-arch" viewBox="0 0 100 70" aria-hidden="true"><path d="M 22 68 L 22 38 Q 50 10 78 38 L 78 68"/><path d="M 50 26 L 50 66"/></svg>
+    <p class="eyebrow">In Gründung</p>
+    <p class="launch-h" id="launch-h">Wir starten im <em>Q1&nbsp;2027</em>.</p>
+    <p class="launch-p">Iveria Immobilien befindet sich derzeit in Gründung. Der offizielle Start ist für das erste Quartal 2027 geplant. Erreichbar sind wir schon jetzt: <a href="mailto:office@iveria.at">office@iveria.at</a></p>
+    <button class="btn solid" type="button" data-close>Verstanden</button>
+  </div>
+</div>
 <div class="cookie dark" id="cookie-banner" role="dialog" aria-label="Cookies und Datenschutz">
   <p class="ch">Cookies &amp; Datenschutz</p>
   <p>Wir verwenden ausschließlich technisch notwendige Cookies. Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
@@ -87,6 +98,6 @@
 <script src="assets/vendor/gsap.min.js?v=3.12.5"></script>
 <script src="assets/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
 <script src="assets/vendor/lenis.min.js?v=1.1.13"></script>
-<script src="assets/iveria.js?v=20261104c"></script>
+<script src="assets/iveria.js?v=20261118a"></script>
 </body>
 </html>

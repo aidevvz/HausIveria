@@ -42,6 +42,11 @@ Solange `formulare_aktiv` in `site.json` false ist, läuft es im Vorschaumodus (
 `bewertungstool_auf_bewertungsseite: true` ersetzt das alte Formular auf `bewertung.html` (erst zum Go-live, Absprache mit Gio).
 Nicht auf die Startseite, in Menü oder Sitemap verlinken, solange die Route noindex ist.
 
+## Gründungs-Hinweis
+
+Beim ersten Besuch erscheint ein Hinweis „In Gründung, Start Q1 2027“ (danach 7 Tage Ruhe pro Browser).
+Ein/aus über `gruendungshinweis` in `site.json`, Texte DE/EN/RU in `LAUNCH_TEXT` in `_build/build.py`.
+
 ## Nicht anfassen
 
 - Die generierten `*.html` (auch `immobilienmakler-*.html`), `ratgeber/`, `sitemap.xml`, `llms.txt` (werden bei jedem Build überschrieben)

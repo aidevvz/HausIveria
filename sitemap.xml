@@ -56,9 +56,27 @@
   </url>
   <url>
     <loc>https://iveria.at/ratgeber/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iveria.at/ratgeber/wohnung-vermieten-oesterreich.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iveria.at/ratgeber/immobilienbewertung-oesterreich.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iveria.at/ratgeber/kaufnebenkosten-oesterreich.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://iveria.at/ratgeber/energieausweis-oesterreich.html</loc>

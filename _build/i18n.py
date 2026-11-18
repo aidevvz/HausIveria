@@ -199,6 +199,7 @@ def footer_i18n(lang):
 def tail_i18n(lang, wa_wait=False):
     S = STR[lang]
     t = tail(wa_wait)
+    if launch_notice(): t = t.replace(launch_notice('de'), launch_notice(lang))
     t = t.replace('aria-hidden="true">Ansehen</div>', f'aria-hidden="true">{S["cursor"]}</div>')
     t = t.replace('aria-label="Cookies und Datenschutz"', f'aria-label="{S["cookie_aria"]}"').replace('<p class="ch">Cookies &amp; Datenschutz</p>', f'<p class="ch">{S["cookie_title"]}</p>')
     t = t.replace('Wir verwenden ausschließlich technisch notwendige Cookies. Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.',
